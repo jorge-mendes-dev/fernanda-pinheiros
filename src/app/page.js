@@ -3,7 +3,7 @@ import Navigation from './components/Navigation'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import About from './components/About'
-import Products from './components/Products'
+import Tips from './components/Tips'
 import FadeIn from './components/FadeIn'
 import Loader from './components/Loader'
 
@@ -20,7 +20,7 @@ export default function Home() {
         <About />
       </FadeIn>
       <FadeIn delay={0.6}>
-        <Products />   
+        <Tips />   
       </FadeIn> 
       <FadeIn delay={0.6}>
         <Footer />

@@ -1,6 +1,6 @@
 'use client'
 
-export default function Products() {
+export default function Tips() {
     return (
       <div className="relative bg-green-900" id="products">
         <div className="relative h-80 overflow-hidden bg-green-600 md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
