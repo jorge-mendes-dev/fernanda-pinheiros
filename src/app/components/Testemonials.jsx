@@ -6,10 +6,8 @@ export default function Testimonials() {
   const highlight = {
     body: 'Uma profissional incrivel, cheia de instusiasmo e energia, sempre disposta a ajudar e a ensinar. Uma verdadeira inspiração para todos nós.',
     author: {
-      name: 'Rogeria x',
-      handle: 'Tecnica em nutricao',
-      imageUrl:
-        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=1024&h=1024&q=80',
+      name: 'Rogeria',
+      handle: 'Tecnica em nutricao'
     },
   }
   const testimonials = [
@@ -18,10 +16,8 @@ export default function Testimonials() {
         {
           body: 'Ama seus paceintes e sempre busca o melhor para eles.',
           author: {
-            name: 'Leslie Alexander',
-            handle: 'Copeira',
-            imageUrl:
-              'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            name: 'X',
+            handle: 'Copeira'
           },
         },
       ],
@@ -29,10 +25,8 @@ export default function Testimonials() {
         {
           body: 'Uma gestora extremamente organizada e focada, sabe se comunicar muito bem com todos os colaboradores.',
           author: {
-            name: 'Lindsay Walton',
+            name: 'X',
             handle: 'Chef de cozinha',
-            imageUrl:
-              'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
           },
         },
       ],
@@ -43,9 +37,7 @@ export default function Testimonials() {
           body: 'Sabe lidar com os mais diversos tipos de pessoas, sempre com um sorriso no rosto e uma palavra de apoio.',
           author: {
             name: 'Dra. Kimiko',
-            handle: 'Medica',
-            imageUrl:
-              'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            handle: 'Medica'
           },
         },
       ],
@@ -53,10 +45,8 @@ export default function Testimonials() {
         {
           body: 'Foi a melhor aluna que já tive, sempre disposta a aprender e a ajudar os outros.',
           author: {
-            name: 'Camila',
-            handle: 'Professora de nutrição',
-            imageUrl:
-              'https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+            name: 'Prof Camila',
+            handle: 'Professora de nutrição'
           },
         },
       ],
@@ -102,11 +92,6 @@ export default function Testimonials() {
               <p>{`“${highlight.body}”`}</p>
             </blockquote>
             <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-4 border-t border-gray-900/10 px-6 py-4 sm:flex-nowrap">
-              <img
-                alt=""
-                src={highlight.author.imageUrl}
-                className="size-10 flex-none rounded-full bg-gray-50"
-              />
               <div className="flex-auto">
                 <div className="font-semibold">{highlight.author.name}</div>
                 <div className="text-gray-600">{`${highlight.author.handle}`}</div>
@@ -135,7 +120,6 @@ export default function Testimonials() {
                         <p>{`“${testimonial.body}”`}</p>
                       </blockquote>
                       <figcaption className="mt-6 flex items-center gap-x-4">
-                        <img alt="" src={testimonial.author.imageUrl} className="size-10 rounded-full bg-gray-50" />
                         <div>
                           <div className="font-semibold">{testimonial.author.name}</div>
                           <div className="text-gray-600">{`${testimonial.author.handle}`}</div>

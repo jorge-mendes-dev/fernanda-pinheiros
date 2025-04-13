@@ -8,6 +8,7 @@ import FadeIn from './components/FadeIn'
 import Loader from './components/Loader'
 import Testimonials from './components/Testemonials'
 import Curriculum from './components/Curriculum'
+import Work from './components/Work'
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <FadeIn delay={0.4}>
         <About />
         <Curriculum />
+        <Work />
       </FadeIn>
       <FadeIn delay={0.5}>
         <Testimonials />
