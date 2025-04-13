@@ -1,12 +1,16 @@
 'use client'
 
+import Image from 'next/image'
+
 import { useState } from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Sobre mim', href: '#about' },
-  { name: 'Dicas', href: '#products' },
+  { name: 'Formação', href: '#curriculum' },
+  { name: 'Depoimentos', href: '#testimonials' },
+  { name: 'Dicas', href: '#tips' },
   { name: 'Linkedin', href: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/' },
   { name: 'Instagram', href: 'https://www.instagram.com/nutri_fernandasouza/profilecard/' },
 ]
@@ -19,7 +23,9 @@ export default function Navigation() {
       <nav aria-label="Global" className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
         <a href="#" className="-m-1.5 p-1.5">
           <span className="sr-only">Your Company</span>
-          <img
+          <Image
+            width={32}
+            height={32}
             alt=""
             src="/assets/images/logo.svg"
             className="h-8 w-auto"
@@ -37,7 +43,7 @@ export default function Navigation() {
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
-            <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900">
+            <a key={item.name} href={item.href} className="text-sm/6 font-semibold text-gray-900 hover:text-pink-600">
               {item.name}
             </a>
           ))}
@@ -49,7 +55,9 @@ export default function Navigation() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
-              <img
+              <Image
+                width={32}
+                height={32}
                 alt=""
                 src="/assets/images/logo.svg"
                 className="h-8 w-auto"
@@ -71,7 +79,7 @@ export default function Navigation() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 hover:text-pink-600"
                   >
                     {item.name}
                   </a>

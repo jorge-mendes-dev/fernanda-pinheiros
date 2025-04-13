@@ -6,6 +6,8 @@ import About from './components/About'
 import Tips from './components/Tips'
 import FadeIn from './components/FadeIn'
 import Loader from './components/Loader'
+import Testimonials from './components/Testemonials'
+import Curriculum from './components/Curriculum'
 
 export default function Home() {
   return (
@@ -18,6 +20,10 @@ export default function Home() {
       </FadeIn>
       <FadeIn delay={0.4}>
         <About />
+        <Curriculum />
+      </FadeIn>
+      <FadeIn delay={0.5}>
+        <Testimonials />
       </FadeIn>
       <FadeIn delay={0.6}>
         <Tips />   

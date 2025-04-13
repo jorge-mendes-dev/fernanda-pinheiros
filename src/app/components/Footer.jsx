@@ -3,7 +3,9 @@
 const navigation = {
     main: [
       { name: 'Sobre mim', href: '#about' },
-      { name: 'Dicas', href: '#products' },
+      { name: 'Formação', href: '#curriculum' },
+      { name: 'Depoimentos', href: '#testimonials' },
+      { name: 'Dicas', href: '#tips' },
     //   { name: 'Jobs', href: '#' },
     //   { name: 'Press', href: '#' },
     //   { name: 'Accessibility', href: '#' },
