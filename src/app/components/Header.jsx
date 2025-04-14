@@ -34,9 +34,9 @@ export default function Header() {
                 height={100}
               /> */}
                <div className="hidden sm:mt-32 sm:flex lg:mt-16">
-                <div className="relative rounded-full px-3 py-1 text-sm/6 font-semibold text-pink-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                <span className="rounded-full bg-pink-600/10 px-3 py-1 text-sm/6 font-semibold text-pink-600 ring-1 ring-inset ring-indigo-600/10">
                   NUTRICIONISTA CLÍNICO
-                </div>
+                </span>
               </div>
               <h1 className="mt-24 text-pretty text-5xl font-semibold tracking-tight text-gray-900 sm:mt-10 sm:text-7xl">
                 Fernanda Souza

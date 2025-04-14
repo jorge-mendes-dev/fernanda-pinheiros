@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { BriefcaseIcon } from '@heroicons/react/20/solid'
+import { BriefcaseIcon, CheckCircleIcon } from '@heroicons/react/20/solid'
 
 export default function Work() {
   return (
@@ -64,15 +64,28 @@ export default function Work() {
               <span>
                 <strong className="font-semibold text-gray-900">HUMANA MAGNA - UNIDADE IBIRAPUERA – ESTÁGIO EM NUTRIÇÃO CLÍNICA</strong> <br />
                 <i className='text-pink-600'>Fevereiro 2025 – atualmente | São Paulo</i> <br/>
-                <ul>
-                  <li>
-                    •	<b>Acompanhamento da Terapia Nutricional:</b> Monitorar a evolução nutricional dos pacientes, ajustando as dietas conforme necessário.
+               
+                <ul role="list" className="mt-2 max-w-xl space-y-8 text-gray-600">
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Acompanhamento da Terapia Nutricional:</strong> 
+                      Monitorar a evolução nutricional dos pacientes, ajustando as dietas conforme necessário.
+                    </span>
                   </li>
-                  <li>
-                    •	<b>Educação Nutricional:</b> Oferecer orientações nutricionais verbais e escritas para pacientes e familiares.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Educação Nutricional:</strong> 
+                      Oferecer orientações nutricionais verbais e escritas para pacientes e familiares.
+                    </span>
                   </li>
-                  <li>
-                    •	<b>Acompanhamento de Pacientes:</b> Realizar visitas regulares aos pacientes internados para avaliar sua evolução clínica e nutricional.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Acompanhamento de Pacientes:</strong> 
+                      Realizar visitas regulares aos pacientes internados para avaliar sua evolução clínica e nutricional.
+                    </span>
                   </li>
                 </ul>
               </span>
@@ -82,21 +95,42 @@ export default function Work() {
               <span>
                 <strong className="font-semibold text-gray-900">SODEXO UNIDADE TITAN – ESTÁGIO EM UNIDADE DE ALIMENTAÇÃO E NUTRIÇÃO</strong> <br />
                 <i className='text-pink-600'>Setembro 2024 – outubro 2024 | São Paulo</i> <br/>
-                <ul>
-                  <li>
-                  •	<b>Acompanhamento Nutricional:</b> Avaliar o estado nutricional dos pacientes, coletar dados sobre hábitos alimentares e histórico médico, e fornecer orientações básicas sobre alimentação saudável.
+                
+                <ul role="list" className="mt-2 max-w-xl space-y-8 text-gray-600">
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Acompanhamento Nutricional:</strong> 
+                      Avaliar o estado nutricional dos pacientes, coletar dados sobre hábitos alimentares e histórico médico, e fornecer orientações básicas sobre alimentação saudável.
+                    </span>
                   </li>
-                  <li>
-                  •	<b>Planejamento de Cardápios:</b> Auxiliar na elaboração de cardápios gerais e especiais, considerando restrições alimentares e necessidades nutricionais dos pacientes.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Planejamento de Cardápios:</strong> 
+                      Auxiliar na elaboração de cardápios gerais e especiais, considerando restrições alimentares e necessidades nutricionais dos pacientes.
+                    </span>
                   </li>
-                  <li>
-                  •	<b>Supervisão da Produção Alimentar:</b> Garantir que as boas práticas de manipulação de alimentos sejam seguidas, desde o armazenamento até o preparo das refeições.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Supervisão da Produção Alimentar:</strong> 
+                      Garantir que as boas práticas de manipulação de alimentos sejam seguidas, desde o armazenamento até o preparo das refeições.
+                    </span>
                   </li>
-                  <li>
-                  •	<b>Controle de Qualidade:</b> Monitorar a qualidade dos alimentos servidos, verificando a procedência dos ingredientes e a higienização correta do local.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Controle de Qualidade:</strong> 
+                      Monitorar a qualidade dos alimentos servidos, verificando a procedência dos ingredientes e a higienização correta do local.
+                    </span>
                   </li>
-                  <li>
-                  •	<b>Gestão de Estoque:</b> Organizar o armazenamento adequado dos alimentos e monitorar o uso eficiente dos ingredientes.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Gestão de Estoque:</strong> 
+                      Organizar o armazenamento adequado dos alimentos e monitorar o uso eficiente dos ingredientes.
+                    </span>
                   </li>
                 </ul>
               </span>
@@ -106,20 +140,38 @@ export default function Work() {
               <span>
                 <strong className="font-semibold text-gray-900">CIECS - CLÍNICAS INTEGRADAS DA ESCOLA DE CIÊNCIAS DA SAÚDE – ESTÁGIO EM NUTRIÇÃO COLETIVA</strong> <br />
                 <i className='text-pink-600'>Outubro 2024 – dezembro 2024 | São Paulo</i> <br/>
-                <ul>
-                  <li>
-                    •	<b>Avaliação Nutricional:</b> Realizar avaliações antropométricas (peso, altura, circunferência da cintura) e classificar o estado nutricional dos usuários.
+
+                <ul role="list" className="mt-2 max-w-xl space-y-8 text-gray-600">
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Avaliação Nutricional:</strong> 
+                      Realizar avaliações antropométricas (peso, altura, circunferência da cintura) e classificar o estado nutricional dos usuários.
+                    </span>
                   </li>
-                  <li>
-                    •	<b>Orientação Nutricional:</b> Fornecer orientações nutricionais individuais e em grupo para pacientes e cuidadores.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Orientação Nutricional:</strong> 
+                      Fornecer orientações nutricionais individuais e em grupo para pacientes e cuidadores.
+                    </span>
                   </li>
-                  <li>
-                    •	<b>Educação Nutricional:</b> Planejar e ministrar palestras educativas sobre alimentação saudável e prevenção de doenças para diferentes grupos.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Educação Nutricional:</strong> 
+                      Planejar e ministrar palestras educativas sobre alimentação saudável e prevenção de doenças para diferentes grupos.
+                    </span>
                   </li>
-                  <li>
-                    •	<b>Desenvolvimento de Materiais Educativos:</b> Criar materiais de educação nutricional, como folders e banners, para salas de espera.
+                  <li className="flex gap-x-3">
+                    <CheckCircleIcon aria-hidden="true" className="mt-1 size-5 flex-none text-pink-600" />
+                    <span>
+                      <strong className="font-semibold text-gray-900 mr-1">Desenvolvimento de Materiais Educativos:</strong> 
+                      Criar materiais de educação nutricional, como folders e banners, para salas de espera.
+                    </span>
                   </li>
                 </ul>
+
               </span>
             </li>
           </ul>
