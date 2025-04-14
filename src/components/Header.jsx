@@ -31,13 +31,6 @@ export default function Header() {
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
         <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-48 lg:pt-40 xl:col-span-6">
           <div className="mx-auto max-w-lg lg:mx-0">
-            {/* <Image
-                alt="Logo"
-                src="/assets/images/logo.svg"
-                className="h-11"
-                width={100}
-                height={100}
-              /> */}
             <div className="hidden sm:mt-32 sm:flex lg:mt-16">
               <span className="rounded-full bg-pink-600/10 px-3 py-1 text-sm/6 font-semibold text-pink-600 ring-1 ring-inset ring-indigo-600/10">
                 NUTRICIONISTA CLÍNICO

@@ -106,7 +106,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-10 text-center text-sm/6 text-gray-600">
-          &copy; {new Date().getFullYear()} Fernanda Pinheiros Nutricionista.
+          &copy; {new Date().getFullYear()} Nutricionista Fernanda Souza.
           Todos os Direitos Reservados.
         </p>
       </div>
