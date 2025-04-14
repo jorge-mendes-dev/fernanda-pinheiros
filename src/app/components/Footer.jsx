@@ -1,5 +1,3 @@
-'use client';
-
 const navigation = {
   main: [
     { name: 'Sobre mim', href: '#about' },

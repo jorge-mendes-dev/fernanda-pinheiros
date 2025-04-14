@@ -13,8 +13,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: 'Nutricionista Fernanda Pinheiros',
-  description: 'Nutricionista Fernanda Pinheiros',
+  title: 'Nutricionista Fernanda Souza',
+  description: 'Olá! Sou Fernanda, nutricionista dedicada ao bem-estar e à qualidade de vida dos meus pacientes.',
 };
 
 export default function RootLayout({ children }) {
