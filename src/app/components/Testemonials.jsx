@@ -6,8 +6,8 @@ export default function Testimonials() {
   const highlight = {
     body: 'Uma profissional incrivel, cheia de instusiasmo e energia, sempre disposta a ajudar e a ensinar. Uma verdadeira inspiração para todos nós.',
     author: {
-      name: 'Rogeria',
-      handle: 'Tecnica em nutricao'
+      name: 'Rogeria Silva',
+      handle: 'Técnica em Nutrição'
     },
   }
   const testimonials = [
@@ -16,7 +16,7 @@ export default function Testimonials() {
         {
           body: 'Ama seus paceintes e sempre busca o melhor para eles.',
           author: {
-            name: 'X',
+            name: 'Marcia Alves',
             handle: 'Copeira'
           },
         },
@@ -25,8 +25,8 @@ export default function Testimonials() {
         {
           body: 'Uma gestora extremamente organizada e focada, sabe se comunicar muito bem com todos os colaboradores.',
           author: {
-            name: 'X',
-            handle: 'Chef de cozinha',
+            name: 'Andriele',
+            handle: 'Farmaceutica',
           },
         },
       ],
@@ -36,8 +36,8 @@ export default function Testimonials() {
         {
           body: 'Sabe lidar com os mais diversos tipos de pessoas, sempre com um sorriso no rosto e uma palavra de apoio.',
           author: {
-            name: 'Dra. Kimiko',
-            handle: 'Medica'
+            name: 'Dra. Midori',
+            handle: 'Médica'
           },
         },
       ],
@@ -46,7 +46,7 @@ export default function Testimonials() {
           body: 'Foi a melhor aluna que já tive, sempre disposta a aprender e a ajudar os outros.',
           author: {
             name: 'Prof Camila',
-            handle: 'Professora de nutrição'
+            handle: 'Professora de nutrição - FMU'
           },
         },
       ],

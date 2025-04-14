@@ -3,7 +3,7 @@ import { BriefcaseIcon } from '@heroicons/react/20/solid'
 
 export default function Work() {
   return (
-    <div className="relative isolate overflow-hidden bg-white py-24 sm:py-32">
+    <div className="relative isolate overflow-hidden bg-white py-24 sm:py-32" id='work'>
       <div
         aria-hidden="true"
         className="absolute -top-80 left-[max(6rem,33%)] -z-10 transform-gpu blur-3xl sm:left-1/2 md:top-20 lg:ml-20 xl:top-3 xl:ml-56"

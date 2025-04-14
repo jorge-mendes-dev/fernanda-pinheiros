@@ -9,6 +9,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 const navigation = [
   { name: 'Sobre mim', href: '#about' },
   { name: 'Formação', href: '#curriculum' },
+  { name: 'Carreira', href: '#work' },
   { name: 'Depoimentos', href: '#testimonials' },
   { name: 'Dicas', href: '#tips' },
   { name: 'Linkedin', href: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/' },
