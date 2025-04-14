@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 const Loader = () => (
   <div className="fixed inset-0 flex items-center justify-center">
@@ -6,4 +6,4 @@ const Loader = () => (
   </div>
 );
 
-export default Loader
+export default Loader;
