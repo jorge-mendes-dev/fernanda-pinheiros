@@ -13,7 +13,7 @@ export default function Curriculum() {
                 height={1000}
                 priority
                 alt=""
-                src="/assets/images/curriculum.jpg"
+                src="/assets/images/curriculum_croped_fix.png"
                 className="absolute inset-0 size-full rounded bg-gray-50 object-cover"
               />
             </div>
