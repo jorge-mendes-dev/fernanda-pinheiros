@@ -47,7 +47,7 @@ export default function About() {
               <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
                 <Image
                   alt=""
-                  src="/assets/images/abt01.png"
+                  src="/assets/images/fernanda.jpeg"
                   className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                   width={1000}
                   height={1000}
