@@ -83,5 +83,130 @@ export const AppConfig = {
       },
     ],
   },
+  work: {
+    title: 'Experiência Profissional',
+    quote: '“A saúde não está na magreza nem em dietas malucas. Está na boa nutrição e na rica alimentação… Saúde é sinônimo de felicidade, e não de sofrimento.”',
+    author: 'Fernanda Souza',
+    description: 'Minha experiência profissional é uma parte importante da minha jornada.',
+    image: {
+      src: '/assets/images/header.jpg',
+      alt: 'Experiência Profissional',
+    },
+    experiences: [
+      {
+        company: 'HUMANA MAGNA - UNIDADE IBIRAPUERA - ESTÁGIO EM NUTRIÇÃO CLÍNICA',
+        position: '',
+        period: 'Fevereiro 2025 - atualmente | São Paulo',
+        obrigations: [
+          {
+            title: 'Atendimento nutricional:',
+            description: 'Monitorar a evolução nutricional dos pacientes, ajustando as dietas conforme necessário.',
+          },
+          {
+            title: 'Educação Nutricional:',
+            description: 'Oferecer orientações nutricionais verbais e escritas para pacientes e familiares.',
+          },
+          {
+            title: 'Acompanhamento de Pacientes:',
+            description: 'Realizar visitas regulares aos pacientes internados para avaliar sua evolução clínica e nutricional.',
+          },
+        ],
+      },
+      {
+        company: 'SODEXO UNIDADE TITAN - ESTÁGIO EM UNIDADE DE ALIMENTAÇÃO E NUTRIÇÃO',
+        position: '',
+        period: 'Setembro 2024 - outubro 2024 | São Paulo',
+        obrigations: [
+          {
+            title: 'Acompanhamento Nutricional:',
+            description: 'Avaliar o estado nutricional dos pacientes, coletar dados sobre hábitos alimentares e histórico médico, e fornecer orientações básicas sobre alimentação saudável.',
+          },
+          {
+            title: 'Planejamento de Cardápios:',
+            description: 'Auxiliar na elaboração de cardápios gerais e especiais, considerando restrições alimentares e necessidades nutricionais dos pacientes.',
+          },
+          {
+            title: 'Supervisão da Produção Alimentar:',
+            description: 'Garantir que as boas práticas de manipulação de alimentos sejam seguidas, desde o armazenamento até o preparo das refeições.',
+          },
+          {
+            title: 'Controle de Qualidade:',
+            description: 'Monitorar a qualidade dos alimentos servidos, verificando a procedência dos ingredientes e a higienização correta do local.',
+          },
+          {
+            title: 'Gestão de Estoque:',
+            description: 'Organizar o armazenamento adequado dos alimentos e monitorar o uso eficiente dos ingredientes.',
+          },
+        ],
+      },
+      {
+        company: 'CIECS - CLÍNICAS INTEGRADAS DA ESCOLA DE CIÊNCIAS DA SAÚDE - ESTÁGIO EM NUTRIÇÃO COLETIVA',
+        position: '',
+        period: 'Outubro 2024 - dezembro 2024 | São Paulo',
+        obrigations: [
+          {
+            title: 'Avaliação Nutricional:',
+            description: 'Realizar avaliações antropométricas (peso, altura, circunferência da cintura) e classificar o estado nutricional dos usuários.',
+          },
+          {
+            title: 'Orientação Nutricional:',
+            description: 'Fornecer orientações nutricionais individuais e em grupo para pacientes e cuidadores.',
+          },
+          {
+            title: 'Educação Nutricional:',
+            description: 'Planejar e ministrar palestras educativas sobre alimentação saudável e prevenção de doenças para diferentes grupos.',
+          },
+          {
+            title: 'Desenvolvimento de Materiais Educativos:',
+            description: 'Criar materiais de educação nutricional, como folders e banners, para salas de espera.',
+          },
+        ],
+      },
+    ],
+  },
+  testimonials: {
+    title: 'Depoimentos',
+    description: 'Feedbacks positivos',
+    highlight: {
+      feedback: '“Uma profissional incrivel, cheia de instusiasmo e energia, sempre disposta a ajudar e a ensinar. Uma verdadeira inspiração para todos nós.”',
+      author: 'Rogeria Silva',
+      position: 'Técnica em Nutrição',
+    },
+    feedbacks: [
+      {
+        feedback: 'Ama seus paceintes e sempre busca o melhor para eles.',
+        author: 'Marcia Alves',
+        position: 'Copeira',
+      },
+      {
+        author: 'Andriele',
+        position: 'Farmaceutica',
+        feedback: '“Uma gestora extremamente organizada e focada, sabe se comunicar muito bem com todos os colaboradores.”',
+      },
+      {
+        author: 'Dra. Midori',
+        position: 'Médica',
+        feedback: 'Sabe lidar com os mais diversos tipos de pessoas, sempre com um sorriso no rosto e uma palavra de apoio.',
+      },
+      {
+        author: 'Prof Camila',
+        position: 'Professora de nutrição - FMU',
+        feedback: 'Foi a melhor aluna que já tive, sempre disposta a aprender e a ajudar os outros.',
+      },
+    ],
+  },
+  tips: {
+    title: 'Nutrição por amor',
+    subtitle: 'Dicas para tornar sua vida melhor',
+    description: 'Usando minhas redes sociais para promover a conscientização e a educação sobre a importância da nutrição no manejo de dislipidemia, sarcopenia e depressão, com foco em intervenções Nutricionais e hábitos alimentares',
+    image: {
+      src: '/assets/images/square.png',
+      alt: 'Dicas',
+    },
+    link: {
+      label: 'Visite meu instagram para saber mais',
+      href: 'https://www.instagram.com/nutri_fernandasouza/profilecard/',
+    },
+  },
   footer: `${new Date().getFullYear()} Nutricionista Fernanda Souza. - Todos os Direitos Reservados.`
 };
