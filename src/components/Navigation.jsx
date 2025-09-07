@@ -5,24 +5,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-
-const navigation = [
-  { name: 'Sobre mim', href: '#about' },
-  { name: 'Formação', href: '#curriculum' },
-  { name: 'Carreira', href: '#work' },
-  { name: 'Depoimentos', href: '#testimonials' },
-  { name: 'Dicas', href: '#tips' },
-  {
-    name: 'Linkedin',
-    href: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/',
-  },
-  {
-    name: 'Instagram',
-    href: 'https://www.instagram.com/nutri_fernandasouza/profilecard/',
-  },
-];
+import { AppConfig } from 'config/AppConfig';
 
 export default function Navigation() {
+  const { navigation, company } = AppConfig;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -36,8 +22,8 @@ export default function Navigation() {
           <Image
             width={32}
             height={32}
-            alt=""
-            src="/assets/images/logo.svg"
+            alt={company.logo.alt}
+            src={company.logo.src}
             className="h-8 w-auto"
           />
         </a>
@@ -76,8 +62,8 @@ export default function Navigation() {
               <Image
                 width={32}
                 height={32}
-                alt=""
-                src="/assets/images/logo.svg"
+                alt={company.logo.alt}
+                src={company.logo.src}
                 className="h-8 w-auto"
               />
             </a>
