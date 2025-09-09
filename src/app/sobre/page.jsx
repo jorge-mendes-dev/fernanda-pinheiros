@@ -22,7 +22,6 @@ export default function AboutMe() {
       </FadeIn>
       <FadeIn delay={0.2}>
         <About />
-        <Tips />
       </FadeIn>
       <FadeIn delay={0.3}>
         <Curriculum />
@@ -30,6 +29,7 @@ export default function AboutMe() {
       </FadeIn>
       <FadeIn delay={0.4}>
         <Testimonials />
+        <Tips />
       </FadeIn>
       <FadeIn delay={0.5}>
         <Footer />
