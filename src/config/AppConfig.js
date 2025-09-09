@@ -14,13 +14,16 @@ export const AppConfig = {
       alt: 'Fernanda Souza',
     },
   },
+  whatsapp: 'https://wa.me/5511978271175',
   social: {
     instagram: 'https://www.instagram.com/nutri_fernandasouza/',
     linkedin: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/',
+    whatsapp: 'https://wa.me/5511978271175',
   },
   navigation: [
     { name: 'Home', href: '/' },
-    { name: 'Sobre mim', href: '/sobre' },,
+    { name: 'Sobre mim', href: '/sobre' },
+    { name: 'Contato', href: 'https://wa.me/5511978271175' },
   ],
   header: {
     tag: 'NUTRICIONISTA CLÍNICO',
@@ -31,8 +34,8 @@ export const AppConfig = {
       href: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/',
     },
     link: {
-      label: 'Sobre mim',
-      href: '/sobre',
+      label: 'Contato',
+      href: 'https://wa.me/5511978271175',
     },
     image: {
       src: '/assets/images/header.svg',
@@ -197,17 +200,77 @@ export const AppConfig = {
       },
     ],
   },
+  consult: {
+    title: 'Como funciona a consulta?',
+    highlight: 'Atendimento humanizado',
+    description: [
+      'Será um momento importante para garantir a saúde e o bem-estar tanto da mãe quanto do bebê ou da criança/adolescente. Durante a consulta, eu irei avaliar a alimentação do paciente, considerando fatores como idade, necessidades nutricionais específicas, saúde geral e estilo de vida.',
+      'É entregue plano alimentar e materiais de apoio impressos ou por e-mail. Há a avaliação física como: peso, altura, circunferência da cabeça (bebês), avaliação das curvas, análise alimentar, bioimpedância para mulheres tentantes ou adolescentes, circunferências, dobras cutâneas e esclarecimento de dúvidas.',
+      'Na consulta on-line o exame físico é feito pelo próprio paciente, é enviado um PDF com o passo a passo de como fazer cada medição e avaliado pela nutricionista. Em casos de crianças/bebês é feito a curva de crescimento com base nos dados da carteirinha realizada pelo médico pediatra.'
+    ],
+    image: {
+      src: '/assets/images/header_01.jpg',
+      alt: 'Consulta Nutricional',
+    },
+  },
+  evaluation: {
+    title: 'O que está incluso na consulta?',
+    highlight: 'Atendimento personalizado',
+    description: 'Te ajudando em todas as fases da vida.',
+    includes: [
+      {
+        title: 'Plano Alimentar',
+        description: 'Plano personalizado e elaborado de acordo com o objetivo de cada paciente.'
+      },
+      {
+        title: 'Suporte Nutricional',
+        description: 'Acompanhamento e suporte via WhatsApp para tirar dúvidas entre as consultas.'
+      },
+      {
+        title: 'Exame',
+        description: 'Avaliação de exame e solicitação de exames de sangue de acordo com cada necessidade.'
+      },
+      {
+        title: 'Suplementação / Fórmulas',
+        description: 'Prescrição de suplementos e indicação de fórmulas.'
+      },
+      {
+        title: 'Orientação Nutricional',
+        description: 'Orientações sobre hábitos alimentares saudáveis e adequados às necessidades do paciente.'
+      },
+      {
+        title: 'Avaliação Física',
+        description: 'Avaliação das medidas corporais e composição corporal do paciente.'
+      },
+    ]
+  },
+  schedule: {
+    title: 'Gostou? Agende sua consulta!',
+    description: 'Sabemos que o primeiro passo é sempre muito difícil mas eu estou aqui para te ajudar a dar esse passo de uma maneira simples e confortável, clique no botão abaixo e me chame no whatsapp, vamos conversar.',
+    image: {
+      src: '/assets/images/work.svg',
+      alt: 'Agende sua consulta',
+    },
+    link: {
+      label: 'Fale comigo',
+      href: 'https://wa.me/5511978271175',
+    },
+    social: {
+      label: 'Instagram',
+      href: 'https://www.instagram.com/nutri_fernandasouza/',
+    },
+  },
   tips: {
     title: 'Nutrição por amor',
     subtitle: 'Dicas para tornar sua vida melhor',
     description: 'Usando minhas redes sociais para promover a conscientização e a educação sobre a importância da nutrição no manejo de dislipidemia, sarcopenia e depressão, com foco em intervenções Nutricionais e hábitos alimentares',
     image: {
-      src: '/assets/images/jaleco.svg',
+      src: '/assets/images/green_eyes.svg',
       alt: 'Dicas',
     },
     link: {
       label: 'Visite meu instagram para saber mais',
-      href: 'https://www.instagram.com/nutri_fernandasouza/profilecard/',
+      href: 'https://www.instagram.com/nutri_fernandasouza/',
     },
   },
   footer: `${new Date().getFullYear()} Nutricionista Fernanda Souza. - Todos os Direitos Reservados.`

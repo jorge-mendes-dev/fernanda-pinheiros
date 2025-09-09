@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { AppConfig } from 'config/AppConfig';
+import { FaWhatsapp } from "react-icons/fa";
 import Link from 'next/link';
 
 export default function Header() {
@@ -59,9 +60,10 @@ export default function Header() {
               </Link>
               <Link
                 href={header.link.href}
-                className="text-sm/6 font-semibold text-gray-900"
+                target="_blank"
+                className="text-sm/6 font-semibold text-gray-900 flex align-center items-center hover:text-primary"
               >
-                {header.link.label} <span aria-hidden="true">→</span>
+                {header.link.label}<FaWhatsapp className="ml-1" />
               </Link>
             </div>
           </div>

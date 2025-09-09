@@ -13,7 +13,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: 'Nutricionista Fernanda Souza',
+  title: 'Fernanda Souza',
   description: 'Olá! Sou Fernanda, nutricionista dedicada ao bem-estar e à qualidade de vida dos meus pacientes.',
 };
 

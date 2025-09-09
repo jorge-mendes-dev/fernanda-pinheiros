@@ -10,10 +10,10 @@ export default function Tips() {
         <Image
           alt={tips.image.alt}
           src={tips.image.src}
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover aspect-[4/3]"
           width={1000}
           height={1000}
-        />
+        /> 
       </div>
       <div className="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
         <div className="pl-6 pr-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pl-24 lg:pr-0 xl:pl-32">
