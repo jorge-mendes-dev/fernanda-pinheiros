@@ -1,5 +1,3 @@
-'use client';
-
 import Image from 'next/image';
 import { AppConfig } from 'config/AppConfig';
 import { FaWhatsapp } from "react-icons/fa";
