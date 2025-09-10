@@ -12,7 +12,7 @@ export default function About() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-primary">
               {about.title}
             </h2>
-            <p className="mt-4 sm:mt-6 text-lg sm:text-xl text-gray-600">
+            <p className="mt-4 sm:mt-6 text-base sm:text-xl text-gray-700">
               {about.description}
             </p>
             {about.paragraph.map((text, index) => (

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { AppConfig } from "config/AppConfig";
+import Instagram from './Instagram';
 
 export default function Tips() {
   const { tips } = AppConfig;
@@ -26,9 +27,12 @@ export default function Tips() {
           <p className="mt-6 text-base/7 text-zinc-900">
             {tips.description}
           </p>
-          <div className="mt-8">
+           <Instagram />
+          <div className="mt-2">
             <Link 
               href={tips.link.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex rounded-md bg-white/10 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               {tips.link.label}

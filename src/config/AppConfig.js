@@ -271,7 +271,7 @@ export const AppConfig = {
       alt: 'Dicas',
     },
     link: {
-      label: 'Visite meu instagram para saber mais',
+      label: 'Visite meu instagram',
       href: 'https://www.instagram.com/nutri_fernandasouza/',
     },
   },

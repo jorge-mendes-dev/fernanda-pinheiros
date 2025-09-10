@@ -76,6 +76,7 @@ export default function Header() {
             className="aspect-[3/2] w-full rounded bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full"
             width={1000}
             height={1000}
+            priority
           />
         </div>
       </div>
