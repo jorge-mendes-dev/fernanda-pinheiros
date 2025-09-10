@@ -17,7 +17,6 @@ export const AppConfig = {
   whatsapp: 'https://wa.me/5511978271175',
   social: {
     instagram: 'https://www.instagram.com/nutri_fernandasouza/',
-    linkedin: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/',
     whatsapp: 'https://wa.me/5511978271175',
   },
   navigation: [
