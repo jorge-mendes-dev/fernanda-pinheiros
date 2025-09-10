@@ -46,7 +46,7 @@ export default function Footer() {
               target="_blank"
               key={item.name}
               href={item.href}
-              className="text-gray-600 hover:text-gray-900"
+              className="text-gray-600 hover:text-gray-900 hover:text-primary"
             >
               {item.name}
             </Link>

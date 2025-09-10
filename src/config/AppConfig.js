@@ -88,6 +88,36 @@ export const AppConfig = {
       }
     ],
   },
+  certificates: {
+    title: 'Meus Diplomas',
+    description: 'Aqui estão alguns dos certificados que refletem meu compromisso com a educação contínua e o aprimoramento profissional.',
+    images: [
+      '/assets/images/certificates/01.jpg',
+      '/assets/images/certificates/02.png',
+      '/assets/images/certificates/03.jpg',
+      '/assets/images/certificates/04.jpg',
+      '/assets/images/certificates/05.jpg',
+      '/assets/images/certificates/06.jpg',
+      '/assets/images/certificates/07.jpg',
+      '/assets/images/certificates/08.jpg',
+      '/assets/images/certificates/09.jpg',
+      '/assets/images/certificates/10.jpg',
+      '/assets/images/certificates/11.jpg',
+      '/assets/images/certificates/12.jpg',
+      '/assets/images/certificates/13.jpg',
+      '/assets/images/certificates/14.jpg',
+      '/assets/images/certificates/15.jpg',
+      '/assets/images/certificates/16.jpg',
+      '/assets/images/certificates/17.jpg',
+      '/assets/images/certificates/18.jpg',
+      '/assets/images/certificates/19.jpg',
+      '/assets/images/certificates/20.jpg',
+      '/assets/images/certificates/21.jpg',
+      '/assets/images/certificates/22.jpg',
+      '/assets/images/certificates/23.jpg'
+    ],
+    alt: 'Certificados'
+  },
   work: {
     title: 'Experiência Profissional',
     quote: '“A saúde não está na magreza nem em dietas malucas. Está na boa nutrição e na rica alimentação… Saúde é sinônimo de felicidade, e não de sofrimento.”',

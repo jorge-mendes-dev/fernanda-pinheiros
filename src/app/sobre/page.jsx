@@ -20,7 +20,7 @@ export default function AboutMe() {
             <Curriculum />
             <Work />
           </FadeIn>
-          <FadeIn delay={0.4}>
+          <FadeIn delay={0.3}>
             <Testimonials />
           </FadeIn>
           <FadeIn delay={0.4}>
