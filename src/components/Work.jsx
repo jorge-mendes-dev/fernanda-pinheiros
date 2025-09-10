@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { BriefcaseIcon, CheckCircleIcon } from '@heroicons/react/20/solid';
-import { AppConfig } from '../config/AppConfig';
+import { AppConfig } from 'config/AppConfig';
 
 export default function Work() {
   const { work } = AppConfig;

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { AcademicCapIcon } from '@heroicons/react/20/solid';
-import { AppConfig } from '../config/AppConfig';
+import { AppConfig } from 'config/AppConfig';
 
 export default function Curriculum() {
   const { curriculum } = AppConfig;

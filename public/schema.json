@@ -1,0 +1,31 @@
+{
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Fernanda Souza Nutricionista",
+  "telephone": "+55 11 97827-1175",
+  "description": "Nutricionista (CRN-3 91282/P), Pós graduada em Nutrição Clínica e Nutrição Materno-Infantil. Atendimento personalizado para saúde e bem-estar.",
+  "image": "https://www.nutrifernandasouza.com.br/assets/images/photo.jpg",
+  "url": "https://www.nutrifernandasouza.com.br",
+  "sameAs": [
+    "https://www.instagram.com/nutri_fernandasouza/",
+    "https://www.linkedin.com/in/nutri-fernanda-pinheiros/",
+    "https://wa.me/5511978271175"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "São Paulo, Brasil"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "08:00",
+    "closes": "18:00"
+  },
+  "priceRange": "Consulte valores e modalidades de atendimento."
+}

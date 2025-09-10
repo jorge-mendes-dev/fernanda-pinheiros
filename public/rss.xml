@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nutricionista Fernanda Souza</title>
+    <description>Oi, eu sou a Nutricionista Fernanda (CRN-3 91282/P), Pós graduada em Nutrição Clínica e Nutrição Materno-Infantil.</description>
+    <link>https://www.nutrifernandasouza.com.br/</link>
+    <language>pt-br</language>
+    <atom:link href="https://www.nutrifernandasouza.com.br/rss.xml" rel="self" type="application/rss+xml" />
+    <!-- Example items from AppConfig (replace with dynamic data if needed) -->
+    <item>
+      <title>Formação Acadêmica</title>
+      <description>Minha formação acadêmica é uma parte essencial da minha jornada profissional.</description>
+      <link>https://www.nutrifernandasouza.com.br/sobre</link>
+      <guid>https://www.nutrifernandasouza.com.br/sobre</guid>
+    </item>
+    <item>
+      <title>Experiência Profissional</title>
+      <description>Minha experiência profissional é uma parte importante da minha jornada.</description>
+      <link>https://www.nutrifernandasouza.com.br/work</link>
+      <guid>https://www.nutrifernandasouza.com.br/work</guid>
+    </item>
+    <item>
+      <title>Depoimentos</title>
+      <description>Veja o que meus pacientes dizem sobre meu trabalho.</description>
+      <link>https://www.nutrifernandasouza.com.br/#testimonials</link>
+      <guid>https://www.nutrifernandasouza.com.br/#testimonials</guid>
+    </item>
+    <item>
+      <title>Serviços Oferecidos</title>
+      <description>Conheça os serviços que ofereço para cuidar da sua saúde.</description>
+      <link>https://www.nutrifernandasouza.com.br/#consult</link>
+      <guid>https://www.nutrifernandasouza.com.br/#consult</guid>
+    </item>
+    <item>
+      <title>Instagram</title>
+      <description>Siga-me no Instagram para dicas de nutrição e novidades.</description>
+      <link>https://www.instagram.com/nutri_fernandasouza/</link>
+      <guid>https://www.instagram.com/nutri_fernandasouza/</guid>
+    </item>
+    <item>
+      <title>Linkedin</title>
+      <description>Acompanhe minha página no Linkedin para conteúdos exclusivos.</description>
+      <link>https://www.linkedin.com/in/nutri-fernanda-pinheiros/</link>
+      <guid>https://www.linkedin.com/in/nutri-fernanda-pinheiros/</guid>
+    </item>
+    <item>
+      <title>WhatsApp</title>
+      <description>Entre em contato diretamente pelo WhatsApp para agendar consultas.</description>
+      <link>https://wa.me/5511978271175</link>
+      <guid>https://wa.me/5511978271175</guid>
+    </item>
+  </channel>
+</rss>

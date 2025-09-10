@@ -5,7 +5,7 @@ export const AppConfig = {
   locale: 'pt-br',
   url: '/',
   bg_color: '#ff7da4',
-  keywords: ['Nutricionista', 'Clinica', 'Saúde', 'Bem-estar', 'nutrição materno infantil', 'adulto', 'nutrição', 'nutrição clínica', 'nutrição esportiva'],
+  keywords: ['Nutricionista', 'Clinica', 'Saúde', 'Bem-estar', 'nutrição materno infantil', 'adulto', 'nutrição', 'nutrição clínica', 'nutrição materno-infantil', 'nutrição esportiva', 'emagrecimento', 'saúde intestinal', 'suplementação', 'consultas online', 'plano alimentar personalizado', 'educação nutricional', 'nutricionista São Paulo', 'gestantes', 'lactantes', 'crianças', 'adolescentes', 'adultos', 'idosos', 'nutrição funcional', 'nutrição comportamental'],
   crn: 'CRN-3 91282/P',
   company: {
     title: 'Fernanda Souza',

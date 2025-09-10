@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { AppConfig } from '../config/AppConfig';
+import { AppConfig } from 'config/AppConfig';
 
 export default function About() {
   const { about } = AppConfig;
