@@ -3,7 +3,7 @@ export const AppConfig = {
   title: 'Nutricionista Fernanda Souza',
   description: 'Olá! Sou Fernanda, nutricionista dedicada ao bem-estar e à qualidade de vida dos meus pacientes.',
   locale: 'pt-br',
-  url: '/',
+  url: 'www.nutrifernandasouza.com.br',
   bg_color: '#ff7da4',
   keywords: ['Nutricionista', 'Clinica', 'Saúde', 'Bem-estar', 'nutrição materno infantil', 'adulto', 'nutrição', 'nutrição clínica', 'nutrição materno-infantil', 'nutrição esportiva', 'emagrecimento', 'saúde intestinal', 'suplementação', 'consultas online', 'plano alimentar personalizado', 'educação nutricional', 'nutricionista São Paulo', 'gestantes', 'lactantes', 'crianças', 'adolescentes', 'adultos', 'idosos', 'nutrição funcional', 'nutrição comportamental'],
   crn: 'CRN-3 91282/P',
@@ -30,8 +30,8 @@ export const AppConfig = {
     title: 'Fernanda Souza',
     description: 'Olá! Sou Fernanda, nutricionista dedicada ao bem-estar e à qualidade de vida dos meus pacientes.',
     button: {
-      label: 'Linkedin',
-      href: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/',
+      label: 'Instagram',
+      href: 'https://www.instagram.com/nutri_fernandasouza/',
     },
     link: {
       label: 'Contato',
@@ -71,19 +71,19 @@ export const AppConfig = {
       {
         institution: 'FAMEF - FACULDADE METROPOLITANA DE FRANCA',
         course: 'Pós-graduação em Nutrição Clínica',
-        period: 'Março 2025 - atualmente.',
+        period: '',
         description: 'Atualmente estudando profundamente os conhecimentos em patologias gástricas, com ênfase no papel da nutrição em diferentes cenários clínicos. Atuo no entendimento e aplicação da nutrição enteral e parenteral, especialmente no contexto hospitalar, em pacientes acamados e em tratamento de longa permanência. Minha formação também contempla a triagem nutricional hospitalar, etapa fundamental para garantir cuidado individualizado e recuperação eficaz.',
       },
       {
         institution: 'NUTRIÇÃO APLICADA',
         course: 'Pós-graduação em Nutrição Materno-Infantil - da fertilidade a introdução alimentar',
-        period: 'Março 2025 - atualmente.',
+        period: '',
         description: 'Especialização voltada para o cuidado de gestantes, lactantes e crianças de 0 a 5 anos, fases decisivas para a saúde ao longo da vida. Ênfase na análise crítica de laudos laboratoriais, permitindo condutas mais seguras e assertivas. Estudo aprofundado dos métodos de introdução alimentar, respeitando individualidade e favorecendo a formação de hábitos saudáveis desde cedo. Também com foco na nutrição ligada à fertilidade, oferecendo suporte em um dos momentos mais importantes da vida da mulher.',
       },
       {
         institution: 'Centro Universitário FMU | FIAM-FAAM',
         course: 'Ensino Superior em Nutrição',
-        period: 'Janeiro 2020 - junho 2025',
+        period: '',
         description: 'O curso forma profissionais capacitados para promoverem a saúde através da alimentação. Durante a graduação, aprenderão a consultar, diagnosticar, tratar e acompanhar o estado nutricional dos pacientes.',
       }
     ],
@@ -101,7 +101,7 @@ export const AppConfig = {
       {
         company: 'HUMANA MAGNA - UNIDADE IBIRAPUERA - ESTÁGIO EM NUTRIÇÃO CLÍNICA',
         position: '',
-        period: 'Fevereiro 2025 - atualmente | São Paulo',
+        period: 'São Paulo',
         requires: [
           {
             title: 'Atendimento nutricional:',
@@ -120,7 +120,7 @@ export const AppConfig = {
       {
         company: 'SODEXO UNIDADE TITAN - ESTÁGIO EM UNIDADE DE ALIMENTAÇÃO E NUTRIÇÃO',
         position: '',
-        period: 'Setembro 2024 - outubro 2024 | São Paulo',
+        period: 'São Paulo',
         requires: [
           {
             title: 'Acompanhamento Nutricional:',
@@ -147,7 +147,7 @@ export const AppConfig = {
       {
         company: 'CIECS - CLÍNICAS INTEGRADAS DA ESCOLA DE CIÊNCIAS DA SAÚDE - ESTÁGIO EM NUTRIÇÃO COLETIVA',
         position: '',
-        period: 'Outubro 2024 - dezembro 2024 | São Paulo',
+        period: 'São Paulo',
         requires: [
           {
             title: 'Avaliação Nutricional:',
