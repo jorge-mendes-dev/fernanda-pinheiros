@@ -40,7 +40,7 @@ export default function Curriculum() {
                         </strong>
                         <br />
                         <i className="text-pink-600">
-                          <b>{edu.course}</b> | {edu.period}
+                          <b>{edu.course}</b> <br /> {edu.period}
                         </i>
                         <br />
                         {edu.description}

@@ -44,7 +44,7 @@ export const AppConfig = {
   },
   about: {
     title: 'Sobre Mim',
-    description: 'Oi, eu sou a Nutricionista Fernanda',
+    description: 'Oi, eu sou a Nutricionista Fernanda (CRN-3 91282/P), Pós graduada em Nutrição Clínica e Nutrição Materno-Infantil.',
     paragraph: [
       'Nutricionista apaixonada por acolher, orientar e transformar a forma como as pessoas se relacionam com a comida desde o comecinho da vida.',
       'Atuo com Nutrição Clínica e Materno-Infantil: cuido de gestantes, bebês, crianças e também de adultos que buscam mais saúde, leveza e equilíbrio.',
@@ -69,23 +69,23 @@ export const AppConfig = {
     },
     education: [
       {
-        institution: 'Centro Universitário FMU | FIAM-FAAM',
-        course: 'Nutrição',
-        period: 'Janeiro 2020 - junho 2025',
-        description: 'O curso forma profissionais capacitados para promoverem a saúde através da alimentação. Durante a graduação, aprenderão a consultar, diagnosticar, tratar e acompanhar o estado nutricional dos pacientes.',
-      },
-      {
         institution: 'FAMEF - FACULDADE METROPOLITANA DE FRANCA',
-        course: 'Nutrição Clínica',
-        period: 'Abril 2025 - atualmente.',
-        description: 'Este curso aborda diversas patologias nutricionais, incluindo dietoterapia para doenças digestivas e terapias nutricionais. Os estudos também cobriram nutrientes calóricos, balanço energético e nutrição em diferentes estágios da vida. O curso ofereceu uma visão abrangente sobre nutrição.',
+        course: 'Pós-graduação em Nutrição Clínica',
+        period: 'Março 2025 - atualmente.',
+        description: 'Atualmente estudando profundamente os conhecimentos em patologias gástricas, com ênfase no papel da nutrição em diferentes cenários clínicos. Atuo no entendimento e aplicação da nutrição enteral e parenteral, especialmente no contexto hospitalar, em pacientes acamados e em tratamento de longa permanência. Minha formação também contempla a triagem nutricional hospitalar, etapa fundamental para garantir cuidado individualizado e recuperação eficaz.',
       },
       {
         institution: 'NUTRIÇÃO APLICADA',
-        course: 'Da fertilidade a introdução alimentar',
+        course: 'Pós-graduação em Nutrição Materno-Infantil - da fertilidade a introdução alimentar',
         period: 'Março 2025 - atualmente.',
-        description: 'Quando se trata da paciente gestante, é necessário acompanhar as alterações e necessidades fisiológicas e nutricionais a cada mês. Portanto, os cálculos nutricionais, a correção de sintomas como azia e má digestão, assim como a presença do diabetes gestacional devem ser tratados com cautela e precisão.',
+        description: 'Especialização voltada para o cuidado de gestantes, lactantes e crianças de 0 a 5 anos, fases decisivas para a saúde ao longo da vida. Ênfase na análise crítica de laudos laboratoriais, permitindo condutas mais seguras e assertivas. Estudo aprofundado dos métodos de introdução alimentar, respeitando individualidade e favorecendo a formação de hábitos saudáveis desde cedo. Também com foco na nutrição ligada à fertilidade, oferecendo suporte em um dos momentos mais importantes da vida da mulher.',
       },
+      {
+        institution: 'Centro Universitário FMU | FIAM-FAAM',
+        course: 'Ensino Superior em Nutrição',
+        period: 'Janeiro 2020 - junho 2025',
+        description: 'O curso forma profissionais capacitados para promoverem a saúde através da alimentação. Durante a graduação, aprenderão a consultar, diagnosticar, tratar e acompanhar o estado nutricional dos pacientes.',
+      }
     ],
   },
   work: {
@@ -174,39 +174,41 @@ export const AppConfig = {
     description: 'Feedbacks positivos',
     highlight: {
       feedback: '“Uma profissional incrivel, cheia de instusiasmo e energia, sempre disposta a ajudar e a ensinar. Uma verdadeira inspiração para todos nós.”',
-      author: 'Rogeria Silva',
+      author: 'Maria Silva',
       position: 'Técnica em Nutrição',
     },
     reviews: [
       {
-        feedback: '“Ama seus paceintes e sempre busca o melhor para eles.“',
-        author: 'Marcia Alves',
+        feedback: '“Ama seus pacientes e sempre busca o melhor para eles.“',
+        author: 'Ana Clara',
         position: 'Copeira',
       },
       {
-        author: 'Andriele',
+        author: 'Ana Paula',
         position: 'Farmaceutica',
         feedback: '“Uma gestora extremamente organizada e focada, sabe se comunicar muito bem com todos os colaboradores.”',
       },
       {
-        author: 'Dra. Midori',
+        author: 'Dra. Nazaré',
         position: 'Médica',
         feedback: '“Sabe lidar com os mais diversos tipos de pessoas, sempre com um sorriso no rosto e uma palavra de apoio.”',
       },
       {
-        author: 'Prof Camila',
-        position: 'Professora de nutrição - FMU',
+        author: 'Prof. Meire',
+        position: 'Professora de nutrição',
         feedback: '“Foi a melhor aluna que já tive, sempre disposta a aprender e a ajudar os outros.”',
       },
     ],
   },
   consult: {
     title: 'Como funciona a consulta?',
-    highlight: 'Atendimento humanizado',
+    highlight: 'Atendimento On-line',
     description: [
-      'Será um momento importante para garantir a saúde e o bem-estar tanto da mãe quanto do bebê ou da criança/adolescente. Durante a consulta, eu irei avaliar a alimentação do paciente, considerando fatores como idade, necessidades nutricionais específicas, saúde geral e estilo de vida.',
-      'É entregue plano alimentar e materiais de apoio impressos ou por e-mail. Há a avaliação física como: peso, altura, circunferência da cabeça (bebês), avaliação das curvas, análise alimentar, bioimpedância para mulheres tentantes ou adolescentes, circunferências, dobras cutâneas e esclarecimento de dúvidas.',
-      'Na consulta on-line o exame físico é feito pelo próprio paciente, é enviado um PDF com o passo a passo de como fazer cada medição e avaliado pela nutricionista. Em casos de crianças/bebês é feito a curva de crescimento com base nos dados da carteirinha realizada pelo médico pediatra.'
+      'O atendimento on-line é realizado por meio de vídeo conferência e da mesma maneira e formato do presencial.',
+      'Com isso, você se sentirá como se estivesse no consultório, desfrutando de todo conforto e segurança do seu lar, utilizando o aplicativo ou plataforma que melhor lhe agradar (Microsoft Teams, WhatsApp, Google Hangouts, Zoom, Messenger, etc.).',
+      'Durante o atendimento, que tem duração média de uma hora e quinze minutos, será realizada uma anamnese completa e detalhada, análise de exames e conversa sobre todas as dúvidas.',
+      'Após o atendimento será montado um Plano Alimentar Personalizado, o qual será enviado por e-mail ou WhatsApp em até 48 horas.',
+      'Além disso, você contará com suporte via WhatsApp pelo período de 30 dias.'
     ],
     image: {
       src: '/assets/images/header_01.jpg',
@@ -214,33 +216,33 @@ export const AppConfig = {
     },
   },
   evaluation: {
-    title: 'O que está incluso na consulta?',
-    highlight: 'Atendimento personalizado',
-    description: 'Te ajudando em todas as fases da vida.',
+    title: 'O que está incluso no atendimento?',
+    highlight: 'Te ajudando em todas as fases da vida.',
+    description: 'Realizamos apenas atendimentos particulares e fornecemos Nota Fiscal para reembolso.',
     includes: [
       {
-        title: 'Plano Alimentar',
-        description: 'Plano personalizado e elaborado de acordo com o objetivo de cada paciente.'
+        title: 'Avaliação Nutricional',
+        description: ''
       },
       {
-        title: 'Suporte Nutricional',
-        description: 'Acompanhamento e suporte via WhatsApp para tirar dúvidas entre as consultas.'
+        title: 'Orientações Personalizadas',
+        description: ''
       },
       {
-        title: 'Exame',
-        description: 'Avaliação de exame e solicitação de exames de sangue de acordo com cada necessidade.'
+        title: 'Receitinhas',
+        description: ''
       },
       {
-        title: 'Suplementação / Fórmulas',
-        description: 'Prescrição de suplementos e indicação de fórmulas.'
+        title: 'Solicitação e avaliação de exames',
+        description: '(se necessário)'
       },
       {
-        title: 'Orientação Nutricional',
-        description: 'Orientações sobre hábitos alimentares saudáveis e adequados às necessidades do paciente.'
+        title: 'Prescrição de suplementação',
+        description: '(se necessária)'
       },
       {
-        title: 'Avaliação Física',
-        description: 'Avaliação das medidas corporais e composição corporal do paciente.'
+        title: 'Suporte via WhatsApp pelo período de 30 dias',
+        description: ''
       },
     ]
   },
