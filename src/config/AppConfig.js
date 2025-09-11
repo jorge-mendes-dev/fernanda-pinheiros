@@ -18,6 +18,7 @@ export const AppConfig = {
   social: {
     instagram: 'https://www.instagram.com/nutri_fernandasouza/',
     whatsapp: 'https://wa.me/5511978271175',
+    linkedin: '',
   },
   navigation: [
     { name: 'Home', href: '/' },
