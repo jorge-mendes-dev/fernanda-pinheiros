@@ -129,7 +129,7 @@ export const AppConfig = {
     },
     experiences: [
       {
-        company: 'HUMANA MAGNA - UNIDADE IBIRAPUERA - ESTÁGIO EM NUTRIÇÃO CLÍNICA',
+        company: 'HUMANA MAGNA - UNIDADE IBIRAPUERA - NUTRIÇÃO CLÍNICA',
         position: '',
         period: 'São Paulo',
         requires: [
@@ -148,7 +148,7 @@ export const AppConfig = {
         ],
       },
       {
-        company: 'SODEXO UNIDADE TITAN - ESTÁGIO EM UNIDADE DE ALIMENTAÇÃO E NUTRIÇÃO',
+        company: 'SODEXO UNIDADE TITAN - UNIDADE DE ALIMENTAÇÃO E NUTRIÇÃO',
         position: '',
         period: 'São Paulo',
         requires: [
@@ -175,7 +175,7 @@ export const AppConfig = {
         ],
       },
       {
-        company: 'CIECS - CLÍNICAS INTEGRADAS DA ESCOLA DE CIÊNCIAS DA SAÚDE - ESTÁGIO EM NUTRIÇÃO COLETIVA',
+        company: 'CIECS - CLÍNICAS INTEGRADAS DA ESCOLA DE CIÊNCIAS DA SAÚDE - NUTRIÇÃO COLETIVA',
         position: '',
         period: 'São Paulo',
         requires: [
