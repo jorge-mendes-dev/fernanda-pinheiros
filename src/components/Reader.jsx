@@ -28,98 +28,6 @@ const options = {
 const resizeObserverOptions = {};
 const maxWidth = 800;
 
-const NavbarZoom = ({
-  handleFullscreen,
-  isFullscreen,
-  handleZoomIn,
-  handleZoomReset,
-  handleZoomOut
-}) => {
-  return (
-    <>
-      {/* Mobile: Horizontal layout at bottom */}
-      <div className="fixed bottom-3 left-1/2 z-30 flex -translate-x-1/2 flex-row gap-1.5 rounded-full bg-white/95 px-3 py-2 shadow-xl backdrop-blur-md transition-all duration-300 hover:shadow-2xl dark:bg-rose-950/95 md:hidden">
-        <button
-          onClick={handleFullscreen}
-          className="rounded-full p-1.5 transition-all active:scale-95 hover:bg-rose-100 dark:hover:bg-rose-900"
-          title={isFullscreen ? 'Sair do modo tela cheia' : 'Tela cheia'}
-          type="button"
-        >
-          {isFullscreen ? (
-            <ArrowsPointingInIcon className="h-4.5 w-4.5 text-rose-600 dark:text-rose-400" />
-          ) : (
-            <ArrowsPointingOutIcon className="h-4.5 w-4.5 text-rose-600 dark:text-rose-400" />
-          )}
-        </button>
-        <button
-          onClick={handleZoomIn}
-          className="rounded-full p-1.5 transition-all active:scale-95 hover:bg-rose-100 dark:hover:bg-rose-900"
-          title="Aumentar zoom"
-          type="button"
-        >
-          <MagnifyingGlassPlusIcon className="h-4.5 w-4.5 text-rose-600 dark:text-rose-400" />
-        </button>
-        <button
-          onClick={handleZoomReset}
-          className="rounded-full p-1.5 transition-all active:scale-95 hover:bg-rose-100 dark:hover:bg-rose-900"
-          title="Resetar zoom"
-          type="button"
-        >
-          <ArrowPathIcon className="h-4.5 w-4.5 text-rose-600 dark:text-rose-400" />
-        </button>
-        <button
-          onClick={handleZoomOut}
-          className="rounded-full p-1.5 transition-all active:scale-95 hover:bg-rose-100 dark:hover:bg-rose-900"
-          title="Diminuir zoom"
-          type="button"
-        >
-          <MagnifyingGlassMinusIcon className="h-4.5 w-4.5 text-rose-600 dark:text-rose-400" />
-        </button>
-      </div>
-
-      {/* Desktop/Tablet: Vertical layout on right side */}
-      <div className="fixed right-6 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-2 rounded-full bg-white/95 px-2.5 py-4 shadow-xl backdrop-blur-md transition-all duration-300 hover:shadow-2xl dark:bg-rose-950/95 md:flex">
-        <button
-          onClick={handleFullscreen}
-          className="rounded-full p-2 transition-all hover:scale-110 hover:bg-rose-100 dark:hover:bg-rose-900"
-          title={isFullscreen ? 'Sair do modo tela cheia' : 'Tela cheia'}
-          type="button"
-        >
-          {isFullscreen ? (
-            <ArrowsPointingInIcon className="h-5 w-5 text-rose-600 dark:text-rose-400" />
-          ) : (
-            <ArrowsPointingOutIcon className="h-5 w-5 text-rose-600 dark:text-rose-400" />
-          )}
-        </button>
-        <button
-          onClick={handleZoomIn}
-          className="rounded-full p-2 transition-all hover:scale-110 hover:bg-rose-100 dark:hover:bg-rose-900"
-          title="Aumentar zoom"
-          type="button"
-        >
-          <MagnifyingGlassPlusIcon className="h-5 w-5 text-rose-600 dark:text-rose-400" />
-        </button>
-        <button
-          onClick={handleZoomReset}
-          className="rounded-full p-2 transition-all hover:scale-110 hover:bg-rose-100 dark:hover:bg-rose-900"
-          title="Resetar zoom"
-          type="button"
-        >
-          <ArrowPathIcon className="h-5 w-5 text-rose-600 dark:text-rose-400" />
-        </button>
-        <button
-          onClick={handleZoomOut}
-          className="rounded-full p-2 transition-all hover:scale-110 hover:bg-rose-100 dark:hover:bg-rose-900"
-          title="Diminuir zoom"
-          type="button"
-        >
-          <MagnifyingGlassMinusIcon className="h-5 w-5 text-rose-600 dark:text-rose-400" />
-        </button>
-      </div>
-    </>
-  );
-};
-
 const DocumentPreview = ({
   memoSelected,
   onDocumentLoadSuccess,
@@ -175,13 +83,13 @@ const DocumentPreview = ({
   );
 };
 
-const PageNavigation = ({ currentPage, numPages, onPrevious, onNext }) => {
+const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFullscreen, isFullscreen, handleZoomIn, handleZoomReset, handleZoomOut }) => {
   if (!numPages) return null;
 
   return (
     <div className="mb-4 flex w-full items-center justify-center sm:mb-6">
       {/* Professional Navigation Bar */}
-      <div className="flex w-full max-w-md items-center justify-between gap-2 rounded-xl bg-white p-2.5 shadow-lg dark:bg-rose-950/90 sm:max-w-none sm:justify-center sm:gap-3 md:gap-4 md:px-6 md:py-4">
+      <div className="flex w-full max-w-5xl flex-wrap items-center justify-center gap-2 rounded-xl bg-white p-2.5 shadow-lg dark:bg-rose-950/90 sm:gap-3 md:gap-4 md:px-6 md:py-4">
         {/* Previous Button */}
         <button
           onClick={onPrevious}
@@ -195,7 +103,7 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext }) => {
           type="button"
         >
           <ChevronLeftIcon className="h-4 w-4 sm:h-5 sm:w-5" />
-          <span className="hidden text-sm sm:inline md:inline">Anterior</span>
+          <span className="hidden text-sm sm:inline">Anterior</span>
         </button>
 
         {/* Page Counter with Input Style */}
@@ -220,9 +128,52 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext }) => {
           title="Próxima página"
           type="button"
         >
-          <span className="hidden text-sm sm:inline md:inline">Próxima</span>
+          <span className="hidden text-sm sm:inline">Próxima</span>
           <ChevronRightIcon className="h-4 w-4 sm:h-5 sm:w-5" />
         </button>
+
+        {/* Divider */}
+        <div className="hidden h-8 w-px bg-gray-300 dark:bg-rose-800 sm:block" />
+
+        {/* Zoom Controls */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <button
+            onClick={handleZoomOut}
+            className="rounded-lg p-2 transition-all hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            title="Diminuir zoom"
+            type="button"
+          >
+            <MagnifyingGlassMinusIcon className="h-4 w-4 text-rose-600 dark:text-rose-400 sm:h-5 sm:w-5" />
+          </button>
+          <button
+            onClick={handleZoomReset}
+            className="rounded-lg p-2 transition-all hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            title="Resetar zoom"
+            type="button"
+          >
+            <ArrowPathIcon className="h-4 w-4 text-rose-600 dark:text-rose-400 sm:h-5 sm:w-5" />
+          </button>
+          <button
+            onClick={handleZoomIn}
+            className="rounded-lg p-2 transition-all hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            title="Aumentar zoom"
+            type="button"
+          >
+            <MagnifyingGlassPlusIcon className="h-4 w-4 text-rose-600 dark:text-rose-400 sm:h-5 sm:w-5" />
+          </button>
+          <button
+            onClick={handleFullscreen}
+            className="rounded-lg p-2 transition-all hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            title={isFullscreen ? 'Sair do modo tela cheia' : 'Tela cheia'}
+            type="button"
+          >
+            {isFullscreen ? (
+              <ArrowsPointingInIcon className="h-4 w-4 text-rose-600 dark:text-rose-400 sm:h-5 sm:w-5" />
+            ) : (
+              <ArrowsPointingOutIcon className="h-4 w-4 text-rose-600 dark:text-rose-400 sm:h-5 sm:w-5" />
+            )}
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -310,15 +261,7 @@ export default function Reader({ selected }) {
       isFullscreen={isFullscreen}
       setContainerRef={setContainerRef}
     >
-      <NavbarZoom
-        handleFullscreen={handleFullscreen}
-        isFullscreen={isFullscreen}
-        handleZoomIn={handleZoomIn}
-        handleZoomReset={handleZoomReset}
-        handleZoomOut={handleZoomOut}
-      />
-
-      <div className={`flex flex-col items-center px-3 py-6 pb-28 sm:px-4 sm:py-8 md:px-8 md:pb-12 ${
+      <div className={`flex flex-col items-center px-3 py-6 pb-12 sm:px-4 sm:py-8 md:px-8 ${
         isFullscreen ? 'min-h-screen justify-center' : 'min-h-screen'
       }`}>
         <PageNavigation
@@ -326,6 +269,11 @@ export default function Reader({ selected }) {
           numPages={numPages}
           onPrevious={handlePreviousPage}
           onNext={handleNextPage}
+          handleFullscreen={handleFullscreen}
+          isFullscreen={isFullscreen}
+          handleZoomIn={handleZoomIn}
+          handleZoomReset={handleZoomReset}
+          handleZoomOut={handleZoomOut}
         />
 
         <DocumentPreview
