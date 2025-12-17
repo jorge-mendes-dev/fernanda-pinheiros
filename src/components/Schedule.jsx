@@ -15,23 +15,22 @@ export default function Schedule() {
           <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-zinc-900">
             {schedule.description}
           </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Link   
+          <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 sm:gap-x-6">
+            <Link
               href={schedule.link.href}
               target="_blank"
               rel="noreferrer"
-              className="flex rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-primary shadow-xs hover:bg-indigo-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="flex items-center justify-center rounded-md bg-white px-4 py-3 sm:px-3.5 sm:py-2.5 text-sm font-semibold text-primary shadow-sm transition-all hover:bg-indigo-50 hover:shadow-md hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              {' '}
-              {schedule.link.label}{' '}
+              {schedule.link.label}
               <FaWhatsapp className="ml-2 -mr-0.5 h-5 w-5" aria-hidden="true" />
             </Link>
-            <Link 
+            <Link
               href={schedule.social.href}
               target="_blank"
               rel="noreferrer"
-              className="flex text-sm/6 font-semibold text-white hover:underline">
-              {schedule.social.label}{' '}
+              className="flex items-center justify-center text-sm sm:text-sm/6 font-semibold text-white px-4 py-3 sm:px-0 sm:py-0 rounded-md sm:rounded-none hover:underline transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              {schedule.social.label}
               <span aria-hidden="true"><CiInstagram className="ml-2 -mr-0.5 h-5 w-5" aria-hidden="true" /></span>
             </Link>
           </div>

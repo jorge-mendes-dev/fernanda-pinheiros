@@ -48,18 +48,18 @@ export default function Header() {
             <p className="mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8">
               {header.description}
             </p>
-            <div className="mt-10 flex items-center gap-x-6">
+            <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-x-6">
               <Link
                 href={header.button.href}
                 target="_blank"
-                className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-pink-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-primary px-4 py-3 sm:px-3.5 sm:py-2.5 text-sm font-semibold text-white text-center shadow-sm transition-all hover:bg-pink-600 hover:shadow-md hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 {header.button.label}
               </Link>
               <Link
                 href={header.link.href}
                 target="_blank"
-                className="text-sm/6 font-semibold text-gray-900 flex align-center items-center hover:text-primary"
+                className="text-sm sm:text-sm/6 font-semibold text-gray-900 flex align-center items-center justify-center sm:justify-start px-4 py-3 sm:px-0 sm:py-0 rounded-md sm:rounded-none hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 {header.link.label}<FaWhatsapp className="ml-1" />
               </Link>

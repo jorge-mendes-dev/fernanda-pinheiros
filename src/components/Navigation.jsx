@@ -42,7 +42,7 @@ export default function Navigation() {
             <a
               key={item.name}
               href={item.href}
-              className="text-sm/6 font-semibold text-gray-900 hover:text-pink-600"
+              className="text-sm/6 font-semibold text-gray-900 hover:text-pink-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-sm px-1"
             >
               {item.name}
             </a>
@@ -83,7 +83,8 @@ export default function Navigation() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 hover:text-pink-600"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="-mx-3 block rounded-lg px-3 py-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 hover:text-pink-600 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
                   >
                     {item.name}
                   </a>
