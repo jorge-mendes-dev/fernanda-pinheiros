@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import About from 'components/About';
 import Tips from 'components/Tips';
-import FadeIn from 'components/FadeIn';
+import RevealSection from 'components/RevealSection';
 import Testimonials from 'components/Testemonials';
 import Schedule from 'components/Schedule';
 import Consult from 'components/Consult';
@@ -14,20 +14,24 @@ export default function Home() {
     <Suspense fallback={<Loader />}>
       <Template>
         <>
-          <FadeIn delay={0.2}>
+          <RevealSection delay={0.1} direction="up">
             <About />
-          </FadeIn>
-          <FadeIn delay={0.3}>
+          </RevealSection>
+          <RevealSection delay={0.2} direction="up">
             <Consult />
+          </RevealSection>
+          <RevealSection delay={0.2} direction="scale">
             <Evaluation />
+          </RevealSection>
+          <RevealSection delay={0.2} direction="up">
             <Schedule />
-          </FadeIn>
-          <FadeIn delay={0.3}>
+          </RevealSection>
+          <RevealSection delay={0.2} direction="up">
             <Testimonials />
-          </FadeIn>
-          <FadeIn delay={0.4}>
+          </RevealSection>
+          <RevealSection delay={0.2} direction="left">
             <Tips />
-          </FadeIn>
+          </RevealSection>
         </>
       </Template>
     </Suspense>

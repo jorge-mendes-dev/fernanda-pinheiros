@@ -1,0 +1,42 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { ArrowUpIcon } from '@heroicons/react/24/outline';
+
+export default function BackToTop() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 500) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <>
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
+          aria-label="Voltar ao topo"
+          className="fixed bottom-24 right-6 z-40 flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-primary to-pink-600 text-white shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:from-pink-600 hover:to-primary focus:outline-none focus:ring-4 focus:ring-primary/50 focus:ring-offset-2 animate-fade-in"
+        >
+          <ArrowUpIcon className="h-5 w-5" />
+        </button>
+      )}
+    </>
+  );
+}

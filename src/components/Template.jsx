@@ -4,21 +4,21 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import FadeIn from 'components/FadeIn';
 import WhatsButton from 'components/WhatsButton';
+import BackToTop from 'components/BackToTop';
 
 export default memo(function Template({ children }) {
   return (
     <>
+      <Navigation />
       <FadeIn delay={0}>
-        <>
-          <Navigation />
-          <Header />
-        </>
+        <Header />
       </FadeIn>
       {children}
       <FadeIn delay={0}>
         <Footer />
       </FadeIn>
-       <WhatsButton />
+      <WhatsButton />
+      <BackToTop />
     </>
   );
 });

@@ -7,7 +7,7 @@ export default function Header() {
   const { header, crn } = AppConfig;
 
   return (
-    <div className="relative isolate overflow-hidden bg-white">
+    <div className="relative isolate overflow-hidden bg-white pt-16">
       <svg
         aria-hidden="true"
         className="absolute inset-0 -z-10 size-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
@@ -32,7 +32,7 @@ export default function Header() {
         />
       </svg>
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-        <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-48 lg:pt-40 xl:col-span-6">
+        <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-48 lg:pt-32 xl:col-span-6">
           <div className="mx-auto max-w-lg lg:mx-0">
             <div className="hidden sm:mt-32 sm:flex lg:mt-16">
               <span className="rounded-full bg-pink-600/10 px-3 py-1 text-sm/6 font-semibold text-primary ring-1 ring-inset ring-indigo-600/10">
