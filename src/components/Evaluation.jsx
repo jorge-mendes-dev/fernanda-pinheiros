@@ -20,15 +20,15 @@ export default function Evaluation() {
             <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
               {evaluation.includes.map((feature, key) => (
                 <div key={key} className="pt-6">
-                  <div className="flow-root rounded-lg bg-pink-50 px-6 pb-8">
+                  <div className="group flow-root rounded-xl bg-gradient-to-br from-pink-50 to-white px-6 pb-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ring-1 ring-pink-100 hover:ring-primary/30">
                     <div className="-mt-6">
                       <div>
-                        <span className="inline-flex items-center justify-center rounded-xl bg-primary p-3 shadow-lg">
+                        <span className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-pink-600 p-3 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
                           <HeartIcon aria-hidden="true" className="size-8 text-white" />
                         </span>
                       </div>
-                      <h3 className="mt-8 text-lg/8 font-semibold tracking-tight text-gray-900">{feature.title}</h3>
-                      <p className="mt-5 text-base/7 text-zinc-900">{feature.description}</p>
+                      <h3 className="mt-8 text-lg/8 font-bold tracking-tight text-gray-900 group-hover:text-primary transition-colors">{feature.title}</h3>
+                      <p className="mt-5 text-base/7 text-gray-700">{feature.description}</p>
                     </div>
                   </div>
                 </div>

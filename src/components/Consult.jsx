@@ -27,16 +27,19 @@ export default function Consult() {
               </dl>
             </div>
           </div>
-          <div className="flex justify-center items-center">
-            <Image
-              alt={consult.image.alt}
-              src={consult.image.src}
-              width={400}
-              height={400}
-              sizes="(max-width: 768px) 100vw, 400px"
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-xl shadow-xl ring-1 ring-gray-400/10"
-              priority
-            />
+          <div className="flex justify-center items-center group">
+            <div className="relative overflow-hidden rounded-xl shadow-2xl transition-all duration-300 group-hover:shadow-pink-200/50 group-hover:scale-[1.02]">
+              <Image
+                alt={consult.image.alt}
+                src={consult.image.src}
+                width={400}
+                height={400}
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-xl ring-1 ring-gray-400/10 transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </div>
           </div>
         </div>
       </div>
