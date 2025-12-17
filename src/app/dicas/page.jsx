@@ -95,7 +95,7 @@ export default function Docs() {
                     {selectedDoc.title.split(' - ')[1] || selectedDoc.title}
                   </span>
                 </div>
-                <div className="overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-gray-900/5">
+                <div className="overflow-hidden rounded-2xl bg-rose-100 shadow-2xl ring-1 ring-gray-900/5">
                   <Reader selected={selectedDoc} />
                 </div>
               </div>
