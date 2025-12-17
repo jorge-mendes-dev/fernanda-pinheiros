@@ -9,11 +9,16 @@ export default function Evaluation() {
     <>
       <div className="relative bg-white py-24 sm:py-32 lg:py-40">
         <div className="mx-auto max-w-md px-6 text-center sm:max-w-3xl lg:max-w-7xl lg:px-8">
-          <h2 className="text-lg font-semibold text-primary">{evaluation.highlight}</h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 to-pink-200/20 px-4 py-2 text-sm font-bold text-primary ring-1 ring-primary/20 mb-4">
+            <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
+            </svg>
+            {evaluation.highlight}
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
             {evaluation.title}
-          </p>
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600">
+          </h2>
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600 leading-relaxed">
             {evaluation.description}
           </p>
           <div className="mt-20">

@@ -10,15 +10,20 @@ export default function Consult() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pt-4 lg:pr-8 flex flex-col justify-center">
             <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold text-primary">{consult.highlight}</h2>
-              <p className="mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-pretty text-gray-900">
+              <div className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary/10 to-pink-200/20 px-4 py-2 text-sm font-bold text-primary ring-1 ring-primary/20 mb-4">
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                </svg>
+                {consult.highlight}
+              </div>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
                 {consult.title}
-              </p>
+              </h2>
               <dl className="mt-8 sm:mt-10 max-w-xl space-y-6 sm:space-y-8 text-base text-gray-600 lg:max-w-none">
                 {consult.description.map((feature, key) => (
-                  <div key={key} className="relative pl-9">
-                    <dt className="inline font-base text-gray-900">
-                      <HeartIcon aria-hidden="true" className="absolute top-1 left-1 size-5 text-primary" />
+                  <div key={key} className="relative pl-9 group">
+                    <dt className="inline font-medium text-gray-900 leading-relaxed">
+                      <HeartIcon aria-hidden="true" className="absolute top-1 left-1 size-5 text-primary group-hover:scale-110 transition-transform" />
                       {feature}
                     </dt>{' '}
                     <dd className="inline">{feature.description}</dd>
