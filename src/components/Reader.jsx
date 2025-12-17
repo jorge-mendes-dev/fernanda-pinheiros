@@ -147,7 +147,7 @@ const DocumentPreview = ({
           <Loader />
         </div>
       }
-      className="w-full"
+      className="flex w-full justify-center"
     >
       <AnimatePresence mode="wait">
         {numPages && (
@@ -157,6 +157,7 @@ const DocumentPreview = ({
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3, ease: 'easeInOut' }}
+            className="flex justify-center"
           >
             <Page
               className="rounded-lg shadow-lg"
@@ -317,7 +318,9 @@ export default function Reader({ selected }) {
         handleZoomOut={handleZoomOut}
       />
 
-      <div className="flex min-h-screen flex-col items-center px-3 py-6 pb-28 sm:px-4 sm:py-8 md:px-8 md:pb-12">
+      <div className={`flex flex-col items-center px-3 py-6 pb-28 sm:px-4 sm:py-8 md:px-8 md:pb-12 ${
+        isFullscreen ? 'min-h-screen justify-center' : 'min-h-screen'
+      }`}>
         <PageNavigation
           currentPage={currentPage}
           numPages={numPages}
