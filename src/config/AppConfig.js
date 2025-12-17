@@ -23,6 +23,7 @@ export const AppConfig = {
   navigation: [
     { name: 'Home', href: '/' },
     { name: 'Sobre mim', href: '/sobre' },
+    { name: 'Dicas', href: '/dicas' },
     { name: 'Contato', href: 'https://wa.me/5511978271175' },
   ],
   header: {
@@ -305,5 +306,31 @@ export const AppConfig = {
       href: 'https://www.instagram.com/nutri_fernandasouza/',
     },
   },
+  docs: [
+    {
+      title: 'Guia da Nutri Fernanda - Atendimento Nutricional',
+      description: 'Um guia completo para entender como funciona o atendimento nutricional comigo.',
+      pdfPath: '/Guia da nutri fernanda atendimento nutricional.pdf',
+      slug: 'guia-atendimento'
+    },
+    {
+      title: 'Opções de Acompanhamento Nutricional',
+      description: 'Conheça as diferentes modalidades de acompanhamento nutricional disponíveis.',
+      pdfPath: '/Opções de acompanhamento nutricional.pdf',
+      slug: 'opcoes-acompanhamento'
+    },
+    {
+      title: 'O que Contém Meu Atendimento Nutricional',
+      description: 'Detalhes sobre o que você pode esperar das consultas e do acompanhamento.',
+      pdfPath: '/Oque contém meu atendimento nutricional.pdf',
+      slug: 'conteudo-atendimento'
+    },
+    {
+      title: 'Valores do Acompanhamento Nutricional',
+      description: 'Informações sobre os valores e formas de pagamento dos serviços.',
+      pdfPath: '/valores do Acompanhamento nutricional.pdf',
+      slug: 'valores-acompanhamento'
+    }
+  ],
   footer: `${new Date().getFullYear()} Nutricionista Fernanda Souza. - Todos os Direitos Reservados.`
 };
