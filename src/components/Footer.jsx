@@ -45,8 +45,8 @@ export default function Footer() {
             <Link
               target="_blank"
               key={item.name}
-              href={item.href}
-              className="text-gray-600 hover:text-gray-900 hover:text-primary"
+              href={item?.href ? item.href : '#'}
+              className="text-gray-600 hover:text-primary"
             >
               {item.name}
             </Link>
@@ -56,7 +56,7 @@ export default function Footer() {
           {links.social.map(item => (
             <Link
               key={item.name}
-              href={item.href}
+              href={item?.href ? item.href : '#'}
               className="text-gray-600 hover:text-gray-800"
               target="_blank"
             >

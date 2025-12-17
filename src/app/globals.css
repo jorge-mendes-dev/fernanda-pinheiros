@@ -1,19 +1,64 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Brand Colors */
+  --color-background: #ffffff;
+  --color-foreground: #171717;
+  --color-primary: #ff7da4;
+  --color-text: #545454;
+
+  /* Light Theme Colors */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Gray Scale */
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #545454;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #030712;
+
+  /* Pink/Rose Shades (for primary color variants) */
+  --color-pink-50: #fdf2f8;
+  --color-pink-100: #fce7f3;
+  --color-pink-200: #fbcfe8;
+  --color-pink-300: #f9a8d4;
+  --color-pink-400: #ff7da4;
+  --color-pink-500: #ec4899;
+  --color-pink-600: #db2777;
+  --color-pink-700: #be185d;
+  --color-pink-800: #9f1239;
+  --color-pink-900: #831843;
+
+  /* Additional Light Theme Colors */
+  --color-blue-50: #eff6ff;
+  --color-blue-500: #3b82f6;
+  --color-blue-600: #2563eb;
+
+  --color-green-50: #f0fdf4;
+  --color-green-500: #22c55e;
+  --color-green-600: #16a34a;
+
+  --color-red-50: #fef2f2;
+  --color-red-500: #ef4444;
+  --color-red-600: #dc2626;
+
+  --color-yellow-50: #fefce8;
+  --color-yellow-500: #eab308;
+  --color-yellow-600: #ca8a04;
+}
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
   --primary: #ff7da4;
   --text: #545454;
-}
-
-@media (prefers-color-scheme: white) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html {

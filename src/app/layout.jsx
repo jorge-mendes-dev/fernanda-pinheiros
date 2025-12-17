@@ -23,7 +23,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang={AppConfig.locale}>
+    <html lang={AppConfig.locale} className='light bg-white'>
       <head>
         <meta property="og:title" content={AppConfig.title} />
         <meta property="og:description" content={AppConfig.description} />
