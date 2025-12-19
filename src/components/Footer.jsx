@@ -1,5 +1,5 @@
 import { AppConfig } from "config/AppConfig";
-import { FaWhatsapp } from "react-icons/fa6";
+import { FaWhatsapp, FaTiktok } from "react-icons/fa6";
 import { CiInstagram, CiLinkedin } from "react-icons/ci";
 import Link from "next/link";
 
@@ -29,6 +29,13 @@ export default function Footer() {
       icon: props => (
         <CiLinkedin fill="currentColor" viewBox="0 0 24 24" {...props} />
       ),
+    },
+    {
+      name: 'TikTok',
+      href: social.tiktok,
+      icon: props => (
+        <FaTiktok className='h-6 w-6' />
+      ),
     }
   ],
 };
@@ -46,7 +53,7 @@ export default function Footer() {
               target="_blank"
               key={item.name}
               href={item?.href ? item.href : '#'}
-              className="text-gray-600 hover:text-primary transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-sm px-1"
+              className="text-gray-600 hover:text-primary transition-colors focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-primary rounded-sm px-1"
             >
               {item.name}
             </Link>
@@ -57,7 +64,7 @@ export default function Footer() {
             <Link
               key={item.name}
               href={item?.href ? item.href : '#'}
-              className="text-gray-600 hover:text-gray-800 transition-all hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-full p-1"
+              className="text-gray-600 hover:text-gray-800 transition-all hover:scale-110 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary rounded-full p-1"
               target="_blank"
               aria-label={item.name}
             >
