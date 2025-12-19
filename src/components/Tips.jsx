@@ -11,7 +11,7 @@ export default function Tips() {
         <Image
           alt={tips.image.alt}
           src={tips.image.src}
-          className="h-full w-full object-cover aspect-[4/3]"
+          className="h-full w-full object-cover aspect-4/3"
           width={1000}
           height={1000}
         />
@@ -31,19 +31,7 @@ export default function Tips() {
             {tips.description}
           </p>
            <Instagram />
-          <div className="mt-2">
-            <Link
-              href={tips.link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center rounded-lg bg-white/10 backdrop-blur-sm px-4 py-3 text-sm font-bold text-white shadow-lg hover:bg-white/20 hover:shadow-xl hover:scale-105 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              {tips.link.label}
-              <svg className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
+
         </div>
       </div>
     </div>

@@ -21,6 +21,7 @@ export default function RevealSection({ children, delay = 0, direction = 'up' })
       initial={variants[direction]}
       animate={isInView ? { opacity: 1, y: 0, x: 0, scale: 1 } : {}}
       transition={{ duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      style={{ overflow: 'hidden' }}
     >
       {children}
     </motion.div>
