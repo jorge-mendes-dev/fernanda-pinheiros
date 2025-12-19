@@ -160,12 +160,12 @@ export default function Tips() {
                         <blockquote
                           className="tiktok-embed"
                           cite={AppConfig.social.tiktok}
-                          data-unique-id="nutri_fernandasouza"
+                          data-unique-id={AppConfig.social.tiktokUsername}
                           data-embed-type="creator"
                           style={{ margin: '0 auto', width: '100%', maxWidth: '540px' }}
                         >
                           <section>
-                            <a target="_blank" href={AppConfig.social.tiktok}>@nutri_fernandasouza</a>
+                            <a target="_blank" rel="noopener noreferrer" href={AppConfig.social.tiktok}>@{AppConfig.social.tiktokUsername}</a>
                           </section>
                         </blockquote>
                       )}

@@ -20,6 +20,7 @@ export const AppConfig = {
     whatsapp: 'https://wa.me/5511978271175',
     linkedin: '',
     tiktok: 'https://www.tiktok.com/@nutri_fernandasouza',
+    tiktokUsername: 'nutri_fernandasouza',
   },
   navigation: [
     { name: 'Home', href: '/' },
