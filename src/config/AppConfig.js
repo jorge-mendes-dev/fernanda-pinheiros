@@ -26,6 +26,7 @@ export const AppConfig = {
     { name: 'Home', href: '/' },
     { name: 'Sobre mim', href: '/sobre' },
     { name: 'Dicas', href: '/dicas' },
+    { name: 'Redes Sociais', href: '/redes-sociais' },
     { name: 'Contato', href: 'https://wa.me/5511978271175' },
   ],
   header: {
@@ -308,6 +309,58 @@ export const AppConfig = {
       href: 'https://www.instagram.com/nutri_fernandasouza/',
     },
   },
+  tiktokVideos: [
+    {
+      id: 1,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7585704347023969544',
+      size: 'large',
+    },
+    {
+      id: 2,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7585326523591167240',
+      size: 'small',
+    },
+    {
+      id: 3,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7584043132409433362',
+      size: 'small',
+    },
+    {
+      id: 4,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/photo/7583091546053020936',
+      size: 'large',
+    },
+    {
+      id: 5,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7582734498568162578',
+      size: 'small',
+    },
+    {
+      id: 6,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7581989817458724103',
+      size: 'small',
+    },
+    {
+      id: 7,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7581473823384456456',
+      size: 'large',
+    },
+    {
+      id: 8,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7580475969329286418',
+      size: 'small',
+    },
+    {
+      id: 9,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7579266888602062098',
+      size: 'small',
+    },
+    {
+      id: 10,
+      url: 'https://www.tiktok.com/@nutri_fernandasouza/video/7578895214895500551',
+      size: 'small',
+    }
+  ],
   docs: [
     {
       title: 'Guia da Nutri Fernanda - Atendimento Nutricional',
