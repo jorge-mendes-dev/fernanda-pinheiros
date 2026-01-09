@@ -68,6 +68,11 @@ export const AppConfig = {
     linkedin: '',
     tiktok: 'https://www.tiktok.com/@nutri_fernandasouza',
     tiktokUsername: 'nutri_fernandasouza',
+    links: [
+      { name: 'Instagram', url: 'https://www.instagram.com/nutri_fernandasouza/' },
+      { name: 'TikTok', url: 'https://www.tiktok.com/@nutri_fernandasouza' },
+      { name: 'WhatsApp', url: 'https://wa.me/5511978271175' },
+    ],
   },
   navigation: [
     { name: 'Home', href: '/' },
