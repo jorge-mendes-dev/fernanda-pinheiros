@@ -1,11 +1,58 @@
 export const AppConfig = {
   site_name: 'Nutricionista Fernanda Souza',
-  title: 'Nutricionista Fernanda Souza',
-  description: 'Olá! Sou Fernanda, nutricionista dedicada ao bem-estar e à qualidade de vida dos meus pacientes.',
+  title: 'Nutricionista Fernanda Souza - Nutrição Clínica e Materno-Infantil | CRN-3 91282/P',
+  description: 'Nutricionista especializada em Nutrição Clínica e Materno-Infantil. Atendimento personalizado para gestantes, bebês, crianças e adultos. Consultas online e presenciais em São Paulo. CRN-3 91282/P.',
   locale: 'pt-br',
   url: 'www.nutrifernandasouza.com.br',
   bg_color: '#ff7da4',
-  keywords: ['Nutricionista', 'Clinica', 'Saúde', 'Bem-estar', 'nutrição materno infantil', 'adulto', 'nutrição', 'nutrição clínica', 'nutrição materno-infantil', 'nutrição esportiva', 'emagrecimento', 'saúde intestinal', 'suplementação', 'consultas online', 'plano alimentar personalizado', 'educação nutricional', 'nutricionista São Paulo', 'gestantes', 'lactantes', 'crianças', 'adolescentes', 'adultos', 'idosos', 'nutrição funcional', 'nutrição comportamental'],
+  keywords: [
+    // Core Services - Most Important
+    'nutricionista são paulo',
+    'nutricionista online',
+    'consulta nutricional online',
+    'nutrição materno infantil',
+    'nutricionista gestante',
+    'nutrição clínica',
+
+    // Specific Specializations
+    'introdução alimentar',
+    'nutricionista bebê',
+    'nutricionista crianças',
+    'nutrição para gestantes',
+    'nutrição para lactantes',
+    'alimentação infantil',
+
+    // Health & Wellness Goals
+    'emagrecimento saudável',
+    'saúde intestinal',
+    'nutrição funcional',
+    'nutrição comportamental',
+    'plano alimentar personalizado',
+    'reeducação alimentar',
+
+    // Professional Credentials
+    'CRN-3 91282/P',
+    'nutricionista credenciada',
+    'pós graduação nutrição clínica',
+    'especialista nutrição materno infantil',
+
+    // Location-based
+    'nutricionista sp',
+    'consultório nutrição são paulo',
+
+    // Additional Services
+    'avaliação nutricional',
+    'acompanhamento nutricional',
+    'educação nutricional',
+    'suplementação nutricional',
+    'nutrição esportiva',
+
+    // Target Audience
+    'nutrição para adultos',
+    'nutrição para idosos',
+    'nutrição para adolescentes',
+    'nutrição para família',
+  ],
   crn: 'CRN-3 91282/P',
   company: {
     title: 'Fernanda Souza',

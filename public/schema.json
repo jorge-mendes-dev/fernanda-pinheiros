@@ -1,30 +1,171 @@
 {
-  "@context": "http://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Fernanda Souza Nutricionista",
-  "telephone": "+55 11 97827-1175",
-  "description": "Nutricionista (CRN-3 91282/P), Pós graduada em Nutrição Clínica e Nutrição Materno-Infantil. Atendimento personalizado para saúde e bem-estar.",
-  "image": "https://www.nutrifernandasouza.com.br/assets/images/photo.jpg",
-  "url": "https://www.nutrifernandasouza.com.br",
-  "sameAs": [
-    "https://www.instagram.com/nutri_fernandasouza/",
-    "https://wa.me/5511978271175"
-  ],
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "São Paulo, Brasil"
-  },
-  "openingHoursSpecification": {
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday"
-    ],
-    "opens": "08:00",
-    "closes": "18:00"
-  },
-  "priceRange": "Consulte valores e modalidades de atendimento."
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.nutrifernandasouza.com.br/#organization",
+      "name": "Fernanda Souza - Nutricionista",
+      "legalName": "Fernanda Souza Nutricionista CRN-3 91282/P",
+      "telephone": "+55-11-97827-1175",
+      "description": "Nutricionista CRN-3 91282/P especializada em Nutrição Clínica e Nutrição Materno-Infantil. Atendimento personalizado para gestantes, bebês, crianças, adolescentes e adultos. Consultas presenciais e online.",
+      "image": "https://www.nutrifernandasouza.com.br/assets/images/header.jpg",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.nutrifernandasouza.com.br/assets/images/logo.png"
+      },
+      "url": "https://www.nutrifernandasouza.com.br",
+      "sameAs": [
+        "https://www.instagram.com/nutri_fernandasouza/",
+        "https://www.tiktok.com/@nutri_fernandasouza",
+        "https://wa.me/5511978271175"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-23.550520",
+        "longitude": "-46.633308"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "City",
+        "name": "São Paulo"
+      },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "-23.550520",
+          "longitude": "-46.633308"
+        },
+        "geoRadius": "50000"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.nutrifernandasouza.com.br/#service",
+      "name": "Nutricionista Fernanda Souza",
+      "provider": {
+        "@id": "https://www.nutrifernandasouza.com.br/#organization"
+      },
+      "serviceType": [
+        "Nutrição Clínica",
+        "Nutrição Materno-Infantil",
+        "Nutrição para Gestantes",
+        "Nutrição Infantil",
+        "Emagrecimento",
+        "Saúde Intestinal",
+        "Nutrição Funcional",
+        "Consultas Online"
+      ],
+      "areaServed": "Brasil",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Nutrição",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Consulta Nutricional Individual",
+              "description": "Atendimento personalizado com avaliação completa e plano alimentar individualizado"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Acompanhamento Nutricional Materno-Infantil",
+              "description": "Cuidado especializado para gestantes, lactantes e crianças de 0 a 5 anos"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.nutrifernandasouza.com.br/#person",
+      "name": "Fernanda Souza",
+      "givenName": "Fernanda",
+      "familyName": "Souza",
+      "jobTitle": "Nutricionista",
+      "worksFor": {
+        "@id": "https://www.nutrifernandasouza.com.br/#organization"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "educationalLevel": "Pós-Graduação",
+          "name": "Pós-graduação em Nutrição Clínica",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "FAMEF - Faculdade Metropolitana de Franca"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "degree",
+          "educationalLevel": "Pós-Graduação",
+          "name": "Pós-graduação em Nutrição Materno-Infantil",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Nutrição Aplicada"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "professional certification",
+          "name": "CRN-3 91282/P",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Conselho Regional de Nutricionistas - CRN3"
+          }
+        }
+      ],
+      "knowsAbout": [
+        "Nutrição Clínica",
+        "Nutrição Materno-Infantil",
+        "Nutrição para Gestantes",
+        "Introdução Alimentar",
+        "Saúde Intestinal",
+        "Nutrição Funcional",
+        "Emagrecimento Saudável"
+      ],
+      "url": "https://www.nutrifernandasouza.com.br",
+      "image": "https://www.nutrifernandasouza.com.br/assets/images/header.jpg",
+      "sameAs": [
+        "https://www.instagram.com/nutri_fernandasouza/",
+        "https://www.tiktok.com/@nutri_fernandasouza"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.nutrifernandasouza.com.br/#website",
+      "url": "https://www.nutrifernandasouza.com.br",
+      "name": "Nutricionista Fernanda Souza",
+      "description": "Site oficial da nutricionista Fernanda Souza - Especialista em Nutrição Clínica e Materno-Infantil",
+      "publisher": {
+        "@id": "https://www.nutrifernandasouza.com.br/#organization"
+      },
+      "inLanguage": "pt-BR",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.nutrifernandasouza.com.br/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]
 }

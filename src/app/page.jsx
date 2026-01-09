@@ -8,6 +8,18 @@ import Consult from 'components/Consult';
 import Evaluation from 'components/Evaluation';
 import Template from 'components/Template';
 import Loader from 'components/Loader';
+import { AppConfig } from 'config/AppConfig';
+
+export const metadata = {
+  title: 'Home',
+  description: 'Nutricionista Fernanda Souza - Especialista em Nutrição Clínica e Materno-Infantil. Atendimento personalizado para gestantes, bebês, crianças e adultos em São Paulo.',
+  keywords: ['nutricionista são paulo', 'nutrição materno infantil', 'nutricionista online', 'consulta nutricional', 'nutricionista gestante', 'introdução alimentar', 'emagrecimento saudável'],
+  openGraph: {
+    title: 'Nutricionista Fernanda Souza - Nutrição Clínica e Materno-Infantil',
+    description: 'Cuidado nutricional especializado para toda a família. Atendimento presencial e online.',
+    images: [`https://${AppConfig.url}/assets/images/og-image.jpg`],
+  },
+};
 
 export default function Home() {
   return (
