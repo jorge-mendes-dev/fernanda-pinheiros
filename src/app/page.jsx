@@ -8,6 +8,7 @@ import Consult from 'components/Consult';
 import Evaluation from 'components/Evaluation';
 import Template from 'components/Template';
 import Loader from 'components/Loader';
+import Price from 'components/Price';
 import { AppConfig } from 'config/AppConfig';
 
 export const metadata = {
@@ -34,6 +35,9 @@ export default function Home() {
           </RevealSection>
           <RevealSection delay={0.2} direction="scale">
             <Evaluation />
+          </RevealSection>
+          <RevealSection delay={0.2} direction="up">
+            <Price />
           </RevealSection>
           <RevealSection delay={0.2} direction="up">
             <Schedule />

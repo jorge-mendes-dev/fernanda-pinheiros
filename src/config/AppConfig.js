@@ -439,5 +439,62 @@ export const AppConfig = {
       slug: 'valores-acompanhamento'
     }
   ],
+
+  pricing: {
+    title: 'Valores - Atendimento Nutricional',
+    description: 'Atendimento presencial em São Paulo - Capital ou online para todo o Brasil.',
+    plans: [
+      {
+        name: 'Consulta Inicial',
+        presencial: 'R$ 260,00',
+        online: 'R$ 220,00',
+        duration: '60 a 75 minutos',
+        details: [
+          'Anamnese clínica completa',
+          'Avaliação nutricional detalhada',
+          'Plano alimentar individualizado',
+          'Lâminas educativas personalizadas',
+          'Orientações de suplementação (quando necessário)'
+        ]
+      },
+      {
+        name: 'Consulta de Retorno',
+        presencial: 'R$ 170,00',
+        online: 'R$ 150,00',
+        duration: '30 a 45 minutos',
+        details: [
+          'Avaliação da evolução',
+          'Ajustes do plano alimentar',
+          'Reforço educativo e orientações'
+        ]
+      },
+      {
+        name: 'Acompanhamento Nutricional - Plano 3 Meses',
+        presencial: 'R$ 650,00',
+        online: 'R$ 590,00',
+        details: [
+          '1 consulta inicial',
+          '2 consultas de retorno',
+          'Plano alimentar personalizado',
+          'Lâminas educativas',
+          'Acompanhamento estruturado'
+        ]
+      },
+      {
+        name: 'Acompanhamento Nutricional - Plano 6 Meses',
+        presencial: 'R$ 1.150,00',
+        online: 'R$ 1.050,00',
+        details: [
+          '1 consulta inicial',
+          '4 consultas de retorno',
+          'Atualizações do plano alimentar',
+          'Lâminas educativas personalizadas',
+          'Acompanhamento contínuo e individualizado'
+        ]
+      }
+    ],
+    payment: 'Pagamento via Pix, transferência bancária ou cartão de crédito.'
+  },
+
   footer: `${new Date().getFullYear()} Nutricionista Fernanda Souza. - Todos os Direitos Reservados.`
 };
