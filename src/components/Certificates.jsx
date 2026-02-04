@@ -10,7 +10,7 @@ export default function Certificates() {
     <>
       <div className="bg-white" id="certificates">
         <div className="mx-auto flex justify-center items-center flex-col max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-primary">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-primary font-display">
             {certificates.title}
           </h2>
           <p className="mt-4 sm:mt-6 text-base sm:text-xl text-gray-700">
@@ -35,7 +35,7 @@ export default function Certificates() {
                   alt={certificates.alt}
                   width={150}
                   height={150}
-                  className="w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75" 
+                  className="w-full rounded-lg bg-gray-200 object-cover transition-opacity duration-300 group-hover:opacity-75" 
                 />
               </div>
             ))}

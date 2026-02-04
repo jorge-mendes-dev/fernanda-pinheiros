@@ -15,7 +15,7 @@ export default function Evaluation() {
             </svg>
             {evaluation.highlight}
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl font-display">
             {evaluation.title}
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600 leading-relaxed">
@@ -25,10 +25,10 @@ export default function Evaluation() {
             <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
               {evaluation.includes.map((feature, key) => (
                 <div key={key} className="pt-6">
-                  <div className="group flow-root rounded-xl bg-linear-to-br from-pink-50 to-white px-6 pb-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ring-1 ring-pink-100 hover:ring-primary/30">
+                  <div className="group flow-root rounded-xl bg-gradient-to-br from-pink-50 to-white px-6 pb-8 shadow-sm hover:shadow-xl transition-[transform,box-shadow] duration-300 hover:-translate-y-2 ring-1 ring-pink-100 hover:ring-primary/30">
                     <div className="-mt-6">
                       <div>
-                        <span className="inline-flex items-center justify-center rounded-xl bg-linear-to-br from-primary to-pink-600 p-3 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                        <span className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-pink-600 p-3 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-[transform,box-shadow] duration-300">
                           <HeartIcon aria-hidden="true" className="size-8 text-white" />
                         </span>
                       </div>

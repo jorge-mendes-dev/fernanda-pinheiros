@@ -30,7 +30,7 @@ export default function Socials() {
             </svg>
             Vídeos no TikTok
           </div>
-          <h2 className="text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl lg:text-6xl">
+          <h2 className="text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl lg:text-6xl font-display">
             Conteúdo <span className="text-primary">Exclusivo</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">
@@ -53,7 +53,7 @@ export default function Socials() {
                 <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-br from-primary/20 via-purple-200/20 to-orange-200/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
 
                 {/* Card */}
-                <div className="relative h-full min-h-full rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 overflow-visible border border-gray-100/50 backdrop-blur-sm">
+                <div className="relative h-full min-h-full rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-[box-shadow] duration-500 overflow-visible border border-gray-100/50 backdrop-blur-sm">
                   <div className={`flex h-full min-h-full items-center justify-center ${isLarge ? 'p-6' : 'p-4'}`}>
                     {video.url ? (
                       <blockquote
@@ -63,7 +63,7 @@ export default function Socials() {
                         style={{ maxWidth: '100%', minWidth: '288px' }}
                       >
                         <section>
-                          <a target="_blank" rel="noopener noreferrer" href={video.url}>
+                          <a target="_blank" rel="noopener noreferrer" href={video.url} aria-label="Ver vídeo no TikTok - Abre em nova aba">
                             Ver vídeo
                           </a>
                         </section>

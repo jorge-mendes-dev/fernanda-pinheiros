@@ -1,6 +1,21 @@
 import localFont from 'next/font/local';
+import { Playfair_Display, Inter } from 'next/font/google';
 import { AppConfig } from 'config/AppConfig';
 import './globals.css';
+
+const playfairDisplay = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-display',
+  weight: ['400', '500', '600', '700', '800', '900'],
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  weight: ['300', '400', '500', '600', '700', '800'],
+  display: 'swap',
+});
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -151,7 +166,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${playfairDisplay.variable} ${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>

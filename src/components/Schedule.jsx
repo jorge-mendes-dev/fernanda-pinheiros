@@ -17,7 +17,7 @@ export default function Schedule() {
             </span>
             {schedule.subtitle}
           </div>
-          <h2 className="text-4xl font-black tracking-tight text-balance text-white sm:text-6xl drop-shadow-lg">
+          <h2 className="text-4xl font-black tracking-tight text-balance text-white sm:text-6xl drop-shadow-lg font-display">
             {schedule.title}
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-xl text-pretty text-white font-medium leading-relaxed drop-shadow-sm">
@@ -27,8 +27,9 @@ export default function Schedule() {
             <Link
               href={schedule.link.href}
               target="_blank"
-              rel="noreferrer"
-              className="group relative flex items-center justify-center rounded-xl bg-white px-8 py-5 text-lg font-black text-primary shadow-2xl transition-all hover:shadow-white/20 hover:scale-105 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white overflow-hidden"
+              rel="noopener noreferrer"
+              aria-label={`${schedule.link.label} - Abre WhatsApp em nova aba`}
+              className="group relative flex items-center justify-center rounded-xl bg-white px-8 py-5 text-lg font-black text-primary shadow-2xl transition-[transform,shadow] duration-300 hover:shadow-white/20 hover:scale-105 hover:-translate-y-1 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white overflow-hidden"
             >
               <span className="absolute inset-0 bg-linear-to-r from-pink-50 to-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity" />
               <span className="relative flex items-center gap-3">
@@ -39,8 +40,9 @@ export default function Schedule() {
             <Link
               href={schedule.social.href}
               target="_blank"
-              rel="noreferrer"
-              className="group flex items-center justify-center text-lg font-bold text-white px-6 py-5 rounded-xl border-2 border-white/30 hover:border-white hover:bg-white/15 backdrop-blur-sm transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+              rel="noopener noreferrer"
+              aria-label={`${schedule.social.label} - Abre TikTok em nova aba`}
+              className="group flex items-center justify-center text-lg font-bold text-white px-6 py-5 rounded-xl border-2 border-white/30 hover:border-white hover:bg-white/15 backdrop-blur-sm transition-[border-color,background-color] duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
               <FaTiktok className="mr-3 h-6 w-6 group-hover:scale-110 transition-transform" aria-hidden="true" />
               {schedule.social.label}
             </Link>

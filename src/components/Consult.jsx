@@ -16,7 +16,7 @@ export default function Consult() {
                 </svg>
                 {consult.highlight}
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight font-display">
                 {consult.title}
               </h2>
               <dl className="mt-8 sm:mt-10 max-w-xl space-y-6 sm:space-y-8 text-base text-gray-600 lg:max-w-none">

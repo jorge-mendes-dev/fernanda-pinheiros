@@ -51,9 +51,11 @@ export default function Footer() {
           {links.navigation.map(item => (
             <Link
               target="_blank"
+              rel="noopener noreferrer"
               key={item.name}
               href={item?.href ? item.href : '#'}
-              className="text-gray-600 hover:text-primary transition-colors focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-primary rounded-sm px-1"
+              aria-label={item.name}
+              className="text-gray-600 hover:text-primary transition-colors duration-200 focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-primary rounded-sm px-1"
             >
               {item.name}
             </Link>
@@ -64,9 +66,10 @@ export default function Footer() {
             <Link
               key={item.name}
               href={item?.href ? item.href : '#'}
-              className="text-gray-600 hover:text-gray-800 transition-all hover:scale-110 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary rounded-full p-1"
+              className="text-gray-600 hover:text-gray-800 transition-[color,transform] duration-200 hover:scale-110 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary rounded-full p-1"
               target="_blank"
-              aria-label={item.name}
+              rel="noopener noreferrer"
+              aria-label={`Seguir no ${item.name}`}
             >
               <span className="sr-only">{item.name}</span>
               <item.icon aria-hidden="true" className="h-6 w-6" />

@@ -42,7 +42,7 @@ export default function Header() {
                 {crn}
               </span>
             </div>
-            <h1 className="mt-24 text-balance text-5xl font-bold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent sm:mt-10 sm:text-7xl lg:text-8xl">
+            <h1 className="mt-24 text-balance text-5xl font-bold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent sm:mt-10 sm:text-7xl lg:text-8xl font-display">
               {header.title}
             </h1>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-600 leading-relaxed sm:text-xl/8">
@@ -52,7 +52,9 @@ export default function Header() {
               <Link
                 href={header.button.href}
                 target="_blank"
-                className="group relative rounded-xl bg-gradient-to-r from-primary to-pink-500 px-6 py-4 text-base font-bold text-white text-center shadow-lg transition-all hover:shadow-xl hover:scale-105 hover:from-pink-500 hover:to-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary overflow-hidden"
+                rel="noopener noreferrer"
+                aria-label={`${header.button.label} - Abre em nova aba`}
+                className="group relative rounded-xl bg-gradient-to-r from-primary to-pink-500 px-6 py-4 text-base font-bold text-white text-center shadow-lg transition-[transform,shadow,background-position] duration-300 hover:shadow-xl hover:scale-105 hover:from-pink-500 hover:to-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary overflow-hidden"
               >
                 <span className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                 <span className="relative flex items-center justify-center gap-2">
@@ -65,7 +67,9 @@ export default function Header() {
               <Link
                 href={header.link.href}
                 target="_blank"
-                className="group flex items-center justify-center sm:justify-start px-6 py-4 text-base font-bold text-gray-900 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                rel="noopener noreferrer"
+                aria-label={`${header.link.label} - Abre WhatsApp em nova aba`}
+                className="group flex items-center justify-center sm:justify-start px-6 py-4 text-base font-bold text-gray-900 rounded-xl border-2 border-gray-200 hover:border-primary hover:bg-primary/5 transition-[border-color,background-color,transform] duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 <FaWhatsapp className="mr-2 h-5 w-5 text-green-500 group-hover:scale-110 transition-transform" />
                 {header.link.label}

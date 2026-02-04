@@ -67,7 +67,7 @@ export default function Work() {
             </figure>
           </div>
           <div className="max-w-xl text-base/7 text-gray-700 lg:col-span-7">
-            <h2 className="mt-10 text-2xl font-bold tracking-tight text-primary lg:mt-0">
+            <h2 className="mt-10 text-2xl font-bold tracking-tight text-primary lg:mt-0 font-display">
               {work.title}
             </h2>
             <ul role="list" className="mt-8 space-y-8 text-gray-600">

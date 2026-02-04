@@ -33,14 +33,14 @@ export default function Navigation() {
           isScrolled ? 'p-4 lg:p-4' : 'p-6 lg:px-8'
         }`}
       >
-        <a href="#" className="-m-1.5 p-1.5 group">
-          <span className="sr-only">Your Company</span>
+        <a href="#" className="-m-1.5 p-1.5 group" aria-label="Ir para o topo da página">
+          <span className="sr-only">{company.name}</span>
           <Image
             width={32}
             height={32}
             alt={company.logo.alt}
             src={company.logo.src}
-            className={`w-auto transition-all duration-300 ${
+            className={`w-auto transition-[height,transform] duration-300 ${
               isScrolled ? 'h-7' : 'h-8'
             } group-hover:scale-110`}
           />
@@ -49,9 +49,10 @@ export default function Navigation() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            aria-label="Abrir menu de navegação"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
           >
-            <span className="sr-only">Open main menu</span>
+            <span className="sr-only">Abrir menu</span>
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
@@ -75,8 +76,8 @@ export default function Navigation() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+            <a href="#" className="-m-1.5 p-1.5" aria-label="Ir para o topo da página">
+              <span className="sr-only">{company.name}</span>
               <Image
                 width={32}
                 height={32}
@@ -88,9 +89,10 @@ export default function Navigation() {
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              aria-label="Fechar menu de navegação"
+              className="-m-2.5 rounded-md p-2.5 text-gray-700 hover:bg-gray-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
-              <span className="sr-only">Close menu</span>
+              <span className="sr-only">Fechar menu</span>
               <XMarkIcon aria-hidden="true" className="h-6 w-6" />
             </button>
           </div>

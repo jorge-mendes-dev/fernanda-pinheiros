@@ -83,7 +83,7 @@ export default function Tips() {
           </svg>
           {tips.title}
         </div>
-        <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-950 sm:text-6xl lg:text-pretty">
+        <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-950 sm:text-6xl lg:text-pretty font-display">
           {tips.subtitle}
         </h1>
         <p className="mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 mx-auto sm:text-xl/8">
@@ -120,8 +120,8 @@ export default function Tips() {
                         href={tier.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label={`Seguir no ${tier.name}`}
-                        className={`inline-block w-full rounded-md ${tier.color} px-3.5 py-2.5 text-center text-sm/6 font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all focus-visible:outline-2 focus-visible:outline-offset-2`}
+                        aria-label={`Seguir ${tier.name} - Abre em nova aba`}
+                        className={`inline-block w-full rounded-md ${tier.color} px-3.5 py-2.5 text-center text-sm/6 font-semibold text-white shadow-lg transition-[transform,box-shadow] duration-300 hover:shadow-xl hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-2`}
                       >
                         Seguir no {tier.name}
                       </a>

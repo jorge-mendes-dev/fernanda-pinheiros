@@ -94,7 +94,8 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
         <button
           onClick={onPrevious}
           disabled={currentPage <= 1}
-          className={`flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 font-medium transition-all sm:gap-2 sm:px-4 md:px-5 md:py-2.5 ${
+          aria-label="Ir para a página anterior"
+          className={`flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 font-medium transition-[background-color,transform,box-shadow] duration-200 sm:gap-2 sm:px-4 md:px-5 md:py-2.5 ${
             currentPage <= 1
               ? 'cursor-not-allowed bg-gray-100 text-gray-400 dark:bg-rose-900/30 dark:text-rose-700'
               : 'bg-rose-100 text-rose-700 hover:bg-rose-200 hover:shadow-md active:scale-95 dark:bg-rose-900 dark:text-rose-200 dark:hover:bg-rose-800'
@@ -107,7 +108,7 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
         </button>
 
         {/* Page Counter with Input Style */}
-        <div className="flex items-center gap-1.5 rounded-lg bg-linear-to-r from-rose-50 to-pink-50 px-2.5 py-1.5 dark:from-rose-700/50 dark:to-pink-800/50 sm:gap-2 sm:px-4 sm:py-2 md:px-6 md:py-2.5">
+        <div className="flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-rose-50 to-pink-50 px-2.5 py-1.5 dark:from-rose-700/50 dark:to-pink-800/50 sm:gap-2 sm:px-4 sm:py-2 md:px-6 md:py-2.5" role="status" aria-label={`Página ${currentPage} de ${numPages}`}>
           <span className="text-xs font-bold text-rose-600 dark:text-rose-300 sm:text-sm sm:font-semibold sm:text-gray-700 sm:dark:text-rose-200">
             {currentPage}
           </span>
@@ -120,7 +121,8 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
         <button
           onClick={onNext}
           disabled={currentPage >= numPages}
-          className={`flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 font-medium transition-all sm:gap-2 sm:px-4 md:px-5 md:py-2.5 ${
+          aria-label="Ir para a próxima página"
+          className={`flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 font-medium transition-[background-color,transform,box-shadow] duration-200 sm:gap-2 sm:px-4 md:px-5 md:py-2.5 ${
             currentPage >= numPages
               ? 'cursor-not-allowed bg-gray-100 text-gray-400 dark:bg-rose-900/30 dark:text-rose-700'
               : 'bg-rose-100 text-rose-700 hover:bg-rose-200 hover:shadow-md active:scale-95 dark:bg-rose-900 dark:text-rose-200 dark:hover:bg-rose-800'
@@ -139,7 +141,8 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
         <div className="flex items-center gap-1.5 sm:gap-2">
           <button
             onClick={handleZoomOut}
-            className="rounded-lg p-2 transition-all hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            aria-label="Diminuir zoom"
+            className="rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
             title="Diminuir zoom"
             type="button"
           >
@@ -147,7 +150,8 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           </button>
           <button
             onClick={handleZoomReset}
-            className="rounded-lg p-2 transition-all hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            aria-label="Resetar zoom"
+            className="rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
             title="Resetar zoom"
             type="button"
           >
@@ -155,7 +159,8 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           </button>
           <button
             onClick={handleZoomIn}
-            className="rounded-lg p-2 transition-all hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            aria-label="Aumentar zoom"
+            className="rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
             title="Aumentar zoom"
             type="button"
           >
@@ -163,7 +168,8 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           </button>
           <button
             onClick={handleFullscreen}
-            className="rounded-lg p-2 transition-all hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            aria-label={isFullscreen ? 'Sair do modo tela cheia' : 'Ativar modo tela cheia'}
+            className="rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
             title={isFullscreen ? 'Sair do modo tela cheia' : 'Tela cheia'}
             type="button"
           >

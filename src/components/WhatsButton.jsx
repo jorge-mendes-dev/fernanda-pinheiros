@@ -16,14 +16,14 @@ const WhatsButton = () => {
 
       <Link
         target="_blank"
-        rel="noreferrer"
+        rel="noopener noreferrer"
         href={whatsapp}
-        aria-label="Fale conosco pelo WhatsApp"
+        aria-label="Fale conosco pelo WhatsApp - Abre em nova aba"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
         onFocus={() => setShowTooltip(true)}
         onBlur={() => setShowTooltip(false)}
-        className="relative flex h-16 w-16 sm:h-18 sm:w-18 items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-green-600 text-4xl text-white shadow-2xl transition-all duration-300 hover:from-green-500 hover:to-green-700 hover:scale-110 hover:shadow-green-500/50 focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-offset-2"
+        className="relative flex h-16 w-16 sm:h-18 sm:w-18 items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-green-600 text-4xl text-white shadow-2xl transition-[background-position,transform,box-shadow] duration-300 hover:from-green-500 hover:to-green-700 hover:scale-110 hover:shadow-green-500/50 focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-offset-2"
       >
         <FaWhatsapp className="drop-shadow-md" />
 

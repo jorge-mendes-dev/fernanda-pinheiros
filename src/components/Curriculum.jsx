@@ -22,7 +22,7 @@ export default function Curriculum() {
           </div>
           <div className="px-6 lg:contents">
             <div className="mx-auto max-w-2xl pb-24 pt-16 sm:pb-32 sm:pt-20 lg:ml-8 lg:mr-0 lg:w-full lg:max-w-lg lg:flex-none lg:pt-2 xl:w-1/2">
-              <h2 className="mt-10 text-2xl font-bold tracking-tight text-primary">
+              <h2 className="mt-10 text-2xl font-bold tracking-tight text-primary font-display">
                 {curriculum.title}
               </h2>
               <p className="mt-4 text-base text-gray-700">{curriculum.description}</p>

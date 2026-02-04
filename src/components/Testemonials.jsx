@@ -64,7 +64,7 @@ export default function Testimonials() {
             </svg>
             {testimonials.title}
           </div>
-          <h2 className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+          <h2 className="mt-4 text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl font-display">
             {testimonials.description}
           </h2>
         </div>

@@ -18,7 +18,7 @@ export default function Price() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base font-semibold text-primary">{pricing.title}</h2>
-          <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
+          <p className="mt-2 text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl font-display">
             Escolha o plano ideal para você
           </p>
         </div>
@@ -78,8 +78,10 @@ export default function Price() {
 
                 <a
                   href={schedule.link.href}
-                  aria-describedby={schedule.link.label}
-                  className="mt-6 block w-full rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-primary inset-ring-1 inset-ring-indigo-200 group-data-featured/tier:bg-primary group-data-featured/tier:text-white group-data-featured/tier:shadow-xs group-data-featured/tier:inset-ring-0 hover:inset-ring-primary group-data-featured/tier:hover:bg-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${schedule.link.label} - ${plan.name}`}
+                  className="mt-6 block w-full rounded-md px-3 py-2 text-center text-sm/6 font-semibold text-primary inset-ring-1 inset-ring-indigo-200 group-data-featured/tier:bg-primary group-data-featured/tier:text-white group-data-featured/tier:shadow-xs group-data-featured/tier:inset-ring-0 hover:inset-ring-primary group-data-featured/tier:hover:bg-primary transition-[background-color,color,box-shadow] duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   {schedule.link.label}
                 </a>
