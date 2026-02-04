@@ -77,6 +77,7 @@ export const AppConfig = {
   navigation: [
     { name: 'Home', href: '/' },
     { name: 'Sobre mim', href: '/sobre' },
+    { name: 'Valores', href: '#pricing' },
     { name: 'Dicas', href: '/dicas' },
     { name: 'Redes Sociais', href: '/redes-sociais' },
     { name: 'Contato', href: 'https://wa.me/5511978271175' },

@@ -14,7 +14,7 @@ export default function Price() {
   const [frequency, setFrequency] = useState('online');
 
   return (
-    <form className="group/tiers bg-white py-24 sm:py-32" id="valores">
+    <form className="group/tiers bg-white py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base font-semibold text-primary">{pricing.title}</h2>

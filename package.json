@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev:festo": "next dev -p 4000",
+    "dev:f": "next dev -p 4000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
