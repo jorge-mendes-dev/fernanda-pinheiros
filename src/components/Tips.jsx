@@ -76,7 +76,7 @@ export default function Tips() {
 
   return (
     <div className="bg-white py-24 sm:py-32" id="tips">
-      <div className="mx-auto max-w-4xl px-6 max-lg:text-center lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-4xl px-6 flex flex-col items-center text-center lg:max-w-7xl lg:px-8">
         <div className="inline-flex items-center gap-2 rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-primary ring-1 ring-pink-200 mb-6">
           <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clipRule="evenodd" />
@@ -86,7 +86,7 @@ export default function Tips() {
         <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-950 sm:text-6xl lg:text-pretty">
           {tips.subtitle}
         </h1>
-        <p className="mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 max-lg:mx-auto sm:text-xl/8">
+        <p className="mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 mx-auto sm:text-xl/8">
           {tips.description}
         </p>
       </div>
@@ -94,11 +94,11 @@ export default function Tips() {
       <div className="relative pt-16 sm:pt-24">
         <div className="absolute inset-x-0 top-48 bottom-0 bg-[radial-gradient(circle_at_center_center,#ff7da4,#f9a8d4,#fdf2f8_70%)] lg:bg-[radial-gradient(circle_at_center_150%,#ff7da4,#f9a8d4,#fdf2f8_70%)]" />
         <div className="relative mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 justify-center">
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className="-m-2 grid grid-cols-1 rounded-4xl bg-white/2.5 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 max-lg:mx-auto max-lg:w-full max-lg:max-w-md"
+                className="-m-2 grid grid-cols-1 rounded-4xl bg-white/2.5 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 mx-auto w-full max-w-md lg:max-w-lg"
               >
                 <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
                   <div className="rounded-3xl bg-white p-10 pb-9 shadow-2xl ring-1 ring-black/5">

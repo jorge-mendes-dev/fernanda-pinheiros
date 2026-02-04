@@ -87,8 +87,8 @@ export const AppConfig = {
     title: 'Fernanda Souza',
     description: 'Olá! Sou Fernanda, nutricionista dedicada ao bem-estar e à qualidade de vida dos meus pacientes.',
     button: {
-      label: 'Instagram',
-      href: 'https://www.instagram.com/nutri_fernandasouza/',
+      label: 'Tik tok',
+      href: 'https://www.tiktok.com/@nutri_fernandasouza',
     },
     link: {
       label: 'Contato',
@@ -335,6 +335,7 @@ export const AppConfig = {
   },
   schedule: {
     title: 'Gostou? Agende sua consulta!',
+    subtitle: 'Disponível para atendimento',
     description: 'Sabemos que o primeiro passo é sempre muito difícil mas eu estou aqui para te ajudar a dar esse passo de uma maneira simples e confortável, clique no botão abaixo e me chame no whatsapp, vamos conversar.',
     image: {
       src: '/assets/images/work.svg',
@@ -345,8 +346,8 @@ export const AppConfig = {
       href: 'https://wa.me/5511978271175',
     },
     social: {
-      label: 'Instagram',
-      href: 'https://www.instagram.com/nutri_fernandasouza/',
+      label: 'Tik Tok',
+      href: 'https://www.tiktok.com/@nutri_fernandasouza/',
     },
   },
   tips: {
