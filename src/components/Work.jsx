@@ -18,7 +18,7 @@ export default function Work() {
             clipPath:
               'polygon(63.1% 29.6%, 100% 17.2%, 76.7% 3.1%, 48.4% 0.1%, 44.6% 4.8%, 54.5% 25.4%, 59.8% 49.1%, 55.3% 57.9%, 44.5% 57.3%, 27.8% 48%, 35.1% 81.6%, 0% 97.8%, 39.3% 100%, 35.3% 81.5%, 97.2% 52.8%, 63.1% 29.6%)',
           }}
-          className="aspect-[801/1036] w-[50.0625rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+          className="aspect-801/1036 w-200.25 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
         />
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -26,7 +26,7 @@ export default function Work() {
           <div className="relative lg:order-last lg:col-span-5">
             <svg
               aria-hidden="true"
-              className="absolute -top-[40rem] left-1 -z-10 h-[64rem] w-[175.5rem] -translate-x-1/2 stroke-gray-900/10 [mask-image:radial-gradient(64rem_64rem_at_111.5rem_0%,white,transparent)]"
+              className="absolute -top-160 left-1 -z-10 h-256 w-702 -translate-x-1/2 stroke-gray-900/10 mask-[radial-gradient(64rem_64rem_at_111.5rem_0%,white,transparent)]"
             >
               <defs>
                 <pattern

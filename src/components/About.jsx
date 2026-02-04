@@ -35,19 +35,19 @@ export default function About() {
                 <Image
                   alt={about.alt}
                   src={about.images[0]}
-                  className="aspect-[7/5] w-full sm:w-[24rem] lg:w-[37rem] max-w-none bg-gray-50 object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="aspect-7/5 w-full sm:w-96 lg:w-148 max-w-none bg-gray-50 object-cover transition-transform duration-500 group-hover:scale-105"
                   width={1000}
                   height={1000}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-linear-to-t from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
-            <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
+            <div className="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-148 lg:items-start lg:justify-end lg:gap-x-8">
               <div className="order-first flex w-full sm:w-1/2 lg:w-auto flex-none justify-end self-end mb-4 sm:mb-0">
                 <Image
                   alt={about.alt}
                   src={about.images[1]}
-                  className="aspect-[4/3] w-full sm:w-[16rem] lg:w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
+                  className="aspect-4/3 w-full sm:w-64 lg:w-96 max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                   width={1000}
                   height={1000}
                 />
@@ -56,7 +56,7 @@ export default function About() {
                 <Image
                   alt={about.alt}
                   src={about.images[2]}
-                  className="aspect-[4/3] w-full sm:w-[24rem] lg:w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
+                  className="aspect-4/3 w-full sm:w-96 lg:w-148 max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                   width={1000}
                   height={1000}
                 />
@@ -65,7 +65,7 @@ export default function About() {
                 <Image
                   alt={about.alt}
                   src={about.images[3]}
-                  className="aspect-[4/3] w-full sm:w-[16rem] lg:w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
+                  className="aspect-4/3 w-full sm:w-64 lg:w-96 max-w-none rounded-2xl bg-gray-50 object-cover"
                   width={1000}
                   height={1000}
                 />
