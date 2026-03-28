@@ -1,6 +1,6 @@
-import localFont from 'next/font/local';
-import { Playfair_Display, Inter } from 'next/font/google';
 import { AppConfig } from 'config/AppConfig';
+import { Inter, Playfair_Display } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 
 const playfairDisplay = Playfair_Display({
@@ -110,6 +110,7 @@ export default function RootLayout({ children }) {
           AppConfig.social.instagram,
           AppConfig.social.tiktok,
           AppConfig.social.whatsapp,
+          AppConfig.social.linkedin,
         ],
         address: {
           '@type': 'PostalAddress',
