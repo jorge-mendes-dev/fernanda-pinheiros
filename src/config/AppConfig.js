@@ -95,7 +95,7 @@ export const AppConfig = {
       href: 'https://wa.me/5511978271175',
     },
     image: {
-      src: '/assets/images/header.svg',
+      src: '/assets/images/perfil.jpeg',
       alt: 'Fernanda Souza'
     },
   },
@@ -443,56 +443,46 @@ export const AppConfig = {
   ],
 
   pricing: {
-    title: 'Valores - Atendimento Nutricional',
-    description: 'Atendimento presencial em São Paulo - Capital ou online para todo o Brasil.',
+    title: 'Planos de Atendimento',
+    tagline: 'Invista na sua saúde com um atendimento individualizado, baseado em ciência e pensado para a sua rotina.',
     plans: [
       {
-        name: 'Consulta Inicial',
-        presencial: 'R$ 260,00',
-        online: 'R$ 220,00',
-        duration: '60 a 75 minutos',
+        name: 'Consulta Avulsa',
+        emoji: '🩺',
+        price: 'R$ 120,00',
+        description: 'Ideal para quem deseja uma orientação pontual.',
         details: [
-          'Anamnese clínica completa',
-          'Avaliação nutricional detalhada',
-          'Plano alimentar individualizado',
-          'Lâminas educativas personalizadas',
-          'Orientações de suplementação (quando necessário)'
-        ]
-      },
-      {
-        name: 'Consulta de Retorno',
-        presencial: 'R$ 170,00',
-        online: 'R$ 150,00',
-        duration: '30 a 45 minutos',
-        details: [
-          'Avaliação da evolução',
-          'Ajustes do plano alimentar',
-          'Reforço educativo e orientações'
-        ]
-      },
-      {
-        name: 'Acompanhamento Nutricional - Plano 3 Meses',
-        presencial: 'R$ 650,00',
-        online: 'R$ 590,00',
-        details: [
-          '1 consulta inicial',
-          '2 consultas de retorno',
+          'Consulta nutricional individualizada',
           'Plano alimentar personalizado',
-          'Lâminas educativas',
-          'Acompanhamento estruturado'
+          'Indicações e orientações nutricionais'
+        ],
+        note: 'Não inclui retorno.'
+      },
+      {
+        name: 'Acompanhamento Online – 30 dias',
+        emoji: '💻',
+        price: 'R$ 250,00',
+        description: 'Acompanhamento completo para quem busca resultados com suporte.',
+        details: [
+          'Consulta nutricional',
+          'Plano alimentar personalizado',
+          'Ajustes e orientações nutricionais',
+          'Retorno após 30 dias para avaliação da evolução e novos ajustes'
         ]
       },
       {
-        name: 'Acompanhamento Nutricional - Plano 6 Meses',
-        presencial: 'R$ 1.150,00',
-        online: 'R$ 1.050,00',
+        name: 'Acompanhamento Presencial – 30 dias',
+        emoji: '📍',
+        price: 'R$ 350,00',
+        description: 'Um acompanhamento completo para potencializar seus resultados.',
         details: [
-          '1 consulta inicial',
-          '4 consultas de retorno',
-          'Atualizações do plano alimentar',
-          'Lâminas educativas personalizadas',
-          'Acompanhamento contínuo e individualizado'
-        ]
+          'Consulta nutricional presencial',
+          'Plano alimentar personalizado',
+          'Avaliação física completa',
+          'Retorno após 30 dias para acompanhamento da evolução',
+          'Kit brinde exclusivo'
+        ],
+        featured: true
       }
     ],
     payment: 'Pagamento via Pix, transferência bancária ou cartão de crédito.'
