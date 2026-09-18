@@ -25,8 +25,8 @@ export default function Office() {
               <Image
                 alt={image.alt}
                 src={image.src}
-                width={400}
-                height={400}
+                width={384}
+                height={384}
                 sizes="(max-width: 768px) 50vw, 25vw"
                 className="aspect-square w-full rounded-xl object-cover ring-1 ring-gray-400/10 transition-transform duration-300 group-hover:scale-105"
               />
