@@ -5,6 +5,7 @@ import RevealSection from 'components/RevealSection';
 import Testimonials from 'components/Testemonials';
 import Schedule from 'components/Schedule';
 import Consult from 'components/Consult';
+import Office from 'components/Office';
 import Evaluation from 'components/Evaluation';
 import Template from 'components/Template';
 import Loader from 'components/Loader';
@@ -32,6 +33,9 @@ export default function Home() {
           </RevealSection>
           <RevealSection delay={0.2} direction="up">
             <Consult />
+          </RevealSection>
+          <RevealSection delay={0.2} direction="up">
+            <Office />
           </RevealSection>
           <RevealSection delay={0.2} direction="scale">
             <Evaluation />

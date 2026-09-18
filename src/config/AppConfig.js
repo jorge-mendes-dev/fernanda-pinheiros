@@ -302,6 +302,17 @@ export const AppConfig = {
       alt: 'Consulta Nutricional',
     },
   },
+  office: {
+    title: 'Conheça o Consultório',
+    highlight: 'Atendimento Presencial',
+    description: 'Um espaço acolhedor e preparado para receber você com todo conforto e privacidade durante o seu atendimento presencial.',
+    images: [
+      { src: '/assets/images/onsite/sala_01.jpeg', alt: 'Consultório Fernanda Souza - ambiente 1' },
+      { src: '/assets/images/onsite/sala_02.jpeg', alt: 'Consultório Fernanda Souza - ambiente 2' },
+      { src: '/assets/images/onsite/sala_03.jpeg', alt: 'Consultório Fernanda Souza - ambiente 3' },
+      { src: '/assets/images/onsite/sala_04.jpeg', alt: 'Consultório Fernanda Souza - ambiente 4' },
+    ],
+  },
   evaluation: {
     title: 'O que está incluso no atendimento?',
     highlight: 'Te ajudando em todas as fases da vida.',
