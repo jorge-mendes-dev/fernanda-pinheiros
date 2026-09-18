@@ -321,6 +321,7 @@ export const AppConfig = {
       { src: '/assets/images/onsite/sala_08.jpeg', alt: 'Consultório Fernanda Souza - ambiente 9' },
       { src: '/assets/images/onsite/sala_09.jpeg', alt: 'Consultório Fernanda Souza - ambiente 10' },
       { src: '/assets/images/onsite/sala_10.jpeg', alt: 'Consultório Fernanda Souza - ambiente 11' },
+      { src: '/assets/images/onsite/sala_11.jpeg', alt: 'Consultório Fernanda Souza - ambiente 12' },
     ],
     videos: [
       { src: '/assets/images/onsite/video_02.mp4', alt: 'Vídeo do consultório 1' },
