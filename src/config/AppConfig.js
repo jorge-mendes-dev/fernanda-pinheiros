@@ -1,7 +1,7 @@
 export const AppConfig = {
   site_name: 'Nutricionista Fernanda Souza',
-  title: 'Nutricionista Fernanda Souza - Nutrição Clínica e Materno-Infantil | CRN-3 91282/P',
-  description: 'Nutricionista especializada em Nutrição Clínica e Materno-Infantil. Atendimento personalizado para gestantes, bebês, crianças e adultos. Consultas online e presenciais em São Paulo. CRN-3 91282/P.',
+  title: 'Nutricionista Fernanda Souza - Nutrição Clínica e Materno-Infantil | CRN-3 91282',
+  description: 'Nutricionista especializada em Nutrição Clínica e Materno-Infantil. Atendimento personalizado para gestantes, bebês, crianças e adultos. Consultas online e presenciais em São Paulo. CRN-3 91282.',
   locale: 'pt-br',
   url: 'www.nutrifernandasouza.com.br',
   bg_color: '#ff7da4',
@@ -31,7 +31,7 @@ export const AppConfig = {
     'reeducação alimentar',
 
     // Professional Credentials
-    'CRN-3 91282/P',
+    'CRN-3 91282',
     'nutricionista credenciada',
     'pós graduação nutrição clínica',
     'especialista nutrição materno infantil',
@@ -53,7 +53,7 @@ export const AppConfig = {
     'nutrição para adolescentes',
     'nutrição para família',
   ],
-  crn: 'CRN-3 91282/P',
+  crn: 'CRN-3 91282',
   company: {
     title: 'Fernanda Souza',
     logo: {
@@ -101,7 +101,7 @@ export const AppConfig = {
   },
   about: {
     title: 'Sobre Mim',
-    description: 'Oi, eu sou a Nutricionista Fernanda (CRN-3 91282/P), Pós graduada em Nutrição Clínica e Nutrição Materno-Infantil.',
+    description: 'Oi, eu sou a Nutricionista Fernanda (CRN-3 91282), Pós graduada em Nutrição Clínica e Nutrição Materno-Infantil.',
     paragraph: [
       'Nutricionista apaixonada por acolher, orientar e transformar a forma como as pessoas se relacionam com a comida desde o comecinho da vida.',
       'Atuo com Nutrição Clínica e Materno-Infantil: cuido de gestantes, bebês, crianças e também de adultos que buscam mais saúde, leveza e equilíbrio.',
