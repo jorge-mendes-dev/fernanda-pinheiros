@@ -1,7 +1,7 @@
 export const AppConfig = {
   site_name: 'Nutricionista Fernanda Souza',
-  title: 'Nutricionista Fernanda Souza - Nutrição Clínica e Materno-Infantil | CRN-3 91282',
-  description: 'Nutricionista especializada em Nutrição Clínica e Materno-Infantil. Atendimento personalizado para gestantes, bebês, crianças e adultos. Consultas online e presenciais em São Paulo. CRN-3 91282.',
+  title: 'Nutricionista Fernanda Souza - Nutrição Clínica, Materno-Infantil e Esportiva | CRN-3 91282',
+  description: 'Nutricionista especializada em Nutrição Clínica, Materno-Infantil e Esportiva. Atendimento personalizado para gestantes, bebês, crianças e adultos. Consultas online e presenciais no Tatuapé, São Paulo. CRN-3 91282.',
   locale: 'pt-br',
   url: 'www.nutrifernandasouza.com.br',
   bg_color: '#ff7da4',
@@ -105,6 +105,7 @@ export const AppConfig = {
     paragraph: [
       'Nutricionista apaixonada por acolher, orientar e transformar a forma como as pessoas se relacionam com a comida desde o comecinho da vida.',
       'Atuo com Nutrição Clínica e Materno-Infantil: cuido de gestantes, bebês, crianças e também de adultos que buscam mais saúde, leveza e equilíbrio.',
+      'Também sou especializada em Nutrição Esportiva, ajudando atletas e praticantes de atividade física a melhorar performance, recuperação e composição corporal através da alimentação.',
       'Acredito que comer bem é um ato de amor, de vínculo e de cuidado e meu propósito é estar ao seu lado nessa jornada.',
       'Seja muito bem-vindo(a) ao meu cantinho!',
       'Estou sempre em busca de novos conhecimentos e aberta a oportunidades que me permitam contribuir e crescer ainda mais no campo da nutrição.'
@@ -307,6 +308,17 @@ export const AppConfig = {
     highlight: 'Atendimento Presencial',
     description: 'Um espaço acolhedor e preparado para receber você com todo conforto e privacidade durante o seu atendimento presencial.',
     address: 'Edifício Etoile, Rua Itapura, 239 – Sala 304, Tatuapé, São Paulo - SP',
+    addressParts: {
+      streetAddress: 'Rua Itapura, 239 - Sala 304, Edifício Etoile',
+      addressLocality: 'São Paulo',
+      addressRegion: 'SP',
+      postalCode: '03310-000',
+      addressCountry: 'BR',
+    },
+    geo: {
+      latitude: -23.5406419,
+      longitude: -46.5670948,
+    },
     mapEmbedUrl: 'https://www.google.com/maps?q=Edif%C3%ADcio+Etoile%2C+Rua+Itapura%2C+239+-+Sala+304%2C+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP&output=embed',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Edif%C3%ADcio+Etoile%2C+Rua+Itapura%2C+239+-+Sala+304%2C+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP',
     images: [

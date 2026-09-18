@@ -5,9 +5,9 @@
       "@type": "LocalBusiness",
       "@id": "https://www.nutrifernandasouza.com.br/#organization",
       "name": "Fernanda Souza - Nutricionista",
-      "legalName": "Fernanda Souza Nutricionista CRN-3 91282/P",
+      "legalName": "Fernanda Souza Nutricionista CRN-3 91282",
       "telephone": "+55-11-97827-1175",
-      "description": "Nutricionista CRN-3 91282/P especializada em Nutrição Clínica e Nutrição Materno-Infantil. Atendimento personalizado para gestantes, bebês, crianças, adolescentes e adultos. Consultas presenciais e online.",
+      "description": "Nutricionista CRN-3 91282 especializada em Nutrição Clínica, Nutrição Materno-Infantil e Nutrição Esportiva. Atendimento personalizado para gestantes, bebês, crianças, adolescentes e adultos. Consultas presenciais e online.",
       "image": "https://www.nutrifernandasouza.com.br/assets/images/header.jpg",
       "logo": {
         "@type": "ImageObject",
@@ -21,14 +21,16 @@
       ],
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Rua Itapura, 239 - Sala 304, Edifício Etoile",
         "addressLocality": "São Paulo",
         "addressRegion": "SP",
+        "postalCode": "03310-000",
         "addressCountry": "BR"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "-23.550520",
-        "longitude": "-46.633308"
+        "latitude": "-23.5406419",
+        "longitude": "-46.5670948"
       },
       "openingHoursSpecification": [
         {
@@ -47,8 +49,8 @@
         "@type": "GeoCircle",
         "geoMidpoint": {
           "@type": "GeoCoordinates",
-          "latitude": "-23.550520",
-          "longitude": "-46.633308"
+          "latitude": "-23.5406419",
+          "longitude": "-46.5670948"
         },
         "geoRadius": "50000"
       }
@@ -63,6 +65,7 @@
       "serviceType": [
         "Nutrição Clínica",
         "Nutrição Materno-Infantil",
+        "Nutrição Esportiva",
         "Nutrição para Gestantes",
         "Nutrição Infantil",
         "Emagrecimento",
@@ -128,7 +131,7 @@
         {
           "@type": "EducationalOccupationalCredential",
           "credentialCategory": "professional certification",
-          "name": "CRN-3 91282/P",
+          "name": "CRN-3 91282",
           "recognizedBy": {
             "@type": "Organization",
             "name": "Conselho Regional de Nutricionistas - CRN3"
@@ -138,6 +141,7 @@
       "knowsAbout": [
         "Nutrição Clínica",
         "Nutrição Materno-Infantil",
+        "Nutrição Esportiva",
         "Nutrição para Gestantes",
         "Introdução Alimentar",
         "Saúde Intestinal",

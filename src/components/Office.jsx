@@ -73,6 +73,7 @@ function VideoCarousel({ videos }) {
         gap = second.left - first.right;
       }
       const step = first.width + gap;
+      if (!step) return;
       const visible = Math.max(Math.floor((container.clientWidth + gap) / step), 1);
 
       setCardStep(step);
@@ -155,7 +156,7 @@ export default function Office() {
                 src={image.src}
                 width={384}
                 height={384}
-                sizes="(max-width: 768px) 50vw, 25vw"
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 className="aspect-square w-full rounded-xl object-cover ring-1 ring-gray-400/10 transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-linear-to-t from-primary/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />

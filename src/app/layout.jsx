@@ -114,9 +114,12 @@ export default function RootLayout({ children }) {
         ],
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'São Paulo',
-          addressRegion: 'SP',
-          addressCountry: 'BR',
+          ...AppConfig.office.addressParts,
+        },
+        geo: {
+          '@type': 'GeoCoordinates',
+          latitude: AppConfig.office.geo.latitude,
+          longitude: AppConfig.office.geo.longitude,
         },
         openingHoursSpecification: [
           {
@@ -134,6 +137,7 @@ export default function RootLayout({ children }) {
         serviceType: [
           'Nutrição Clínica',
           'Nutrição Materno-Infantil',
+          'Nutrição Esportiva',
           'Consultas Online',
         ],
       },

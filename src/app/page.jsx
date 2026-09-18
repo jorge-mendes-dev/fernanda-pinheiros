@@ -14,11 +14,11 @@ import { AppConfig } from 'config/AppConfig';
 
 export const metadata = {
   title: 'Home',
-  description: 'Nutricionista Fernanda Souza - Especialista em Nutrição Clínica e Materno-Infantil. Atendimento personalizado para gestantes, bebês, crianças e adultos em São Paulo.',
-  keywords: ['nutricionista são paulo', 'nutrição materno infantil', 'nutricionista online', 'consulta nutricional', 'nutricionista gestante', 'introdução alimentar', 'emagrecimento saudável'],
+  description: 'Nutricionista Fernanda Souza - Especialista em Nutrição Clínica, Materno-Infantil e Esportiva. Atendimento personalizado para gestantes, bebês, crianças e adultos, online e presencial no Tatuapé, São Paulo.',
+  keywords: ['nutricionista são paulo', 'nutrição materno infantil', 'nutrição esportiva', 'nutricionista online', 'consulta nutricional', 'nutricionista gestante', 'introdução alimentar', 'emagrecimento saudável', 'nutricionista tatuapé', 'consultório nutricional tatuapé'],
   openGraph: {
-    title: 'Nutricionista Fernanda Souza - Nutrição Clínica e Materno-Infantil',
-    description: 'Cuidado nutricional especializado para toda a família. Atendimento presencial e online.',
+    title: 'Nutricionista Fernanda Souza - Nutrição Clínica, Materno-Infantil e Esportiva',
+    description: 'Cuidado nutricional especializado para toda a família. Atendimento presencial no Tatuapé (São Paulo) e online.',
     images: [`https://${AppConfig.url}/assets/images/og-image.jpg`],
   },
 };

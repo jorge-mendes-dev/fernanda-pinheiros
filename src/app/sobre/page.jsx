@@ -11,10 +11,10 @@ import { AppConfig } from 'config/AppConfig';
 
 export const metadata = {
   title: 'Sobre Mim',
-  description: 'Conheça a nutricionista Fernanda Souza (CRN-3 91282/P). Pós-graduada em Nutrição Clínica e Nutrição Materno-Infantil, especialista em cuidado nutricional para gestantes, bebês, crianças e adultos.',
-  keywords: ['nutricionista fernanda souza', 'crn 91282', 'nutricionista formação', 'especialista nutrição materno infantil', 'pós graduação nutrição'],
+  description: 'Conheça a nutricionista Fernanda Souza (CRN-3 91282). Pós-graduada em Nutrição Clínica e Nutrição Materno-Infantil, também especializada em Nutrição Esportiva. Atendimento para gestantes, bebês, crianças e adultos.',
+  keywords: ['nutricionista fernanda souza', 'crn 91282', 'nutricionista formação', 'especialista nutrição materno infantil', 'nutrição esportiva', 'pós graduação nutrição'],
   openGraph: {
-    title: 'Sobre Fernanda Souza - Nutricionista CRN-3 91282/P',
+    title: 'Sobre Fernanda Souza - Nutricionista CRN-3 91282',
     description: 'Formação acadêmica, especialização e experiência profissional da nutricionista Fernanda Souza.',
     images: [`https://${AppConfig.url}/assets/images/og-image.jpg`],
   },
