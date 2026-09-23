@@ -319,8 +319,8 @@ export const AppConfig = {
       latitude: -23.5406419,
       longitude: -46.5670948,
     },
-    mapEmbedUrl: 'https://www.google.com/maps?q=Edif%C3%ADcio+Etoile%2C+Rua+Itapura%2C+239+-+Sala+304%2C+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP&output=embed',
-    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Edif%C3%ADcio+Etoile%2C+Rua+Itapura%2C+239+-+Sala+304%2C+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP',
+    mapEmbedUrl: 'https://www.google.com/maps?q=Edif%C3%ADcio+Etoile%2C+Rua+Itapura%2C+239%2C+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP&output=embed',
+    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Edif%C3%ADcio+Etoile%2C+Rua+Itapura%2C+239%2C+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP',
     images: [
       { src: '/assets/images/onsite/sala_00.jpeg', alt: 'Consultório Fernanda Souza - ambiente 1' },
       { src: '/assets/images/onsite/sala_01.jpeg', alt: 'Consultório Fernanda Souza - ambiente 2' },
