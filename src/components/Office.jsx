@@ -211,9 +211,7 @@ function VideoCarousel({ videos }) {
     return () => observer.disconnect();
   }, [videos.length]);
 
-  useEffect(() => {
-    setIndex((current) => Math.min(current, maxIndex));
-  }, [maxIndex]);
+  const clampedIndex = Math.min(index, maxIndex);
 
   const goTo = (next) => {
     activeVideoRef.current?.pause();
@@ -226,7 +224,7 @@ function VideoCarousel({ videos }) {
         <div
           ref={trackRef}
           className="flex gap-4 transition-transform duration-300 ease-out sm:gap-6"
-          style={{ transform: `translateX(-${index * cardStep}px)` }}
+          style={{ transform: `translateX(-${clampedIndex * cardStep}px)` }}
         >
           {videos.map((video, key) => (
             <VideoCard key={key} video={video} activeVideoRef={activeVideoRef} />
@@ -235,15 +233,15 @@ function VideoCarousel({ videos }) {
       </div>
       <CircleButton
         icon={ChevronLeftIcon}
-        onClick={() => goTo(Math.max(index - 1, 0))}
-        disabled={index === 0}
+        onClick={() => goTo(Math.max(clampedIndex - 1, 0))}
+        disabled={clampedIndex === 0}
         ariaLabel="Vídeo anterior"
         positionClassName="absolute top-1/2 left-2 -translate-y-1/2"
       />
       <CircleButton
         icon={ChevronRightIcon}
-        onClick={() => goTo(Math.min(index + 1, maxIndex))}
-        disabled={index === maxIndex}
+        onClick={() => goTo(Math.min(clampedIndex + 1, maxIndex))}
+        disabled={clampedIndex === maxIndex}
         ariaLabel="Próximo vídeo"
         positionClassName="absolute top-1/2 right-2 -translate-y-1/2"
       />

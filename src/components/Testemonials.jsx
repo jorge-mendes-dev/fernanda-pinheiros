@@ -108,7 +108,7 @@ export default function Testimonials() {
                     >
                       <blockquote className="text-gray-700 leading-relaxed">
                         <p className="relative">
-                          <span className="text-primary/30 font-serif text-2xl absolute -left-1 -top-2">"</span>
+                          <span className="text-primary/30 font-serif text-2xl absolute -left-1 -top-2">&quot;</span>
                           {testimonial.feedback}
                         </p>
                       </blockquote>

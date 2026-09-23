@@ -1,10 +1,18 @@
+import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 import { AppConfig } from "config/AppConfig";
 import Image from "next/image";
 
 export default function Certificates() {
   const { certificates } = AppConfig;
-  const shuffledImages = [...certificates.images].sort(() => Math.random() - 0.5);
+  const [shuffledImages, setShuffledImages] = useState(certificates.images);
+
+  useEffect(() => {
+    // One-time client-only shuffle: keeps the initial render deterministic
+    // (matching the server) and avoids a hydration mismatch from Math.random().
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setShuffledImages([...certificates.images].sort(() => Math.random() - 0.5));
+  }, [certificates.images]);
 
   return (
     <>
