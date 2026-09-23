@@ -307,9 +307,9 @@ export const AppConfig = {
     title: 'Conheça o Consultório',
     highlight: 'Atendimento Presencial',
     description: 'Um espaço acolhedor e preparado para receber você com todo conforto e privacidade durante o seu atendimento presencial.',
-    address: 'Edifício Etoile, Rua Itapura, 239 – Sala 304, Tatuapé, São Paulo - SP',
+    address: 'Edifício Etoile, Rua Itapura, 239, Tatuapé, São Paulo - SP',
     addressParts: {
-      streetAddress: 'Rua Itapura, 239 - Sala 304, Edifício Etoile',
+      streetAddress: 'Rua Itapura, 239, Edifício Etoile',
       addressLocality: 'São Paulo',
       addressRegion: 'SP',
       postalCode: '03310-000',

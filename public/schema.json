@@ -21,7 +21,7 @@
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Rua Itapura, 239 - Sala 304, Edifício Etoile",
+        "streetAddress": "Rua Itapura, 239, Edifício Etoile",
         "addressLocality": "São Paulo",
         "addressRegion": "SP",
         "postalCode": "03310-000",
