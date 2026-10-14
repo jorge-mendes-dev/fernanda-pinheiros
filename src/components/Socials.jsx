@@ -1,20 +1,8 @@
-'use client';
-
-import { useEffect } from 'react';
 import { AppConfig } from "config/AppConfig";
+import TikTokPlayer from "./TikTokPlayer";
 
 export default function Socials() {
   const { tiktokVideos } = AppConfig;
-
-  useEffect(() => {
-    if (!document.getElementById("tiktok-embed-script")) {
-      const script = document.createElement("script");
-      script.id = "tiktok-embed-script";
-      script.src = "https://www.tiktok.com/embed.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
 
   return (
     <div className="relative bg-gradient-to-br from-pink-50 via-white to-purple-50 py-24 sm:py-32 overflow-hidden" id="videos">
@@ -56,18 +44,7 @@ export default function Socials() {
                 <div className="relative h-full min-h-full rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-[box-shadow] duration-500 overflow-visible border border-gray-100/50 backdrop-blur-sm">
                   <div className={`flex h-full min-h-full items-center justify-center ${isLarge ? 'p-6' : 'p-4'}`}>
                     {video.url ? (
-                      <blockquote
-                        className="tiktok-embed w-full"
-                        cite={video.url}
-                        data-video-id={video.url.split('/').pop()}
-                        style={{ maxWidth: '100%', minWidth: '288px' }}
-                      >
-                        <section>
-                          <a target="_blank" rel="noopener noreferrer" href={video.url} aria-label="Ver vídeo no TikTok - Abre em nova aba">
-                            Ver vídeo
-                          </a>
-                        </section>
-                      </blockquote>
+                      <TikTokPlayer url={video.url} title={`Vídeo ${index + 1} do TikTok de Fernanda Souza`} />
                     ) : (
                       <div className={`flex flex-col items-center justify-center text-center ${isLarge ? 'p-8' : 'p-6'} bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl w-full`}>
                         <svg className={`${isLarge ? 'h-16 w-16' : 'h-12 w-12'} text-gray-300 mb-4`} fill="currentColor" viewBox="0 0 24 24">

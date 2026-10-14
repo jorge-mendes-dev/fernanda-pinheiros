@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { HeartIcon } from '@heroicons/react/20/solid'
 import { AppConfig } from "config/AppConfig";
+import TikTokPlayer from "./TikTokPlayer";
 
 const tiers = [
   {
@@ -49,6 +50,13 @@ const tiers = [
   },
 ];
 
+// TikTok ids grow over time, so the highest id is the newest post
+const tiktokId = (video) => BigInt(video.url?.match(/\/(?:video|photo)\/(\d+)/)?.[1] ?? 0);
+const latestTikTok = AppConfig.tiktokVideos.reduce(
+  (latest, video) => (!latest || tiktokId(video) > tiktokId(latest) ? video : latest),
+  null,
+);
+
 export default function Tips() {
   const { tips } = AppConfig;
 
@@ -62,15 +70,6 @@ export default function Tips() {
       document.body.appendChild(script);
     } else if (window.instgrm) {
       window.instgrm.Embeds.process();
-    }
-
-    // TikTok embed script
-    if (!document.getElementById("tiktok-embed-script")) {
-      const script = document.createElement("script");
-      script.id = "tiktok-embed-script";
-      script.src = "https://www.tiktok.com/embed.js";
-      script.async = true;
-      document.body.appendChild(script);
     }
   }, []);
 
@@ -157,17 +156,8 @@ export default function Tips() {
                           style={{ margin: '0 !important', width: '100%', maxWidth: '540px' }}
                         ></blockquote>
                       ) : (
-                        <blockquote
-                          className="tiktok-embed"
-                          cite={AppConfig.social.tiktok}
-                          data-unique-id={AppConfig.social.tiktokUsername}
-                          data-embed-type="creator"
-                          style={{ margin: '0 auto', width: '100%', maxWidth: '540px' }}
-                        >
-                          <section>
-                            <a target="_blank" rel="noopener noreferrer" href={AppConfig.social.tiktok}>@{AppConfig.social.tiktokUsername}</a>
-                          </section>
-                        </blockquote>
+                        // TikTok has no player for a profile, so show the latest post
+                        <TikTokPlayer url={latestTikTok?.url ?? AppConfig.social.tiktok} title="Último vídeo do TikTok de Fernanda Souza" />
                       )}
                     </div>
                   </div>
