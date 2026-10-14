@@ -3,7 +3,7 @@
 import { useEffect } from 'react';
 import { HeartIcon } from '@heroicons/react/20/solid'
 import { AppConfig } from "config/AppConfig";
-import TikTokPlayer from "./TikTokPlayer";
+import TikTokGrid from "./TikTokGrid";
 
 const tiers = [
   {
@@ -49,13 +49,6 @@ const tiers = [
     ],
   },
 ];
-
-// TikTok ids grow over time, so the highest id is the newest post
-const tiktokId = (video) => BigInt(video.url?.match(/\/(?:video|photo)\/(\d+)/)?.[1] ?? 0);
-const latestTikTok = AppConfig.tiktokVideos.reduce(
-  (latest, video) => (!latest || tiktokId(video) > tiktokId(latest) ? video : latest),
-  null,
-);
 
 export default function Tips() {
   const { tips } = AppConfig;
@@ -156,8 +149,7 @@ export default function Tips() {
                           style={{ margin: '0 !important', width: '100%', maxWidth: '540px' }}
                         ></blockquote>
                       ) : (
-                        // TikTok has no player for a profile, so show the latest post
-                        <TikTokPlayer url={latestTikTok?.url ?? AppConfig.social.tiktok} title="Último vídeo do TikTok de Fernanda Souza" />
+                        <TikTokGrid />
                       )}
                     </div>
                   </div>
