@@ -42,7 +42,7 @@ export default function Docs() {
                   Selecione um documento
                 </h2>
 
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {AppConfig.docs.map((doc, index) => (
                     <button
                       key={doc.slug}

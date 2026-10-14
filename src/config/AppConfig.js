@@ -474,12 +474,6 @@ export const AppConfig = {
       description: 'Detalhes sobre o que você pode esperar das consultas e do acompanhamento.',
       pdfPath: '/Oque contém meu atendimento nutricional.pdf',
       slug: 'conteudo-atendimento'
-    },
-    {
-      title: 'Valores do Acompanhamento Nutricional',
-      description: 'Informações sobre os valores e formas de pagamento dos serviços.',
-      pdfPath: '/valores do Acompanhamento nutricional.pdf',
-      slug: 'valores-acompanhamento'
     }
   ],
 
