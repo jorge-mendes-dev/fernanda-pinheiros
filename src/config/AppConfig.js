@@ -480,11 +480,12 @@ export const AppConfig = {
 
   pricing: {
     title: 'Planos de Atendimento',
+    highlight: 'Planos e valores',
     tagline: 'Invista na sua saúde com um atendimento individualizado, baseado em ciência e pensado para a sua rotina.',
     plans: [
       {
         name: 'Consulta Avulsa',
-        emoji: '🩺',
+        icon: 'consult',
         price: 'R$ 120,00',
         description: 'Ideal para quem deseja uma orientação pontual.',
         details: [
@@ -496,7 +497,7 @@ export const AppConfig = {
       },
       {
         name: 'Acompanhamento Online – 30 dias',
-        emoji: '💻',
+        icon: 'online',
         price: 'R$ 250,00',
         description: 'Acompanhamento completo para quem busca resultados com suporte.',
         details: [
@@ -508,7 +509,7 @@ export const AppConfig = {
       },
       {
         name: 'Acompanhamento Presencial – 30 dias',
-        emoji: '📍',
+        icon: 'office',
         price: 'R$ 350,00',
         description: 'Um acompanhamento completo para potencializar seus resultados.',
         details: [
