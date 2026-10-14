@@ -83,9 +83,10 @@ export default function Header() {
           <Image
             alt={header.image.alt}
             src={header.image.src}
-            className="aspect-[3/2] w-full rounded-2xl lg:rounded-none bg-gray-50 object-cover lg:absolute lg:inset-0 lg:aspect-auto lg:h-full shadow-2xl lg:shadow-none"
+            className="aspect-[3/2] w-full rounded-2xl lg:rounded-none bg-gray-50 object-cover object-top lg:absolute lg:inset-0 lg:aspect-auto lg:h-full shadow-2xl lg:shadow-none"
             width={1000}
             height={1000}
+            sizes="(min-width: 1280px) 50vw, (min-width: 1024px) 40vw, 100vw"
             priority
           />
         </div>
