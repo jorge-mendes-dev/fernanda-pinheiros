@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import About from 'components/About';
 import Tips from 'components/Tips';
 import RevealSection from 'components/RevealSection';
@@ -8,8 +7,8 @@ import Consult from 'components/Consult';
 import Office from 'components/Office';
 import Evaluation from 'components/Evaluation';
 import Template from 'components/Template';
-import Loader from 'components/Loader';
 import Price from 'components/Price';
+import Splash from 'components/Splash';
 import { AppConfig } from 'config/AppConfig';
 
 export const metadata = {
@@ -24,8 +23,11 @@ export const metadata = {
 };
 
 export default function Home() {
+  // No <Suspense> here: nothing on this page suspends, and React streamed the
+  // Loader fallback first, so visitors saw a spinner before the page
   return (
-    <Suspense fallback={<Loader />}>
+    <>
+      <Splash />
       <Template>
         <>
           <RevealSection delay={0.1} direction="up">
@@ -54,6 +56,6 @@ export default function Home() {
           </RevealSection>
         </>
       </Template>
-    </Suspense>
+    </>
   );
 }
