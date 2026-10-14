@@ -83,16 +83,17 @@ export const AppConfig = {
     { name: 'Contato', href: 'https://wa.me/5511978271175' },
   ],
   header: {
-    tag: 'NUTRICIONISTA CLÍNICO',
+    tag: 'NUTRICIONISTA CLÍNICA',
     title: 'Fernanda Souza',
     description: 'Olá! Sou Fernanda, nutricionista dedicada ao bem-estar e à qualidade de vida dos meus pacientes.',
+    // Booking is the page's main action: WhatsApp with a ready message
     button: {
-      label: 'Tik tok',
-      href: 'https://www.tiktok.com/@nutri_fernandasouza',
+      label: 'Agendar consulta',
+      href: 'https://wa.me/5511978271175?text=' + encodeURIComponent('Olá! Gostaria de agendar uma consulta.'),
     },
     link: {
-      label: 'Contato',
-      href: 'https://wa.me/5511978271175',
+      label: 'Ver planos e valores',
+      href: '#pricing',
     },
     image: {
       src: '/assets/images/fernanda-header.jpg',
@@ -387,7 +388,7 @@ export const AppConfig = {
       href: 'https://wa.me/5511978271175',
     },
     social: {
-      label: 'Tik Tok',
+      label: 'TikTok',
       href: 'https://www.tiktok.com/@nutri_fernandasouza/',
     },
   },
