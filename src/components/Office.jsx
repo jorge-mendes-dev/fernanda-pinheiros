@@ -284,7 +284,7 @@ export default function Office() {
   const { office } = AppConfig;
 
   return (
-    <div id="office" className="overflow-hidden bg-white py-20 sm:py-24 md:py-28 lg:py-32">
+    <div id="office" className="overflow-hidden bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center lg:max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-primary/10 to-pink-200/20 px-4 py-2 text-sm font-bold text-primary ring-1 ring-primary/20 mb-4">
