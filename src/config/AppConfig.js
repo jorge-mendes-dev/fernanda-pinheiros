@@ -95,7 +95,7 @@ export const AppConfig = {
       href: 'https://wa.me/5511978271175',
     },
     image: {
-      src: '/assets/images/perfil.jpeg',
+      src: '/assets/images/fernanda-header.jpg',
       alt: 'Fernanda Souza'
     },
   },
