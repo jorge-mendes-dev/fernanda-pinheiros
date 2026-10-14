@@ -1,3 +1,7 @@
+const WHATSAPP = 'https://wa.me/5511978271175';
+// Booking buttons open WhatsApp with this message ready to send
+const WHATSAPP_BOOKING = `${WHATSAPP}?text=${encodeURIComponent('Olá! Gostaria de agendar uma consulta.')}`;
+
 export const AppConfig = {
   site_name: 'Nutricionista Fernanda Souza',
   title: 'Nutricionista Fernanda Souza - Nutrição Clínica, Materno-Infantil e Esportiva | CRN-3 91282',
@@ -61,17 +65,19 @@ export const AppConfig = {
       alt: 'Fernanda Souza',
     },
   },
-  whatsapp: 'https://wa.me/5511978271175',
+  // Plain chat link: config/site.js reads the phone number from it
+  whatsapp: WHATSAPP,
+  booking: WHATSAPP_BOOKING,
   social: {
     instagram: 'https://www.instagram.com/nutri_fernandasouza/',
-    whatsapp: 'https://wa.me/5511978271175',
+    whatsapp: WHATSAPP,
     linkedin: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/',
     tiktok: 'https://www.tiktok.com/@nutri_fernandasouza',
     tiktokUsername: 'nutri_fernandasouza',
     links: [
       { name: 'Instagram', url: 'https://www.instagram.com/nutri_fernandasouza/' },
       { name: 'TikTok', url: 'https://www.tiktok.com/@nutri_fernandasouza' },
-      { name: 'WhatsApp', url: 'https://wa.me/5511978271175' },
+      { name: 'WhatsApp', url: WHATSAPP },
     ],
   },
   navigation: [
@@ -80,7 +86,7 @@ export const AppConfig = {
     { name: 'Valores', href: 'https://www.nutrifernandasouza.com.br/#pricing' },
     { name: 'Dicas', href: '/dicas' },
     { name: 'Redes Sociais', href: '/redes-sociais' },
-    { name: 'Contato', href: 'https://wa.me/5511978271175' },
+    { name: 'Contato', href: WHATSAPP },
   ],
   header: {
     tag: 'NUTRICIONISTA CLÍNICA',
@@ -89,11 +95,12 @@ export const AppConfig = {
     // Booking is the page's main action: WhatsApp with a ready message
     button: {
       label: 'Agendar consulta',
-      href: 'https://wa.me/5511978271175?text=' + encodeURIComponent('Olá! Gostaria de agendar uma consulta.'),
+      href: WHATSAPP_BOOKING,
     },
+    // The hero shows on every page, the pricing section only on the home page
     link: {
       label: 'Ver planos e valores',
-      href: '#pricing',
+      href: '/#pricing',
     },
     image: {
       src: '/assets/images/fernanda-header.jpg',
@@ -112,10 +119,10 @@ export const AppConfig = {
       'Estou sempre em busca de novos conhecimentos e aberta a oportunidades que me permitam contribuir e crescer ainda mais no campo da nutrição.'
     ],
     images: [
-      '/assets/images/green_eyes.jpg',
-      '/assets/images/hospital.jpg',
-      '/assets/images/eventRoberta.jpg',
-      '/assets/images/event01.jpeg'
+      { src: '/assets/images/green_eyes.jpg', alt: 'Retrato de Fernanda Souza de jaleco' },
+      { src: '/assets/images/hospital.jpg', alt: 'Fernanda Souza de jaleco e máscara no hospital, com prontuário' },
+      { src: '/assets/images/eventRoberta.jpg', alt: 'Fernanda Souza com convidados em um evento' },
+      { src: '/assets/images/event01.jpeg', alt: 'Fernanda Souza no estande de nutrição dos 50 anos da FMU' },
     ],
     alt: 'Fernanda Souza'
   },
@@ -400,7 +407,7 @@ export const AppConfig = {
     },
     link: {
       label: 'Fale comigo',
-      href: 'https://wa.me/5511978271175',
+      href: WHATSAPP_BOOKING,
     },
     social: {
       label: 'TikTok',

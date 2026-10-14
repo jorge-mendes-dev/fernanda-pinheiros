@@ -101,7 +101,7 @@ function PhotoGrid({ images }) {
 
   return (
     <>
-      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-4 sm:mt-20 sm:grid-cols-3 sm:gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-4 sm:mt-20 sm:grid-cols-4 sm:gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-4">
         {images.map((image, index) => (
           <button
             type="button"

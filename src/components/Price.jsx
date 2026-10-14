@@ -4,7 +4,7 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 import {
   ClipboardDocumentCheckIcon,
   ComputerDesktopIcon,
-  CurrencyDollarIcon,
+  BanknotesIcon,
   MapPinIcon,
 } from '@heroicons/react/24/outline';
 
@@ -22,10 +22,12 @@ export default function Price() {
     <section className="bg-white py-20 sm:py-24" id="pricing">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="text-center">
-          <div className="from-primary/10 text-primary ring-primary/20 mb-4 inline-flex items-center gap-2 rounded-full bg-linear-to-r to-pink-200/20 px-4 py-2 text-sm font-bold ring-1">
-            <CurrencyDollarIcon aria-hidden="true" className="h-4 w-4" />
-            {pricing.highlight}
-          </div>
+          {pricing.highlight && (
+            <div className="from-primary/10 text-primary ring-primary/20 mb-4 inline-flex items-center gap-2 rounded-full bg-linear-to-r to-pink-200/20 px-4 py-2 text-sm font-bold ring-1">
+              <BanknotesIcon aria-hidden="true" className="h-4 w-4" />
+              {pricing.highlight}
+            </div>
+          )}
           <h2 className="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
             {pricing.title}
           </h2>

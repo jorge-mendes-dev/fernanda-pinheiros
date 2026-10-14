@@ -34,10 +34,10 @@ export default function About() {
           {[[0, 3], [1, 2]].map((column, c) => (
             <div key={c} className={`grid content-start gap-3 sm:gap-4 ${c === 1 ? 'mt-10 sm:mt-16' : ''}`}>
               {column.map((i) => (
-                <div key={about.images[i]} className="group relative overflow-hidden rounded-2xl bg-gray-50 shadow-md">
+                <div key={about.images[i].src} className="group relative overflow-hidden rounded-2xl bg-gray-50 shadow-md">
                   <Image
-                    alt={about.alt}
-                    src={about.images[i]}
+                    alt={about.images[i].alt}
+                    src={about.images[i].src}
                     width={1000}
                     height={1000}
                     sizes="(min-width: 1024px) 300px, 50vw"

@@ -6,7 +6,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import Link from 'next/link';
 
 const WhatsButton = () => {
-  const { whatsapp } = AppConfig;
+  const { booking } = AppConfig;
   const [showTooltip, setShowTooltip] = useState(false);
 
   return (
@@ -17,7 +17,7 @@ const WhatsButton = () => {
       <Link
         target="_blank"
         rel="noopener noreferrer"
-        href={whatsapp}
+        href={booking}
         aria-label="Fale conosco pelo WhatsApp - Abre em nova aba"
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
