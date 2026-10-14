@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import About from 'components/About';
 import Tips from 'components/Tips';
 import FadeIn from 'components/FadeIn';
@@ -6,7 +5,6 @@ import Testimonials from 'components/Testemonials';
 import Curriculum from 'components/Curriculum';
 import Work from 'components/Work';
 import Template from 'components/Template';
-import Loader from 'components/Loader';
 import { AppConfig } from 'config/AppConfig';
 
 export const metadata = {
@@ -22,7 +20,7 @@ export const metadata = {
 
 export default function AboutMe() {
   return (
-    <Suspense fallback={<Loader />}>
+    <>
       <Template>
         <>
           <FadeIn delay={0.2}>
@@ -40,6 +38,6 @@ export default function AboutMe() {
           </FadeIn>
         </>
       </Template>
-    </Suspense>
+    </>
   );
 }

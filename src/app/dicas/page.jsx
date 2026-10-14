@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense, useState } from 'react';
+import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import FadeIn from 'components/FadeIn';
 import Template from 'components/Template';
@@ -17,7 +17,7 @@ export default function Docs() {
   const [selectedDoc, setSelectedDoc] = useState(AppConfig.docs[0]);
 
   return (
-    <Suspense fallback={<Loader />}>
+    <>
       <Template>
         <>
           <FadeIn delay={0.2}>
@@ -103,6 +103,6 @@ export default function Docs() {
           </FadeIn>
         </>
       </Template>
-    </Suspense>
+    </>
   );
 }

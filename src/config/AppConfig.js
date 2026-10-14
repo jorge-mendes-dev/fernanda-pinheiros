@@ -111,9 +111,9 @@ export const AppConfig = {
       'Estou sempre em busca de novos conhecimentos e aberta a oportunidades que me permitam contribuir e crescer ainda mais no campo da nutrição.'
     ],
     images: [
-      '/assets/images/green_eyes.svg',
-      '/assets/images/hospital.svg',
-      '/assets/images/eventRoberta.svg',
+      '/assets/images/green_eyes.jpg',
+      '/assets/images/hospital.jpg',
+      '/assets/images/eventRoberta.jpg',
       '/assets/images/event01.jpeg'
     ],
     alt: 'Fernanda Souza'
@@ -122,7 +122,7 @@ export const AppConfig = {
     title: 'Formação Acadêmica',
     description: 'Minha formação acadêmica é uma parte essencial da minha jornada profissional.',
     image: {
-      src: '/assets/images/work.svg',
+      src: '/assets/images/work.jpg',
       alt: 'Currículo',
     },
     education: [
@@ -379,7 +379,7 @@ export const AppConfig = {
     subtitle: 'Disponível para atendimento',
     description: 'Sabemos que o primeiro passo é sempre muito difícil mas eu estou aqui para te ajudar a dar esse passo de uma maneira simples e confortável, clique no botão abaixo e me chame no whatsapp, vamos conversar.',
     image: {
-      src: '/assets/images/work.svg',
+      src: '/assets/images/work.jpg',
       alt: 'Agende sua consulta',
     },
     link: {
@@ -396,7 +396,7 @@ export const AppConfig = {
     subtitle: 'Dicas para tornar sua vida melhor',
     description: 'Usando minhas redes sociais para promover a conscientização e a educação sobre a importância da nutrição no manejo de dislipidemia, sarcopenia e depressão, com foco em intervenções Nutricionais e hábitos alimentares',
     image: {
-      src: '/assets/images/green_eyes.svg',
+      src: '/assets/images/green_eyes.jpg',
       alt: 'Dicas',
     },
     link: {

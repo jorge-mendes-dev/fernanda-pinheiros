@@ -1,7 +1,5 @@
-import { Suspense } from 'react';
 import FadeIn from 'components/FadeIn';
 import Template from 'components/Template';
-import Loader from 'components/Loader';
 import Socials from 'components/Socials';
 import { AppConfig } from 'config/AppConfig';
 
@@ -18,7 +16,7 @@ export const metadata = {
 
 export default function SocialMedia() {
   return (
-    <Suspense fallback={<Loader />}>
+    <>
       <Template>
         <>
           <FadeIn delay={0.2}>
@@ -26,6 +24,6 @@ export default function SocialMedia() {
           </FadeIn>
         </>
       </Template>
-    </Suspense>
+    </>
   );
 }
