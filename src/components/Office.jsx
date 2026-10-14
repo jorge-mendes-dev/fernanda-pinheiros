@@ -130,7 +130,7 @@ function PhotoGrid({ images }) {
   );
 }
 
-function VideoCard({ video, activeVideoRef }) {
+function VideoCard({ video, activeVideoRef, load }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -157,11 +157,11 @@ function VideoCard({ video, activeVideoRef }) {
     >
       <video
         ref={videoRef}
-        src={video.src}
+        src={load ? video.src : undefined}
         muted
         loop
         playsInline
-        preload="metadata"
+        preload={load ? 'metadata' : 'none'}
         className="h-full w-full object-cover"
         onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)}
@@ -184,6 +184,34 @@ function VideoCarousel({ videos }) {
   const [index, setIndex] = useState(0);
   const [cardStep, setCardStep] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(1);
+  // Videos only get a src once the carousel is near the screen, and only up to
+  // the cards in view plus one ahead: all five used to start downloading on
+  // page load (about 9.7 MB). furthest only grows, so going back never unloads.
+  const [isNear, setIsNear] = useState(false);
+  const [furthest, setFurthest] = useState(0);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    if (typeof IntersectionObserver === 'undefined') {
+      const frame = requestAnimationFrame(() => setIsNear(true));
+      return () => cancelAnimationFrame(frame);
+    }
+    // Watch the container, not the cards: the cards off to the side are clipped
+    // by its overflow-hidden, so they would never count as near
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsNear(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '300px' }
+    );
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     function measure() {
@@ -202,6 +230,7 @@ function VideoCarousel({ videos }) {
       const visible = Math.max(Math.floor((container.clientWidth + gap) / step), 1);
 
       setCardStep(step);
+      setVisibleCount(visible);
       setMaxIndex(Math.max(videos.length - visible, 0));
     }
 
@@ -212,10 +241,12 @@ function VideoCarousel({ videos }) {
   }, [videos.length]);
 
   const clampedIndex = Math.min(index, maxIndex);
+  const loadUpTo = isNear ? furthest + visibleCount : -1;
 
   const goTo = (next) => {
     activeVideoRef.current?.pause();
     setIndex(next);
+    setFurthest((value) => Math.max(value, next));
   };
 
   return (
@@ -227,7 +258,7 @@ function VideoCarousel({ videos }) {
           style={{ transform: `translateX(-${clampedIndex * cardStep}px)` }}
         >
           {videos.map((video, key) => (
-            <VideoCard key={key} video={video} activeVideoRef={activeVideoRef} />
+            <VideoCard key={key} video={video} activeVideoRef={activeVideoRef} load={key <= loadUpTo} />
           ))}
         </div>
       </div>
