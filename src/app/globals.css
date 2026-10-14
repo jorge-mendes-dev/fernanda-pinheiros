@@ -145,3 +145,239 @@ body {
   outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
+
+/* Splash screen (components/Splash.jsx): home page, once per session.
+   0-700ms      logo in (scale + blur) at the center of the screen
+   250-1650ms   a wave lights the rings around the logo, inside out
+   250-1000ms   name letter by letter, then the role
+   1650-1950ms  logo and text lift away
+   1750-2450ms  the splash opens as a circle from the logo, letting taps through
+   The timeline is CSS, so it stays smooth while the page loads and ends by
+   itself even without JavaScript. Only the logo and the content block use
+   blur; everything else is transform and opacity. */
+@property --splash-hole {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: -80px;
+}
+
+.splash {
+  --logo: 8rem;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --splash-hole: -80px;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 50%, var(--color-pink-50), var(--color-white) 70%);
+  /* A soft-edged hole at the logo that grows to reveal the page */
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, transparent var(--splash-hole), #000 calc(var(--splash-hole) + 80px));
+  mask-image: radial-gradient(circle at 50% 50%, transparent var(--splash-hole), #000 calc(var(--splash-hole) + 80px));
+  animation:
+    splash-release 1ms linear 1750ms forwards,
+    splash-open 700ms var(--ease-in-out) 1750ms forwards,
+    splash-fade 250ms ease-out 2200ms forwards;
+}
+
+.splash[data-skip] {
+  display: none;
+}
+
+.splash-rings {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  animation: splash-rings-out 500ms var(--ease-out) 1600ms forwards;
+}
+
+/* Thin pink rings with a soft glow, brightest at the sides and fading toward
+   the top and bottom (the conic mask), the outer ones blending to a lighter
+   pink. Only transform and opacity animate, so they never stall. */
+.splash-rings span {
+  --tint: color-mix(in srgb, var(--color-primary) calc(100% - var(--i) * 18%), var(--color-pink-300));
+  grid-area: 1 / 1;
+  width: calc(var(--logo) * var(--size));
+  height: calc(var(--logo) * var(--size));
+  border: 1.5px solid var(--tint);
+  border-radius: 9999px;
+  box-shadow:
+    0 0 14px color-mix(in srgb, var(--tint) 55%, transparent),
+    inset 0 0 14px color-mix(in srgb, var(--tint) 35%, transparent);
+  -webkit-mask-image: conic-gradient(
+    transparent 0deg calc(90deg - var(--arc) - 35deg),
+    #000 calc(90deg - var(--arc)) calc(90deg + var(--arc)),
+    transparent calc(90deg + var(--arc) + 35deg) calc(270deg - var(--arc) - 35deg),
+    #000 calc(270deg - var(--arc)) calc(270deg + var(--arc)),
+    transparent calc(270deg + var(--arc) + 35deg)
+  );
+  mask-image: conic-gradient(
+    transparent 0deg calc(90deg - var(--arc) - 35deg),
+    #000 calc(90deg - var(--arc)) calc(90deg + var(--arc)),
+    transparent calc(90deg + var(--arc) + 35deg) calc(270deg - var(--arc) - 35deg),
+    #000 calc(270deg - var(--arc)) calc(270deg + var(--arc)),
+    transparent calc(270deg + var(--arc) + 35deg)
+  );
+  opacity: 0;
+  transform: scale(0.94);
+  animation: splash-ring-pulse 1300ms var(--ease-out) forwards;
+  animation-delay: calc(250ms + var(--i) * 110ms);
+}
+
+/* The logo sits exactly at the center of the screen, where the rings and the
+   reveal start; the name and role hang below it */
+.splash-content {
+  position: relative;
+  animation: splash-leave 300ms var(--ease-out) 1650ms forwards;
+}
+
+.splash-mark {
+  width: var(--logo);
+  height: var(--logo);
+}
+
+.splash-logo {
+  width: 100%;
+  height: 100%;
+  border-radius: 9999px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px -16px color-mix(in srgb, var(--color-primary) 60%, transparent);
+  opacity: 0;
+  transform: scale(0.85);
+  filter: blur(8px);
+  animation: splash-logo-in 700ms var(--ease-out) forwards;
+}
+
+.splash-logo img {
+  width: 100%;
+  height: 100%;
+}
+
+.splash-text {
+  position: absolute;
+  top: calc(100% + 1.25rem);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.splash-name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.splash-name span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: splash-letter-in 500ms var(--ease-out) forwards;
+  animation-delay: calc(250ms + var(--i) * 30ms);
+}
+
+.splash-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  opacity: 0;
+  animation: splash-fade-in 500ms var(--ease-out) 650ms forwards;
+}
+
+@media (min-width: 640px) {
+  .splash {
+    --logo: 10rem;
+  }
+
+  .splash-name {
+    font-size: 2.25rem;
+  }
+}
+
+@keyframes splash-logo-in {
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+
+@keyframes splash-letter-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes splash-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Lights up as the wave passes, then stays softly lit and drifts outward */
+@keyframes splash-ring-pulse {
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes splash-rings-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes splash-leave {
+  to {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.98);
+    filter: blur(4px);
+  }
+}
+
+@keyframes splash-open {
+  to {
+    --splash-hole: 150vmax;
+    visibility: hidden;
+  }
+}
+
+/* Ends the open with a short fade. Browsers without @property (before 2024)
+   can't animate --splash-hole and cut to the page at the open's midpoint. */
+@keyframes splash-fade {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Once the page shows through the hole, taps reach it */
+@keyframes splash-release {
+  to {
+    pointer-events: none;
+  }
+}
+
+/* The splash is only decoration: skip it for visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .splash {
+    display: none;
+  }
+}
