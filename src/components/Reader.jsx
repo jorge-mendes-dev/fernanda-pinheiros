@@ -50,6 +50,9 @@ const DocumentPreview = ({
       file={memoSelected.pdfPath}
       onLoadSuccess={onDocumentLoadSuccess}
       options={options}
+      // Keep react-pdf's own loading state: suspending would hit the next/dynamic
+      // boundary in /dicas and swap the whole reader, nav bar included, for <Loader />
+      suspense={false}
       loading={
         <div className="flex min-h-[400px] items-center justify-center">
           <Loader />
