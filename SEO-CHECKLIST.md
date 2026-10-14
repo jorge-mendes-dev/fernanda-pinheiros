@@ -77,6 +77,8 @@ verification: {
 3. **public/sitemap.xml** - URLs corrigidas + prioridades
 4. **public/robots.txt** - Otimizado para crawlers
 5. **public/schema.json** - Structured data expandida
+
+> **Out/2026:** `public/sitemap.xml`, `public/robots.txt`, `public/schema.json` e `public/llms.txt` foram removidos. Eles sobrepunham as rotas do Next: hoje `robots.txt`, `sitemap.xml`, `llms.txt` e `llms-full.txt` são gerados por `src/app/` a partir do `AppConfig`, e o schema fica em `layout.jsx`.
 6. **next.config.mjs** - Otimizações de performance
 
 ### Novos Arquivos

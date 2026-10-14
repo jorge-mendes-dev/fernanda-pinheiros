@@ -1,4 +1,5 @@
 import { AppConfig } from 'config/AppConfig';
+import { phone, siteUrl as baseUrl } from 'config/site';
 import { Inter, Playfair_Display } from 'next/font/google';
 import localFont from 'next/font/local';
 import './globals.css';
@@ -83,12 +84,19 @@ export const metadata = {
       'application/rss+xml': `https://${AppConfig.url}/rss.xml`,
     },
   },
-  verification: {
-    google: 'your-google-verification-code-here',
-  },
 };
 
+// "R$ 1.150,00" -> "1150.00"; null when the price has no number ("Sob consulta")
+const priceValue = (price) => {
+  const value = price?.replace(/[^\d,]/g, '').replace(',', '.');
+  return value && Number(value) > 0 ? value : null;
+};
+const sentence = (text) => text.trim().replace(/[.!]+$/, '');
+
 export default function RootLayout({ children }) {
+  const { curriculum, pricing } = AppConfig;
+  const prices = pricing.plans.map((plan) => Number(priceValue(plan.price))).filter(Boolean);
+
   // Structured data JSON-LD
   const structuredData = {
     '@context': 'https://schema.org',
@@ -100,8 +108,23 @@ export default function RootLayout({ children }) {
         legalName: `Fernanda Souza Nutricionista ${AppConfig.crn}`,
         description: AppConfig.description,
         url: `https://${AppConfig.url}`,
-        telephone: '+55-11-97827-1175',
-        image: `https://${AppConfig.url}/assets/images/header.jpg`,
+        telephone: phone,
+        image: `${baseUrl}${AppConfig.header.image.src}`,
+        ...(prices.length && { priceRange: `R$ ${Math.min(...prices)} - R$ ${Math.max(...prices)}` }),
+        paymentAccepted: sentence(pricing.payment.replace(/^Pagamento via /, '')),
+        currenciesAccepted: 'BRL',
+        areaServed: [
+          { '@type': 'City', name: 'São Paulo' },
+          { '@type': 'Country', name: 'Brasil' },
+        ],
+        founder: { '@id': `${baseUrl}/#fernanda` },
+        makesOffer: pricing.plans.map((plan) => ({
+          '@type': 'Offer',
+          name: plan.name,
+          description: `${[plan.description, ...plan.details, plan.note].filter(Boolean).map(sentence).join('. ')}.`,
+          ...(priceValue(plan.price) && { price: priceValue(plan.price), priceCurrency: 'BRL' }),
+          url: `${baseUrl}/#pricing`,
+        })),
         logo: {
           '@type': 'ImageObject',
           url: `https://${AppConfig.url}${AppConfig.company.logo.src}`,
@@ -131,6 +154,38 @@ export default function RootLayout({ children }) {
         ],
       },
       {
+        '@type': 'Person',
+        '@id': `${baseUrl}/#fernanda`,
+        name: 'Fernanda Souza',
+        jobTitle: 'Nutricionista',
+        description: AppConfig.about.description,
+        image: `${baseUrl}${AppConfig.header.image.src}`,
+        url: `${baseUrl}/sobre`,
+        worksFor: { '@id': `${baseUrl}/#organization` },
+        hasCredential: {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'Registro profissional',
+          name: AppConfig.crn,
+          recognizedBy: {
+            '@type': 'Organization',
+            name: 'Conselho Regional de Nutricionistas da 3ª Região (CRN-3)',
+          },
+        },
+        alumniOf: curriculum.education.map((item) => ({
+          '@type': 'EducationalOrganization',
+          name: item.institution,
+        })),
+        knowsAbout: [
+          'Nutrição Clínica',
+          'Nutrição Materno-Infantil',
+          'Nutrição Esportiva',
+          'Introdução alimentar',
+          'Nutrição na gestação e lactação',
+          'Plano alimentar personalizado',
+        ],
+        sameAs: [AppConfig.social.instagram, AppConfig.social.tiktok, AppConfig.social.linkedin],
+      },
+      {
         '@type': 'ProfessionalService',
         '@id': `https://${AppConfig.url}/#service`,
         name: AppConfig.site_name,
@@ -148,6 +203,7 @@ export default function RootLayout({ children }) {
         name: AppConfig.site_name,
         description: AppConfig.description,
         inLanguage: 'pt-BR',
+        publisher: { '@id': `${baseUrl}/#organization` },
       },
     ],
   };

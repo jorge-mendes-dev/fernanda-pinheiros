@@ -1,31 +1,26 @@
-import { AppConfig } from 'config/AppConfig';
+import { siteUrl as baseUrl } from 'config/site';
 
+// No lastModified: the build date on every page would tell crawlers that
+// everything changes on each deploy, and they would stop trusting it.
 export default function sitemap() {
-  const baseUrl = `https://${AppConfig.url}`;
-  const currentDate = new Date().toISOString();
-
   return [
     {
       url: baseUrl,
-      lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     {
       url: `${baseUrl}/sobre`,
-      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/dicas`,
-      lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/redes-sociais`,
-      lastModified: currentDate,
       changeFrequency: 'monthly',
       priority: 0.6,
     },
