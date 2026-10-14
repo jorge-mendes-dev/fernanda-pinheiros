@@ -11,8 +11,9 @@ import Price from 'components/Price';
 import Splash from 'components/Splash';
 import { AppConfig } from 'config/AppConfig';
 
+// No title here: layout's title.template doesn't apply to a page in the same
+// segment, so 'Home' showed alone. The layout's default (full site title) is used.
 export const metadata = {
-  title: 'Home',
   description: 'Nutricionista Fernanda Souza - Especialista em Nutrição Clínica, Materno-Infantil e Esportiva. Atendimento personalizado para gestantes, bebês, crianças e adultos, online e presencial no Tatuapé, São Paulo.',
   keywords: ['nutricionista são paulo', 'nutrição materno infantil', 'nutrição esportiva', 'nutricionista online', 'consulta nutricional', 'nutricionista gestante', 'introdução alimentar', 'emagrecimento saudável', 'nutricionista tatuapé', 'consultório nutricional tatuapé'],
   openGraph: {

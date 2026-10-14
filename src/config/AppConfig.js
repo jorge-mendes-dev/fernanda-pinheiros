@@ -1,3 +1,7 @@
+const WHATSAPP = 'https://wa.me/5511978271175';
+// Booking buttons open WhatsApp with this message ready to send
+const WHATSAPP_BOOKING = `${WHATSAPP}?text=${encodeURIComponent('Olá! Gostaria de agendar uma consulta.')}`;
+
 export const AppConfig = {
   site_name: 'Nutricionista Fernanda Souza',
   title: 'Nutricionista Fernanda Souza - Nutrição Clínica, Materno-Infantil e Esportiva | CRN-3 91282',
@@ -61,17 +65,19 @@ export const AppConfig = {
       alt: 'Fernanda Souza',
     },
   },
-  whatsapp: 'https://wa.me/5511978271175',
+  // Plain chat link: config/site.js reads the phone number from it
+  whatsapp: WHATSAPP,
+  booking: WHATSAPP_BOOKING,
   social: {
     instagram: 'https://www.instagram.com/nutri_fernandasouza/',
-    whatsapp: 'https://wa.me/5511978271175',
+    whatsapp: WHATSAPP,
     linkedin: 'https://www.linkedin.com/in/nutri-fernanda-pinheiros/',
     tiktok: 'https://www.tiktok.com/@nutri_fernandasouza',
     tiktokUsername: 'nutri_fernandasouza',
     links: [
       { name: 'Instagram', url: 'https://www.instagram.com/nutri_fernandasouza/' },
       { name: 'TikTok', url: 'https://www.tiktok.com/@nutri_fernandasouza' },
-      { name: 'WhatsApp', url: 'https://wa.me/5511978271175' },
+      { name: 'WhatsApp', url: WHATSAPP },
     ],
   },
   navigation: [
@@ -80,19 +86,21 @@ export const AppConfig = {
     { name: 'Valores', href: 'https://www.nutrifernandasouza.com.br/#pricing' },
     { name: 'Dicas', href: '/dicas' },
     { name: 'Redes Sociais', href: '/redes-sociais' },
-    { name: 'Contato', href: 'https://wa.me/5511978271175' },
+    { name: 'Contato', href: WHATSAPP },
   ],
   header: {
-    tag: 'NUTRICIONISTA CLÍNICO',
+    tag: 'NUTRICIONISTA CLÍNICA',
     title: 'Fernanda Souza',
     description: 'Olá! Sou Fernanda, nutricionista dedicada ao bem-estar e à qualidade de vida dos meus pacientes.',
+    // Booking is the page's main action: WhatsApp with a ready message
     button: {
-      label: 'Tik tok',
-      href: 'https://www.tiktok.com/@nutri_fernandasouza',
+      label: 'Agendar consulta',
+      href: WHATSAPP_BOOKING,
     },
+    // The hero shows on every page, the pricing section only on the home page
     link: {
-      label: 'Contato',
-      href: 'https://wa.me/5511978271175',
+      label: 'Ver planos e valores',
+      href: '/#pricing',
     },
     image: {
       src: '/assets/images/fernanda-header.jpg',
@@ -111,10 +119,10 @@ export const AppConfig = {
       'Estou sempre em busca de novos conhecimentos e aberta a oportunidades que me permitam contribuir e crescer ainda mais no campo da nutrição.'
     ],
     images: [
-      '/assets/images/green_eyes.jpg',
-      '/assets/images/hospital.jpg',
-      '/assets/images/eventRoberta.jpg',
-      '/assets/images/event01.jpeg'
+      { src: '/assets/images/green_eyes.jpg', alt: 'Retrato de Fernanda Souza de jaleco' },
+      { src: '/assets/images/hospital.jpg', alt: 'Fernanda Souza de jaleco e máscara no hospital, com prontuário' },
+      { src: '/assets/images/eventRoberta.jpg', alt: 'Fernanda Souza com convidados em um evento' },
+      { src: '/assets/images/event01.jpeg', alt: 'Fernanda Souza no estande de nutrição dos 50 anos da FMU' },
     ],
     alt: 'Fernanda Souza'
   },
@@ -291,12 +299,24 @@ export const AppConfig = {
   consult: {
     title: 'Como funciona a consulta?',
     highlight: 'Atendimento On-line',
-    description: [
-      'O atendimento on-line é realizado por meio de vídeo conferência e da mesma maneira e formato do presencial.',
-      'Com isso, você se sentirá como se estivesse no consultório, desfrutando de todo conforto e segurança do seu lar, utilizando o aplicativo ou plataforma que melhor lhe agradar (Microsoft Teams, WhatsApp, Google Hangouts, Zoom, Messenger, etc.).',
-      'Durante o atendimento, que tem duração média de uma hora e quinze minutos, será realizada uma anamnese completa e detalhada, análise de exames e conversa sobre todas as dúvidas.',
-      'Após o atendimento será montado um Plano Alimentar Personalizado, o qual será enviado por e-mail ou WhatsApp em até 48 horas.',
-      'Além disso, você contará com suporte via WhatsApp pelo período de 30 dias.'
+    // The consultation in order. Also read by llms.txt (config/llms.js).
+    steps: [
+      {
+        title: 'Por videochamada, como no consultório',
+        text: 'No mesmo formato do presencial, no conforto da sua casa, pelo aplicativo que preferir (WhatsApp, Zoom, Google Meet, Microsoft Teams…).',
+      },
+      {
+        title: 'Consulta completa, de cerca de 1h15',
+        text: 'Anamnese completa e detalhada, análise de exames e conversa sobre todas as suas dúvidas.',
+      },
+      {
+        title: 'Plano alimentar em até 48 horas',
+        text: 'Seu Plano Alimentar Personalizado chega por e-mail ou WhatsApp.',
+      },
+      {
+        title: '30 dias de suporte',
+        text: 'Acompanhamento pelo WhatsApp durante 30 dias para tirar dúvidas e ajustar o que for preciso.',
+      },
     ],
     image: {
       src: '/assets/images/header_01.jpg',
@@ -322,18 +342,15 @@ export const AppConfig = {
     mapEmbedUrl: 'https://www.google.com/maps?q=Edif%C3%ADcio+Etoile%2C+Rua+Itapura%2C+239%2C+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP&output=embed',
     mapUrl: 'https://www.google.com/maps/search/?api=1&query=Edif%C3%ADcio+Etoile%2C+Rua+Itapura%2C+239%2C+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP',
     images: [
-      { src: '/assets/images/onsite/sala_00.jpeg', alt: 'Consultório Fernanda Souza - ambiente 1', width: 1200, height: 1600 },
-      { src: '/assets/images/onsite/sala_01.jpeg', alt: 'Consultório Fernanda Souza - ambiente 2', width: 1406, height: 1406 },
-      { src: '/assets/images/onsite/sala_02.jpeg', alt: 'Consultório Fernanda Souza - ambiente 3', width: 1406, height: 1406 },
-      { src: '/assets/images/onsite/sala_03.jpeg', alt: 'Consultório Fernanda Souza - ambiente 4', width: 1406, height: 1406 },
-      { src: '/assets/images/onsite/sala_04.jpeg', alt: 'Consultório Fernanda Souza - ambiente 5', width: 1406, height: 1406 },
-      { src: '/assets/images/onsite/sala_05.jpeg', alt: 'Consultório Fernanda Souza - ambiente 6', width: 960, height: 1280 },
-      { src: '/assets/images/onsite/sala_06.jpeg', alt: 'Consultório Fernanda Souza - ambiente 7', width: 720, height: 1280 },
-      { src: '/assets/images/onsite/sala_07.jpeg', alt: 'Consultório Fernanda Souza - ambiente 8', width: 720, height: 1280 },
-      { src: '/assets/images/onsite/sala_08.jpeg', alt: 'Consultório Fernanda Souza - ambiente 9', width: 720, height: 1280 },
-      { src: '/assets/images/onsite/sala_09.jpeg', alt: 'Consultório Fernanda Souza - ambiente 10', width: 942, height: 1600 },
-      { src: '/assets/images/onsite/sala_10.jpeg', alt: 'Consultório Fernanda Souza - ambiente 11', width: 949, height: 1600 },
-      { src: '/assets/images/onsite/sala_11.jpeg', alt: 'Consultório Fernanda Souza - ambiente 12', width: 900, height: 1600 },
+      // Curated tour: building, rooms, view, then Fernanda at work (more photos in public/assets/images/onsite)
+      { src: '/assets/images/onsite/sala_05.jpeg', alt: 'Fachada do Edifício Etoile, onde fica o consultório', width: 960, height: 1280 },
+      { src: '/assets/images/onsite/sala_01.jpeg', alt: 'Sala de atendimento com mesa e parede azul', width: 1406, height: 1406 },
+      { src: '/assets/images/onsite/sala_02.jpeg', alt: 'Sala de atendimento com vista para a varanda', width: 1406, height: 1406 },
+      { src: '/assets/images/onsite/sala_03.jpeg', alt: 'Sofá da sala de espera', width: 1406, height: 1406 },
+      { src: '/assets/images/onsite/sala_04.jpeg', alt: 'Varanda com sofá e poltrona', width: 1406, height: 1406 },
+      { src: '/assets/images/onsite/sala_11.jpeg', alt: 'Vista da varanda do consultório', width: 900, height: 1600 },
+      { src: '/assets/images/onsite/sala_10.jpeg', alt: 'Fernanda durante a avaliação física, com adipômetro', width: 949, height: 1600 },
+      { src: '/assets/images/onsite/sala_07.jpeg', alt: 'Fernanda Souza no consultório', width: 720, height: 1280 },
     ],
     videos: [
       { src: '/assets/images/onsite/video_02.mp4', alt: 'Vídeo do consultório 1' },
@@ -350,27 +367,33 @@ export const AppConfig = {
     includes: [
       {
         title: 'Avaliação Nutricional',
-        description: ''
+        description: '',
+        icon: 'assessment',
       },
       {
         title: 'Orientações Personalizadas',
-        description: ''
+        description: '',
+        icon: 'guidance',
       },
       {
         title: 'Receitinhas',
-        description: ''
+        description: '',
+        icon: 'recipes',
       },
       {
         title: 'Solicitação e avaliação de exames',
-        description: '(se necessário)'
+        description: '(se necessário)',
+        icon: 'exams',
       },
       {
         title: 'Prescrição de suplementação',
-        description: '(se necessária)'
+        description: '(se necessária)',
+        icon: 'supplements',
       },
       {
         title: 'Suporte via WhatsApp pelo período de 30 dias',
-        description: ''
+        description: '',
+        icon: 'support',
       },
     ]
   },
@@ -384,10 +407,10 @@ export const AppConfig = {
     },
     link: {
       label: 'Fale comigo',
-      href: 'https://wa.me/5511978271175',
+      href: WHATSAPP_BOOKING,
     },
     social: {
-      label: 'Tik Tok',
+      label: 'TikTok',
       href: 'https://www.tiktok.com/@nutri_fernandasouza/',
     },
   },
@@ -479,11 +502,12 @@ export const AppConfig = {
 
   pricing: {
     title: 'Planos de Atendimento',
+    highlight: 'Planos e valores',
     tagline: 'Invista na sua saúde com um atendimento individualizado, baseado em ciência e pensado para a sua rotina.',
     plans: [
       {
         name: 'Consulta Avulsa',
-        emoji: '🩺',
+        icon: 'consult',
         price: 'R$ 120,00',
         description: 'Ideal para quem deseja uma orientação pontual.',
         details: [
@@ -495,7 +519,7 @@ export const AppConfig = {
       },
       {
         name: 'Acompanhamento Online – 30 dias',
-        emoji: '💻',
+        icon: 'online',
         price: 'R$ 250,00',
         description: 'Acompanhamento completo para quem busca resultados com suporte.',
         details: [
@@ -507,7 +531,7 @@ export const AppConfig = {
       },
       {
         name: 'Acompanhamento Presencial – 30 dias',
-        emoji: '📍',
+        icon: 'office',
         price: 'R$ 350,00',
         description: 'Um acompanhamento completo para potencializar seus resultados.',
         details: [

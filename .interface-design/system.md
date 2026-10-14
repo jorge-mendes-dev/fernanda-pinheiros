@@ -1,60 +1,63 @@
-# Interface System — Webmotors OEM Prospecting (HUB)
+# Interface System: Nutricionista Fernanda Souza
 
-Decisions are already made by the corporate brand. This file is a fixed reference for `/interface-design:audit` and future component work — not a starting point for domain exploration. Source of truth for tokens: `DESIGN.md` (spec) and `src/styles/tailwind.css` (implementation) — when they disagree, treat `tailwind.css` as authoritative and flag the doc for correction.
+Marketing site for a nutritionist (pt-BR, mobile-first). The feel is warm, feminine and professional: white pages, one pink brand color, an elegant serif for headings. Every page exists to get a visitor to book a consultation on WhatsApp.
 
-## Direction and feel
+Source of truth for tokens: `src/app/globals.css` (`@theme`). Content and copy: `src/config/AppConfig.js`.
 
-Corporate, dense B2B sales tool embedded inside a legacy ASP.NET MVC shell (the HUB) — not a standalone branded product. Feel: efficient and trustworthy, not playful. Red (`ds-red-400` / `#E22446`) is the single brand accent, used sparingly for primary actions and brand emphasis; everything else is neutral gray. Indigo is reserved for links/complementary accents only — never as a second brand color.
+## Color
 
-Reference: `DESIGN.md` → Typography, Colors sections.
+- **Brand:** `primary` = `#ff7da4`. Used for tags, prices, icons, links and the main button gradient (`from-primary to-pink-500`/`pink-600`).
+- **Pink scale:** `pink-50` to `pink-900` in `@theme`. `pink-50`/`pink-100` for soft card backgrounds and rings, `pink-300` for lighter accents.
+- **Text:** headings `gray-900`, body `gray-600`/`gray-700`, captions `gray-500`.
+- **Surfaces:** white. Soft pink gradients (`from-pink-50 to-white`) only on cards and the booking band.
+- WhatsApp green appears only on WhatsApp icons and the floating WhatsApp button.
 
-## Token architecture
+## Typography
 
-All colors trace back to `ds-*` semantic tokens (`ds-surface-*`, `ds-text-*`, `ds-border-*`, `ds-icon-*`), which map to primitive `ds-{color}-{step}` scales (gray/red/indigo/green/yellow/orange/blue). **Never** use hex values or primitive tokens directly in component code — always the semantic layer.
+- **Headings:** Playfair Display through `font-display` (all `h1`/`h2` section titles, the splash name).
+- **Body and UI:** Inter (the default `font-sans`).
+- Fonts load with `next/font` in `src/app/layout.jsx` as `--font-playfair` / `--font-inter` on `<html>`, mapped to Tailwind's `--font-display` / `--font-sans` with `@theme inline`. Don't name a next/font variable `--font-sans` or `--font-display`: it collides with Tailwind's own and the site silently falls back to system fonts.
 
-Text hierarchy (4 levels — use all of them, not just `base`+`subtle`):
-- `ds-text-neutral-base` — primary text
-- `ds-text-neutral-subtle` — secondary/supporting text
-- `ds-text-neutral-muted` — metadata, captions
-- `ds-text-neutral-disabled` — disabled/placeholder
+## Section pattern
 
-Font: Figtree. Display/Title always Bold 700, Subtitle always Semibold 600, Body/Uppercase/Link support 400/600/700 per `DESIGN.md`.
+Every content section uses the same header:
 
-## Depth strategy
+1. A pill tag: `rounded-full bg-primary/10 px-4 py-2 text-sm font-bold text-primary`, often with a ring and a small icon.
+2. A title: `text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 font-display` (the hero and About go larger).
+3. An optional intro: `text-lg text-gray-600 leading-relaxed`, `max-w-2xl`/`max-w-3xl`.
 
-**Borders + light shadow, not heavy elevation.** Cards use `border` (`ds-border-neutral-base`/`subtle`) plus `shadow-ds-xsmall`/`small` — never both a strong border and a strong shadow on the same surface. Shadow color is always `#6A6977`-based (`DESIGN.md` → Shadows), never black. Modals/drawers step up to `shadow-ds-large`/`xlarge` since they're the only genuinely elevated surfaces in this app (no popovers/dropdown-menus with independent elevation yet).
+## Layout and spacing
 
-Border progression: `subtle` (dividers, quiet separation) → `base` (default card/input border) → `strong` (emphasis, rarely used) → `accessibility-focus` (focus ring only, indigo-400).
+- Container: `mx-auto max-w-7xl px-6 lg:px-8` (narrower `max-w-5xl` for pricing).
+- Vertical rhythm: content sections use `py-20 sm:py-24`. The pink booking band (Schedule) is the one exception, by design.
+- Grids collapse to one column on mobile, except short item lists (O que está incluso), which stay two columns.
 
-## Spacing
+## Shape and depth
 
-Base unit: **4px**, following `ds-spacing-*` (`2xsmall`=4px through `4xlarge`=48px). Component-internal padding defaults to `ds-spacing-medium` (16px, cards/containers) or `ds-spacing-xsmall`/`small` (8–12px, buttons/inputs). Section-to-section gaps use `2xlarge`/`3xlarge` (32–40px).
+- Cards: `rounded-2xl`, `ring-1` in `pink-100` or `gray-900/5`, `shadow-sm` to `shadow-lg`; hover lifts slightly (`-translate-y-1`) and deepens the shadow.
+- Buttons: `rounded-xl`, `px-6 py-4`, bold.
+- Pills and avatars: `rounded-full`.
+- Photos: `rounded-2xl`, `object-cover`, fixed aspect ratios (4:5 in the About mosaic).
 
-Known deviation to fix: `Layout.tsx`'s `AppLayout` main container currently uses `px-4 md:px-6` — `DESIGN.md` specifies `px-4` (mobile) → `px-8` (tablet) → `px-18`/72px (desktop, ≥1360px). Not yet reconciled — see open items below.
+## Icons
 
-## Border radius
+- Heroicons (`@heroicons/react`, 24 outline in feature cards, 20 solid for small inline marks) and `react-icons` for brand logos (WhatsApp, TikTok, Instagram).
+- Feature icons sit in a gradient square: `rounded-xl bg-gradient-to-br from-primary to-pink-600` with a white icon.
+- No emoji as icons: they render differently on every device.
 
-`xsmall` (8px) is the default for interactive controls (buttons, inputs, tooltips). `medium`/`large` (16/24px) for cards and modals. Never use Tailwind's un-prefixed `rounded-sm`/`rounded-md` (6px/2px aren't DS values) — always the `ds-border-radius-*` scale via `rounded-[Npx]` or the mapped utility.
+## Actions
 
-## Breakpoints
+- **Primary:** "Agendar consulta" opens WhatsApp with a ready message. Pink gradient button with the WhatsApp icon.
+- **Secondary:** bordered button (`border-2 border-gray-200`, pink on hover), for example "Ver planos e valores" → `#pricing`.
+- Social links (TikTok, Instagram) are never the primary action.
 
-`md: 768px`, `lg: 1360px` only, per `DESIGN.md`. Known deviation: `tailwind.css` currently keeps Tailwind's default `sm: 640px` "for backward-compat" — this contradicts the DS spec and should be migrated off, not treated as permanent.
+## Motion
 
-## States
+- Sections reveal on scroll with `RevealSection` / `FadeIn` (framer-motion).
+- The home page splash (`Splash.jsx` + `.splash` in `globals.css`) is CSS only: transform, opacity and a mask, about 2.4s, once per session, skipped for reduced motion, crawlers and section links.
+- Easing: `cubic-bezier(0.23, 1, 0.32, 1)` for entrances. Respect `prefers-reduced-motion`.
 
-Every interactive element needs default/hover/active/focus/disabled — `DESIGN.md`'s pre-delivery checklist only explicitly calls out loading/error/empty at the page level. When building/reviewing form controls, check all 5 interaction states are styled, not just the page-level 3.
+## Images
 
-## Key component patterns (Eleanor UI + custom)
-
-- Buttons/inputs/selects: 48px height, 8px radius (`DESIGN.md` → Component Sizing Conventions is the full table — check it before inventing a new component's dimensions).
-- `Page` (`src/components/Page.tsx`) wraps page-level title + testId consistently — new pages should use it rather than reimplementing headers.
-- `StepBadge`, `CommercialJourneyStepper` — numbered step indicators for the wizard; reuse rather than creating new step UI.
-- Eleanor UI component overrides (pagination color overrides in `tailwind.css`) are the only place `!important` + attribute selectors on Eleanor's internal classnames are acceptable — Eleanor's own theming API doesn't expose these yet.
-
-## Open items (known drift, not yet fixed)
-
-- Container padding (`Layout.tsx`) doesn't implement the desktop 72px margin `DESIGN.md` specifies.
-- `sm: 640px` breakpoint override should be removed once no component depends on it.
-- `DESIGN.md`'s "Tailwind Theme Mapping" section is a stale hand-written snippet — should point to `tailwind.css` directly instead of duplicating (and drifting from) it.
-- `Footer.tsx` uses the primitive `bg-ds-gray-dark-900` directly (near-black, `#171719`) instead of a semantic surface token — no `ds-surface-*` token maps to this exact value; `ds-surface-neutral-inverse` is a visibly lighter `#2e2e3a`. Needs either a new semantic token or a design-reviewed decision to accept the lighter shade before changing it.
-- `Footer.tsx`'s copyright text uses `opacity-60` instead of a semantic token — no `ds-text-neutral-inverse-subtle`/`-muted` token exists yet for de-emphasized text on a dark surface.
+- Use `next/image` with `sizes`. Photos are JPG/WebP, never photos wrapped in SVG (next/image can't optimize those).
+- Below-the-fold media loads lazily (gallery videos only get a `src` when the carousel is near the screen).

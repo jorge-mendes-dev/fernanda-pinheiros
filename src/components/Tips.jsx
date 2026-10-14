@@ -67,7 +67,7 @@ export default function Tips() {
   }, []);
 
   return (
-    <div className="bg-white py-24 sm:py-32" id="tips">
+    <div className="bg-white py-20 sm:py-24" id="tips">
       <div className="mx-auto max-w-4xl px-6 flex flex-col items-center text-center lg:max-w-7xl lg:px-8">
         <div className="inline-flex items-center gap-2 rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-primary ring-1 ring-pink-200 mb-6">
           <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">

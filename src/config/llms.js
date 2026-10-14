@@ -25,7 +25,7 @@ ${about.description} ${evaluation.description}
 
 ## Atendimento
 
-- ${consult.description[0]}
+- ${consult.steps[0].title}: ${consult.steps[0].text}
 - Presencial: ${office.address}
 ${list(evaluation.includes.map(item => [item.title, item.description].filter(Boolean).join(' ')))}
 - ${pricing.payment}
@@ -69,7 +69,7 @@ ${curriculum.education.map(item => `### ${item.course}\n${item.institution}\n\n$
 
 ## Como funciona a consulta
 
-${consult.description.join('\n\n')}
+${consult.steps.map((step, i) => `${i + 1}. ${step.title}: ${step.text}`).join('\n')}
 
 ## Planos e valores
 
