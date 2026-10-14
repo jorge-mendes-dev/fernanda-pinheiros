@@ -292,12 +292,24 @@ export const AppConfig = {
   consult: {
     title: 'Como funciona a consulta?',
     highlight: 'Atendimento On-line',
-    description: [
-      'O atendimento on-line é realizado por meio de vídeo conferência e da mesma maneira e formato do presencial.',
-      'Com isso, você se sentirá como se estivesse no consultório, desfrutando de todo conforto e segurança do seu lar, utilizando o aplicativo ou plataforma que melhor lhe agradar (Microsoft Teams, WhatsApp, Google Hangouts, Zoom, Messenger, etc.).',
-      'Durante o atendimento, que tem duração média de uma hora e quinze minutos, será realizada uma anamnese completa e detalhada, análise de exames e conversa sobre todas as dúvidas.',
-      'Após o atendimento será montado um Plano Alimentar Personalizado, o qual será enviado por e-mail ou WhatsApp em até 48 horas.',
-      'Além disso, você contará com suporte via WhatsApp pelo período de 30 dias.'
+    // The consultation in order. Also read by llms.txt (config/llms.js).
+    steps: [
+      {
+        title: 'Por videochamada, como no consultório',
+        text: 'No mesmo formato do presencial, no conforto da sua casa, pelo aplicativo que preferir (WhatsApp, Zoom, Google Meet, Microsoft Teams…).',
+      },
+      {
+        title: 'Consulta completa, de cerca de 1h15',
+        text: 'Anamnese completa e detalhada, análise de exames e conversa sobre todas as suas dúvidas.',
+      },
+      {
+        title: 'Plano alimentar em até 48 horas',
+        text: 'Seu Plano Alimentar Personalizado chega por e-mail ou WhatsApp.',
+      },
+      {
+        title: '30 dias de suporte',
+        text: 'Acompanhamento pelo WhatsApp durante 30 dias para tirar dúvidas e ajustar o que for preciso.',
+      },
     ],
     image: {
       src: '/assets/images/header_01.jpg',
