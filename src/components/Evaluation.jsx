@@ -1,13 +1,29 @@
 import { AppConfig } from 'config/AppConfig';
 import {
-  HeartIcon
+  BeakerIcon,
+  BookOpenIcon,
+  ChatBubbleLeftRightIcon,
+  ClipboardDocumentListIcon,
+  DevicePhoneMobileIcon,
+  HeartIcon,
+  ScaleIcon,
 } from '@heroicons/react/24/outline'
+
+// feature.icon in AppConfig.evaluation.includes
+const ICONS = {
+  assessment: ScaleIcon,
+  guidance: ChatBubbleLeftRightIcon,
+  recipes: BookOpenIcon,
+  exams: BeakerIcon,
+  supplements: ClipboardDocumentListIcon,
+  support: DevicePhoneMobileIcon,
+};
 
 export default function Evaluation() {
   const { evaluation } = AppConfig;
   return (
     <>
-      <div className="relative bg-white py-24 sm:py-32 lg:py-40">
+      <div className="relative bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-md px-6 text-center sm:max-w-3xl lg:max-w-7xl lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-primary/10 to-pink-200/20 px-4 py-2 text-sm font-bold text-primary ring-1 ring-primary/20 mb-4">
             <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -21,25 +37,26 @@ export default function Evaluation() {
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600 leading-relaxed">
             {evaluation.description}
           </p>
-          <div className="mt-20">
-            <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
-              {evaluation.includes.map((feature, key) => (
-                <div key={key} className="pt-6">
-                  <div className="group flow-root rounded-xl bg-gradient-to-br from-pink-50 to-white px-6 pb-8 shadow-sm hover:shadow-xl transition-[transform,box-shadow] duration-300 hover:-translate-y-2 ring-1 ring-pink-100 hover:ring-primary/30">
-                    <div className="-mt-6">
-                      <div>
-                        <span className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-pink-600 p-3 shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-[transform,box-shadow] duration-300">
-                          <HeartIcon aria-hidden="true" className="size-8 text-white" />
-                        </span>
-                      </div>
-                      <h3 className="mt-8 text-lg/8 font-bold tracking-tight text-gray-900 group-hover:text-primary transition-colors">{feature.title}</h3>
-                      <p className="mt-5 text-base/7 text-gray-700">{feature.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          {/* Compact 2-column grid on mobile: six tall stacked cards made a very long scroll */}
+          <ul role="list" className="mt-14 grid grid-cols-2 gap-3 sm:gap-6 lg:grid-cols-3">
+            {evaluation.includes.map((feature) => {
+              const Icon = ICONS[feature.icon] ?? HeartIcon;
+              return (
+                <li
+                  key={feature.title}
+                  className="group flex flex-col items-center rounded-2xl bg-gradient-to-br from-pink-50 to-white px-3 py-6 text-center shadow-sm ring-1 ring-pink-100 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg hover:ring-primary/30 sm:px-6 sm:py-8"
+                >
+                  <span className="inline-flex items-center justify-center rounded-xl bg-gradient-to-br from-primary to-pink-600 p-2.5 shadow-md transition-transform duration-300 group-hover:scale-110 sm:p-3">
+                    <Icon aria-hidden="true" className="size-6 text-white sm:size-7" />
+                  </span>
+                  <h3 className="mt-4 text-sm font-bold leading-snug tracking-tight text-gray-900 transition-colors group-hover:text-primary sm:mt-5 sm:text-lg">
+                    {feature.title}
+                  </h3>
+                  {feature.description && <p className="mt-1 text-xs text-gray-600 sm:text-sm">{feature.description}</p>}
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </>

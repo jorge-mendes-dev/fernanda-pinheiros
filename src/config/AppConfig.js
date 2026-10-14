@@ -351,27 +351,33 @@ export const AppConfig = {
     includes: [
       {
         title: 'Avaliação Nutricional',
-        description: ''
+        description: '',
+        icon: 'assessment',
       },
       {
         title: 'Orientações Personalizadas',
-        description: ''
+        description: '',
+        icon: 'guidance',
       },
       {
         title: 'Receitinhas',
-        description: ''
+        description: '',
+        icon: 'recipes',
       },
       {
         title: 'Solicitação e avaliação de exames',
-        description: '(se necessário)'
+        description: '(se necessário)',
+        icon: 'exams',
       },
       {
         title: 'Prescrição de suplementação',
-        description: '(se necessária)'
+        description: '(se necessária)',
+        icon: 'supplements',
       },
       {
         title: 'Suporte via WhatsApp pelo período de 30 dias',
-        description: ''
+        description: '',
+        icon: 'support',
       },
     ]
   },
