@@ -15,7 +15,7 @@ export default function Consult() {
                 </svg>
                 {consult.highlight}
               </div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight font-display">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl text-gray-900 leading-tight font-display font-normal">
                 {consult.title}
               </h2>
               {/* Numbered steps joined by a line, instead of five dense paragraphs */}

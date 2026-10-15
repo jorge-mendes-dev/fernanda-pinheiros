@@ -42,7 +42,8 @@ export default function Header() {
                 {crn}
               </span>
             </div>
-            <h1 className="mt-8 text-balance text-5xl font-bold tracking-tight bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent sm:mt-10 sm:text-7xl lg:text-8xl font-display">
+            {/* Padding: room for the script's tall strokes, which bg-clip-text would cut */}
+            <h1 className="mt-8 py-[0.25em] text-balance text-5xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent sm:mt-10 sm:text-7xl lg:text-8xl font-display font-normal">
               {header.title}
             </h1>
             <p className="mt-8 text-pretty text-lg font-medium text-gray-600 leading-relaxed sm:text-xl/8">

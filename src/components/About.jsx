@@ -16,7 +16,7 @@ export default function About() {
             </svg>
             Conheça minha história
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight font-display">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl text-gray-900 leading-tight font-display font-normal">
             {about.title}
           </h2>
           <p className="mt-6 sm:mt-8 text-lg sm:text-xl text-gray-700 leading-relaxed font-medium">

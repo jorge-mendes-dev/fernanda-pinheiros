@@ -75,9 +75,9 @@ export default function Tips() {
           </svg>
           {tips.title}
         </div>
-        <h1 className="text-5xl font-semibold tracking-tight text-balance text-gray-950 sm:text-6xl lg:text-pretty font-display">
+        <h2 className="text-5xl text-balance text-gray-950 sm:text-6xl lg:text-pretty font-display font-normal">
           {tips.subtitle}
-        </h1>
+        </h2>
         <p className="mt-6 max-w-2xl text-lg font-medium text-pretty text-gray-600 mx-auto sm:text-xl/8">
           {tips.description}
         </p>

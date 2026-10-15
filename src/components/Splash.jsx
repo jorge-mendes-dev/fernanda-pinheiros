@@ -47,13 +47,7 @@ export default function Splash() {
             </div>
           </div>
           <div className="splash-text">
-            <p className="splash-name font-display">
-              {[...name].map((char, i) => (
-                <span key={i} style={{ '--i': i }}>
-                  {char === ' ' ? '\u00a0' : char}
-                </span>
-              ))}
-            </p>
+            <p className="splash-name font-display font-normal">{name}</p>
             <p className="splash-role">Nutricionista · {AppConfig.crn}</p>
           </div>
         </div>

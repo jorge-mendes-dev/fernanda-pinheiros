@@ -17,7 +17,7 @@ export default function Schedule() {
             </span>
             {schedule.subtitle}
           </div>
-          <h2 className="text-4xl font-black tracking-tight text-balance text-white sm:text-6xl drop-shadow-lg font-display">
+          <h2 className="text-4xl text-balance text-white sm:text-6xl drop-shadow-sm font-display font-normal">
             {schedule.title}
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-xl text-pretty text-white font-medium leading-relaxed drop-shadow-sm">

@@ -291,7 +291,7 @@ export default function Office() {
             <MapPinIcon aria-hidden="true" className="h-4 w-4" />
             {office.highlight}
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-gray-900 leading-tight font-display">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl text-gray-900 leading-tight font-display font-normal">
             {office.title}
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600 leading-relaxed">

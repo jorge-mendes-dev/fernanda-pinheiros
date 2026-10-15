@@ -18,7 +18,7 @@ export default function Socials() {
             </svg>
             Vídeos no TikTok
           </div>
-          <h2 className="text-4xl font-bold tracking-tight text-gray-950 sm:text-5xl lg:text-6xl font-display">
+          <h2 className="text-4xl text-gray-950 sm:text-5xl lg:text-6xl font-display font-normal">
             Conteúdo <span className="text-primary">Exclusivo</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600">

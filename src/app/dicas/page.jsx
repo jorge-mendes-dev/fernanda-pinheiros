@@ -27,9 +27,9 @@ export default function Docs() {
                 <div className="mb-4 inline-flex items-center justify-center rounded-full bg-primary/10 p-3">
                   <DocumentTextIcon className="h-8 w-8 text-primary" />
                 </div>
-                <h1 className="mb-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                <h2 className="mb-4 text-4xl font-display font-normal text-gray-900 sm:text-5xl">
                   Materiais e Guias
-                </h1>
+                </h2>
                 <p className="mx-auto max-w-2xl text-lg text-gray-600">
                   Acesse nossos guias nutricionais e conheça as opções de
                   acompanhamento disponíveis

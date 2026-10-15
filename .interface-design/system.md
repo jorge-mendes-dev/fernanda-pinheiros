@@ -1,6 +1,6 @@
 # Interface System: Nutricionista Fernanda Souza
 
-Marketing site for a nutritionist (pt-BR, mobile-first). The feel is warm, feminine and professional: white pages, one pink brand color, an elegant serif for headings. Every page exists to get a visitor to book a consultation on WhatsApp.
+Marketing site for a nutritionist (pt-BR, mobile-first). The feel is warm, feminine and professional: white pages, one pink brand color, calligraphic script titles that echo the hand-lettered logo. Every page exists to get a visitor to book a consultation on WhatsApp.
 
 Source of truth for tokens: `src/app/globals.css` (`@theme`). Content and copy: `src/config/AppConfig.js`.
 
@@ -14,16 +14,16 @@ Source of truth for tokens: `src/app/globals.css` (`@theme`). Content and copy: 
 
 ## Typography
 
-- **Headings:** Playfair Display through `font-display` (all `h1`/`h2` section titles, the splash name).
-- **Body and UI:** Inter (the default `font-sans`).
-- Fonts load with `next/font` in `src/app/layout.jsx` as `--font-playfair` / `--font-inter` on `<html>`, mapped to Tailwind's `--font-display` / `--font-sans` with `@theme inline`. Don't name a next/font variable `--font-sans` or `--font-display`: it collides with Tailwind's own and the site silently falls back to system fonts.
+- **Titles:** Pinyon Script through `font-display` (the hero name, every section `h2`, the splash name). It has one weight: headings with `font-display` stay `font-normal` with default tracking, since a faux bold or `tracking-tight` breaks the joined letters. Its x-height is tiny, so `.font-display` in `globals.css` scales it with `font-size-adjust`, gives it a 1.3 line height through `--tw-leading` (an explicit `leading-*` still wins) and sets `font-synthesis: none`. Gradient-clipped titles (`bg-clip-text`) need vertical padding or the tall strokes get cut.
+- **Body and UI:** Inter (the default `font-sans`). Small labels, card titles and buttons stay in Inter; script is only for titles.
+- Fonts load with `next/font` in `src/app/layout.jsx` as `--font-pinyon` / `--font-inter` on `<html>`, mapped to Tailwind's `--font-display` / `--font-sans` with `@theme inline`. Don't name a next/font variable `--font-sans` or `--font-display`: it collides with Tailwind's own and the site silently falls back to system fonts. Don't load fonts with a CSS `@import` from Google Fonts: it blocks rendering.
 
 ## Section pattern
 
 Every content section uses the same header:
 
 1. A pill tag: `rounded-full bg-primary/10 px-4 py-2 text-sm font-bold text-primary`, often with a ring and a small icon.
-2. A title: `text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 font-display` (the hero and About go larger).
+2. A title: `text-3xl sm:text-4xl lg:text-5xl text-gray-900 font-display font-normal` (the hero and About go larger).
 3. An optional intro: `text-lg text-gray-600 leading-relaxed`, `max-w-2xl`/`max-w-3xl`.
 
 ## Layout and spacing

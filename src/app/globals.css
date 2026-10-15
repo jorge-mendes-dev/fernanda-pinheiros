@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
-/* Fonts: next/font exposes --font-inter and --font-playfair on <html> (layout.jsx).
+/* Fonts: next/font exposes --font-inter and --font-pinyon on <html> (layout.jsx).
    `inline` makes font-sans / font-display use them directly, so they resolve on
    the element instead of at :root before next/font's variables exist. */
 @theme inline {
   --font-sans: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  /* Titles: Pinyon Script, a calligraphic script with one weight. Headings using
+     font-display stay font-normal with default tracking: a faux bold or tight
+     tracking breaks the joined letters. */
+  --font-display: var(--font-pinyon), 'Pinyon Script', Georgia, serif;
 }
 
 @theme {
@@ -115,6 +118,20 @@ body {
   }
 }
 
+/* Pinyon Script has a very small x-height: at the same font-size it reads much
+   smaller and thinner than a regular font. Scale it by x-height instead, and
+   give its tall ascenders and descenders room. It has one weight: never let the
+   browser fake a bold. The line height goes through --tw-leading, which
+   Tailwind's text-* utilities read, so an explicit leading-* still wins. */
+@layer components {
+  .font-display {
+    font-size-adjust: 0.5;
+    --tw-leading: 1.3;
+    line-height: 1.3;
+    font-synthesis: none;
+  }
+}
+
 .text-balance {
   text-wrap: balance;
 }
@@ -150,7 +167,7 @@ body {
 /* Splash screen (components/Splash.jsx): home page, once per session.
    0-700ms      logo in (scale + blur) at the center of the screen
    250-1650ms   a wave lights the rings around the logo, inside out
-   250-1000ms   name letter by letter, then the role
+   250-1150ms   the name is written in (left-to-right wipe), then the role
    1650-1950ms  logo and text lift away
    1750-2450ms  the splash opens as a circle from the logo, letting taps through
    The timeline is CSS, so it stays smooth while the page loads and ends by
@@ -269,18 +286,14 @@ body {
   transform: translateX(-50%);
 }
 
+/* Written in: a left-to-right wipe over the whole name, like a pen stroke.
+   (Animating letters separately would break the script's joined letters.)
+   The insets reach 0.5em past the box so the swashes aren't clipped. */
 .splash-name {
-  font-size: 1.75rem;
-  font-weight: 700;
+  font-size: 2rem;
   color: var(--color-gray-900);
-}
-
-.splash-name span {
-  display: inline-block;
-  opacity: 0;
-  transform: translateY(8px);
-  animation: splash-letter-in 500ms var(--ease-out) forwards;
-  animation-delay: calc(250ms + var(--i) * 30ms);
+  clip-path: inset(-0.5em 100% -0.5em -0.5em);
+  animation: splash-write 900ms var(--ease-in-out) 250ms forwards;
 }
 
 .splash-role {
@@ -299,7 +312,7 @@ body {
   }
 
   .splash-name {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -311,10 +324,9 @@ body {
   }
 }
 
-@keyframes splash-letter-in {
+@keyframes splash-write {
   to {
-    opacity: 1;
-    transform: none;
+    clip-path: inset(-0.5em -0.5em -0.5em -0.5em);
   }
 }
 

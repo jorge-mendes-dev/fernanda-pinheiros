@@ -1,13 +1,15 @@
 import { AppConfig } from 'config/AppConfig';
 import { phone, siteUrl as baseUrl } from 'config/site';
-import { Inter, Playfair_Display } from 'next/font/google';
+import { Inter, Pinyon_Script } from 'next/font/google';
 import './globals.css';
 
-// Variable fonts: one file each covers every weight. The variable names must
-// not collide with Tailwind's own --font-sans / --font-display (globals.css).
-const playfairDisplay = Playfair_Display({
+// The variable names must not collide with Tailwind's own --font-sans /
+// --font-display (globals.css). Pinyon Script (titles) has a single weight;
+// Inter is a variable font, one file for every weight.
+const pinyonScript = Pinyon_Script({
+  weight: '400',
   subsets: ['latin'],
-  variable: '--font-playfair',
+  variable: '--font-pinyon',
   display: 'swap',
 });
 
@@ -197,7 +199,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang={AppConfig.locale} className={`light bg-white ${playfairDisplay.variable} ${inter.variable}`}>
+    <html lang={AppConfig.locale} className={`light bg-white ${pinyonScript.variable} ${inter.variable}`}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content={AppConfig.bg_color} />

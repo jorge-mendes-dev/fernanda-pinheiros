@@ -28,7 +28,7 @@ export default function Price() {
               {pricing.highlight}
             </div>
           )}
-          <h2 className="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">
+          <h2 className="font-display text-3xl text-gray-900 sm:text-4xl lg:text-5xl font-normal">
             {pricing.title}
           </h2>
           {pricing.tagline && (

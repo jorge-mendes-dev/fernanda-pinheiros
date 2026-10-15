@@ -31,7 +31,7 @@ export default function Evaluation() {
             </svg>
             {evaluation.highlight}
           </div>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl font-display">
+          <h2 className="text-3xl text-gray-900 sm:text-4xl lg:text-5xl font-display font-normal">
             {evaluation.title}
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600 leading-relaxed">
