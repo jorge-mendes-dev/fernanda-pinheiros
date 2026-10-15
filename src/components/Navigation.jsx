@@ -30,7 +30,7 @@ export default function Navigation() {
       <nav
         aria-label="Global"
         className={`mx-auto flex max-w-7xl items-center justify-between transition-all duration-300 lg:px-8 ${
-          isScrolled ? 'p-4 lg:p-4' : 'p-6 lg:px-8'
+          isScrolled ? 'p-4 lg:p-4' : 'px-6 py-4 lg:p-6 lg:px-8'
         }`}
       >
         <a href="#" className="-m-1.5 p-1.5 group" aria-label="Ir para o topo da página">

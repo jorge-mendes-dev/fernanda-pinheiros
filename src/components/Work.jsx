@@ -6,7 +6,7 @@ export default function Work() {
   const { work } = AppConfig;
   return (
     <div
-      className="relative isolate overflow-hidden bg-white py-20 sm:py-24"
+      className="relative isolate overflow-hidden bg-white py-14 sm:py-20 lg:py-24"
       id="work"
     >
       <div

@@ -43,30 +43,33 @@ export default function Footer() {
 
   return (
     <footer className="bg-white" id="contact">
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
+      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-14 sm:py-20 lg:py-24 lg:px-8">
         <nav
           aria-label="Footer"
-          className="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-4 text-sm/6"
+          className="grid grid-cols-3 text-center text-sm/6 sm:flex sm:flex-wrap sm:justify-center sm:gap-x-8"
         >
-          {links.navigation.map(item => (
-            <Link
-              target="_blank"
-              rel="noopener noreferrer"
-              key={item.name}
-              href={item?.href ? item.href : '#'}
-              aria-label={item.name}
-              className="text-gray-600 hover:text-primary transition-colors duration-200 focus-visible:outline focus-visible:outline-offset-4 focus-visible:outline-primary rounded-sm px-1"
-            >
-              {item.name}
-            </Link>
-          ))}
+          {links.navigation.map(item => {
+            const href = item?.href ? item.href : '#';
+            // Internal pages open in the same tab; only external links (WhatsApp) get a new one
+            const external = href.startsWith('http');
+            return (
+              <Link
+                key={item.name}
+                href={href}
+                {...(external && { target: '_blank', rel: 'noopener noreferrer' })}
+                className="flex min-h-11 items-center justify-center px-2 text-gray-600 hover:text-primary transition-colors duration-200 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary rounded-sm"
+              >
+                {item.name}
+              </Link>
+            );
+          })}
         </nav>
-        <div className="mt-16 flex justify-center gap-x-10">
+        <div className="mt-10 flex justify-center gap-x-4 sm:mt-14 sm:gap-x-8">
           {links.social.map(item => (
             <Link
               key={item.name}
               href={item?.href ? item.href : '#'}
-              className="text-gray-600 hover:text-gray-800 transition-[color,transform] duration-200 hover:scale-110 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary rounded-full p-1"
+              className="text-gray-600 hover:text-gray-800 transition-[color,transform] duration-200 hover:scale-110 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-primary rounded-full p-2.5"
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`Seguir no ${item.name}`}

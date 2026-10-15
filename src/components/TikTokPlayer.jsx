@@ -23,7 +23,7 @@ export default function TikTokPlayer({ url, title = 'Vídeo do TikTok', classNam
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Ver no TikTok: ${title} - Abre em nova aba`}
-        className="mt-2 block text-center text-sm font-medium text-gray-500 hover:text-primary"
+        className="flex min-h-11 items-center justify-center text-sm font-medium text-gray-500 hover:text-primary"
       >
         Ver no TikTok
       </a>

@@ -23,7 +23,7 @@ export default function Evaluation() {
   const { evaluation } = AppConfig;
   return (
     <>
-      <div className="relative bg-white py-20 sm:py-24">
+      <div className="relative bg-white py-14 sm:py-20 lg:py-24">
         <div className="mx-auto max-w-md px-6 text-center sm:max-w-3xl lg:max-w-7xl lg:px-8">
           <div className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-primary/10 to-pink-200/20 px-4 py-2 text-sm font-bold text-primary ring-1 ring-primary/20 mb-4">
             <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">

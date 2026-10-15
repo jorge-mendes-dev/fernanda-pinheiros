@@ -7,6 +7,8 @@ import Image from 'next/image';
 import { AppConfig } from 'config/AppConfig';
 
 const FOCUS_RING = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
+// Swipeable rows: native scrolling with snap points, scrollbar hidden
+const NO_SCROLLBAR = '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden';
 
 function CircleButton({ icon: Icon, size = 'size-14', iconSize = 'size-7', onClick, disabled, ariaLabel, positionClassName }) {
   return (
@@ -101,22 +103,23 @@ function PhotoGrid({ images }) {
 
   return (
     <>
-      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-2 gap-4 sm:mt-20 sm:grid-cols-4 sm:gap-6 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+      {/* Phones: one swipeable row with the next photo peeking in. From sm: a 4-column grid. */}
+      <div className={`-mx-6 mt-10 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-6 px-6 py-3 sm:mx-auto sm:py-0 sm:mt-20 sm:grid sm:max-w-2xl sm:grid-cols-4 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:mx-0 lg:max-w-none ${NO_SCROLLBAR}`}>
         {images.map((image, index) => (
           <button
             type="button"
             key={index}
             onClick={() => setLightboxIndex(index)}
             aria-label={`Ampliar foto: ${image.alt}`}
-            className={`group relative overflow-hidden rounded-xl shadow-lg transition-transform duration-300 [-webkit-tap-highlight-color:transparent] hover:scale-[1.02] ${FOCUS_RING}`}
+            className={`group relative w-[70%] flex-none snap-start overflow-hidden rounded-xl shadow-lg transition-transform duration-300 [-webkit-tap-highlight-color:transparent] hover:scale-[1.02] sm:w-auto ${FOCUS_RING}`}
           >
             <Image
               alt={image.alt}
               src={image.src}
               width={384}
               height={384}
-              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="aspect-square w-full rounded-xl object-cover ring-1 ring-gray-400/10 transition-transform duration-300 group-hover:scale-105"
+              sizes="(max-width: 640px) 70vw, (max-width: 1024px) 33vw, 25vw"
+              className="aspect-4/5 w-full rounded-xl object-cover ring-1 ring-gray-400/10 transition-transform duration-300 group-hover:scale-105 sm:aspect-square"
             />
             <div className="absolute inset-0 bg-linear-to-t from-primary/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
           </button>
@@ -130,7 +133,7 @@ function PhotoGrid({ images }) {
   );
 }
 
-function VideoCard({ video, activeVideoRef, load }) {
+function VideoCard({ video, index, activeVideoRef, load }) {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -153,7 +156,8 @@ function VideoCard({ video, activeVideoRef, load }) {
       type="button"
       onClick={togglePlay}
       aria-label={isPlaying ? `Pausar ${video.alt}` : `Reproduzir ${video.alt}`}
-      className="group relative aspect-9/16 w-56 flex-none overflow-hidden rounded-xl bg-gray-900 shadow-lg transition-transform duration-300 hover:scale-[1.02] sm:w-64"
+      data-index={index}
+      className="group relative aspect-9/16 w-[48%] flex-none snap-start overflow-hidden rounded-xl bg-gray-900 shadow-lg transition-transform duration-300 hover:scale-[1.02] sm:w-64"
     >
       <video
         ref={videoRef}
@@ -179,103 +183,137 @@ function VideoCard({ video, activeVideoRef, load }) {
 
 function VideoCarousel({ videos }) {
   const activeVideoRef = useRef(null);
-  const containerRef = useRef(null);
-  const trackRef = useRef(null);
-  const [index, setIndex] = useState(0);
-  const [cardStep, setCardStep] = useState(0);
-  const [maxIndex, setMaxIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(1);
-  // Videos only get a src once the carousel is near the screen, and only up to
-  // the cards in view plus one ahead: all five used to start downloading on
-  // page load (about 9.7 MB). furthest only grows, so going back never unloads.
+  const scrollerRef = useRef(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+  // A video gets a src only once the carousel is near the screen and its card
+  // is within one screen-width of the visible part of the row: all five used
+  // to start downloading on page load (about 9.7 MB). Loaded cards stay loaded.
   const [isNear, setIsNear] = useState(false);
-  const [furthest, setFurthest] = useState(0);
+  const [inReach, setInReach] = useState(() => new Set());
 
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
     if (typeof IntersectionObserver === 'undefined') {
-      const frame = requestAnimationFrame(() => setIsNear(true));
+      const frame = requestAnimationFrame(() => {
+        setIsNear(true);
+        setInReach(new Set(videos.map((_, i) => i)));
+      });
       return () => cancelAnimationFrame(frame);
     }
-    // Watch the container, not the cards: the cards off to the side are clipped
-    // by its overflow-hidden, so they would never count as near
-    const observer = new IntersectionObserver(
+    const near = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsNear(true);
-          observer.disconnect();
+          near.disconnect();
         }
       },
       { rootMargin: '300px' }
     );
-    observer.observe(container);
-    return () => observer.disconnect();
+    near.observe(scroller);
+    // Root is the row itself, so it tracks horizontal position: cards within
+    // one row-width to the right of what's visible count as in reach
+    const reach = new IntersectionObserver(
+      (entries) => {
+        const reached = entries.filter((entry) => entry.isIntersecting);
+        if (!reached.length) return;
+        // A loaded card never unloads, so stop watching it
+        reached.forEach((entry) => reach.unobserve(entry.target));
+        setInReach((current) => new Set([...current, ...reached.map((entry) => Number(entry.target.dataset.index))]));
+      },
+      { root: scroller, rootMargin: '0px 100% 0px 0px' }
+    );
+    [...scroller.children].forEach((card) => reach.observe(card));
+    return () => {
+      near.disconnect();
+      reach.disconnect();
+    };
+  }, [videos]);
+
+  const updateEnds = useCallback(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    setAtStart(scroller.scrollLeft <= 4);
+    setAtEnd(scroller.scrollLeft + scroller.clientWidth >= scroller.scrollWidth - 4);
   }, []);
 
+  // Arrow states on mount and whenever the row resizes (rotation, window size)
   useEffect(() => {
-    function measure() {
-      const track = trackRef.current;
-      const container = containerRef.current;
-      if (!track || !container || track.children.length < 1) return;
+    const scroller = scrollerRef.current;
+    if (!scroller) return;
+    const frame = requestAnimationFrame(updateEnds);
+    const observer = new ResizeObserver(updateEnds);
+    observer.observe(scroller);
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
+  }, [updateEnds]);
 
-      const first = track.children[0].getBoundingClientRect();
-      let gap = 0;
-      if (track.children.length > 1) {
-        const second = track.children[1].getBoundingClientRect();
-        gap = second.left - first.right;
-      }
-      const step = first.width + gap;
-      if (!step) return;
-      const visible = Math.max(Math.floor((container.clientWidth + gap) / step), 1);
-
-      setCardStep(step);
-      setVisibleCount(visible);
-      setMaxIndex(Math.max(videos.length - visible, 0));
-    }
-
-    measure();
-    const observer = new ResizeObserver(measure);
-    if (containerRef.current) observer.observe(containerRef.current);
+  // A playing video that is swiped out of view pauses
+  useEffect(() => {
+    const scroller = scrollerRef.current;
+    if (!scroller || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const video = entry.target.querySelector('video');
+          if (!entry.isIntersecting && video && !video.paused) video.pause();
+        }
+      },
+      { root: scroller, threshold: 0.4 }
+    );
+    [...scroller.children].forEach((card) => observer.observe(card));
     return () => observer.disconnect();
-  }, [videos.length]);
+  }, [videos]);
 
-  const clampedIndex = Math.min(index, maxIndex);
-  const loadUpTo = isNear ? furthest + visibleCount : -1;
-
-  const goTo = (next) => {
+  // Arrows (sm and up) scroll the same row by one card
+  const scrollByCard = (direction) => {
+    const scroller = scrollerRef.current;
+    const card = scroller?.children[0];
+    if (!scroller || !card) return;
     activeVideoRef.current?.pause();
-    setIndex(next);
-    setFurthest((value) => Math.max(value, next));
+    const gap = parseFloat(getComputedStyle(scroller).columnGap) || 0;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    scroller.scrollBy({ left: direction * (card.getBoundingClientRect().width + gap), behavior: reduce ? 'auto' : 'smooth' });
   };
 
   return (
-    <div className="relative">
-      <div ref={containerRef} className="overflow-hidden">
-        <div
-          ref={trackRef}
-          className="flex gap-4 transition-transform duration-300 ease-out sm:gap-6"
-          style={{ transform: `translateX(-${clampedIndex * cardStep}px)` }}
-        >
-          {videos.map((video, key) => (
-            <VideoCard key={key} video={video} activeVideoRef={activeVideoRef} load={key <= loadUpTo} />
-          ))}
+    <div>
+      {/* Arrows live in a header row, never on top of the videos. Phones swipe. */}
+      <div className="mb-3 flex items-center justify-between sm:mb-4">
+        <h3 className="text-base font-semibold text-gray-900 sm:text-lg">Vídeos do consultório</h3>
+        <div className="hidden gap-2 sm:flex">
+          <CircleButton
+            icon={ChevronLeftIcon}
+            size="size-11"
+            iconSize="size-6"
+            onClick={() => scrollByCard(-1)}
+            disabled={atStart}
+            ariaLabel="Vídeo anterior"
+            positionClassName="ring-1 ring-gray-900/5"
+          />
+          <CircleButton
+            icon={ChevronRightIcon}
+            size="size-11"
+            iconSize="size-6"
+            onClick={() => scrollByCard(1)}
+            disabled={atEnd}
+            ariaLabel="Próximo vídeo"
+            positionClassName="ring-1 ring-gray-900/5"
+          />
         </div>
       </div>
-      <CircleButton
-        icon={ChevronLeftIcon}
-        onClick={() => goTo(Math.max(clampedIndex - 1, 0))}
-        disabled={clampedIndex === 0}
-        ariaLabel="Vídeo anterior"
-        positionClassName="absolute top-1/2 left-2 -translate-y-1/2"
-      />
-      <CircleButton
-        icon={ChevronRightIcon}
-        onClick={() => goTo(Math.min(clampedIndex + 1, maxIndex))}
-        disabled={clampedIndex === maxIndex}
-        ariaLabel="Próximo vídeo"
-        positionClassName="absolute top-1/2 right-2 -translate-y-1/2"
-      />
+      <div
+        ref={scrollerRef}
+        onScroll={updateEnds}
+        className={`-mx-6 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-6 px-6 py-3 sm:-mx-3 sm:gap-6 sm:scroll-px-3 sm:px-3 ${NO_SCROLLBAR}`}
+      >
+        {videos.map((video, key) => (
+          <VideoCard key={key} index={key} video={video} activeVideoRef={activeVideoRef} load={isNear && inReach.has(key)} />
+        ))}
+      </div>
     </div>
   );
 }
@@ -284,7 +322,7 @@ export default function Office() {
   const { office } = AppConfig;
 
   return (
-    <div id="office" className="overflow-hidden bg-white py-20 sm:py-24">
+    <div id="office" className="overflow-hidden bg-white py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center lg:max-w-3xl">
           <div className="inline-flex items-center gap-2 rounded-full bg-linear-to-r from-primary/10 to-pink-200/20 px-4 py-2 text-sm font-bold text-primary ring-1 ring-primary/20 mb-4">
@@ -301,22 +339,23 @@ export default function Office() {
 
         <PhotoGrid images={office.images} />
 
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-8 sm:mt-16">
           <VideoCarousel videos={office.videos} />
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-10">
+        <div className="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-6 sm:mt-20 sm:gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-10">
           <div className="flex flex-col justify-center">
             <div className="flex items-start gap-3">
               <MapPinIcon aria-hidden="true" className="mt-1 size-7 flex-none text-primary" />
-              <p className="text-xl text-gray-800 leading-relaxed font-medium">{office.address}</p>
+              <p className="text-lg text-gray-800 leading-relaxed font-medium sm:text-xl">{office.address}</p>
             </div>
             <a
               href={office.mapUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex w-fit items-center gap-1 text-sm font-semibold text-primary hover:text-primary/80"
+              className={`mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl border-2 border-primary/30 px-5 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/5 sm:w-fit ${FOCUS_RING}`}
             >
+              <MapPinIcon aria-hidden="true" className="size-5" />
               Ver rota no Google Maps
             </a>
           </div>
@@ -324,12 +363,10 @@ export default function Office() {
             <iframe
               title={office.address}
               src={office.mapEmbedUrl}
-              width="100%"
-              height="280"
               style={{ border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
+              className="h-56 w-full sm:h-72"
             />
           </div>
         </div>

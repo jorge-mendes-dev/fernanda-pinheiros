@@ -29,7 +29,7 @@ export default function Testimonials() {
 
   return (
     <div
-      className="relative isolate bg-white py-20 sm:py-24"
+      className="relative isolate bg-white py-14 sm:py-20 lg:py-24"
       id="testimonials"
     >
       <div

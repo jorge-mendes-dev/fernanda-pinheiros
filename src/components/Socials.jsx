@@ -5,7 +5,7 @@ export default function Socials() {
   const { tiktokVideos } = AppConfig;
 
   return (
-    <div className="relative bg-gradient-to-br from-pink-50 via-white to-purple-50 py-20 sm:py-24 overflow-hidden" id="videos">
+    <div className="relative bg-gradient-to-br from-pink-50 via-white to-purple-50 py-14 sm:py-20 lg:py-24 overflow-hidden" id="videos">
       {/* Decorative background elements */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,125,164,0.08),transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.08),transparent_50%)]" />

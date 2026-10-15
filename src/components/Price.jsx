@@ -19,7 +19,7 @@ export default function Price() {
   const { pricing } = AppConfig;
 
   return (
-    <section className="bg-white py-20 sm:py-24" id="pricing">
+    <section className="bg-white py-14 sm:py-20 lg:py-24" id="pricing">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="text-center">
           {pricing.highlight && (

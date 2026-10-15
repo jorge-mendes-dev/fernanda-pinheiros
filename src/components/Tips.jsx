@@ -67,7 +67,7 @@ export default function Tips() {
   }, []);
 
   return (
-    <div className="bg-white py-20 sm:py-24" id="tips">
+    <div className="bg-white py-14 sm:py-20 lg:py-24" id="tips">
       <div className="mx-auto max-w-4xl px-6 flex flex-col items-center text-center lg:max-w-7xl lg:px-8">
         <div className="inline-flex items-center gap-2 rounded-full bg-pink-100 px-4 py-2 text-sm font-bold text-primary ring-1 ring-pink-200 mb-6">
           <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -85,7 +85,7 @@ export default function Tips() {
 
       <div className="relative pt-16 sm:pt-24">
         <div className="absolute inset-x-0 top-48 bottom-0 bg-[radial-gradient(circle_at_center_center,#ff7da4,#f9a8d4,#fdf2f8_70%)] lg:bg-[radial-gradient(circle_at_center_150%,#ff7da4,#f9a8d4,#fdf2f8_70%)]" />
-        <div className="relative mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <div className="relative mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 justify-center">
             {tiers.map((tier) => (
               <div
@@ -93,7 +93,7 @@ export default function Tips() {
                 className="-m-2 grid grid-cols-1 rounded-4xl bg-white/2.5 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-1 ring-black/5 mx-auto w-full max-w-md lg:max-w-lg"
               >
                 <div className="grid grid-cols-1 rounded-4xl p-2 shadow-md shadow-black/5">
-                  <div className="rounded-3xl bg-white p-10 pb-9 shadow-2xl ring-1 ring-black/5">
+                  <div className="rounded-3xl bg-white p-6 sm:p-10 sm:pb-9 shadow-2xl ring-1 ring-black/5">
                     <div className="flex items-center gap-4">
                       <div className={`${tier.color} rounded-2xl p-3 text-white shadow-lg`}>
                         {tier.icon}
@@ -140,7 +140,10 @@ export default function Tips() {
                     </div>
 
                     {/* Social Media Embed */}
-                    <div className="mt-8 flex justify-center">
+                    {/* Instagram's embed has a 326px minimum width: on narrow phones it
+                        runs edge to edge (-mx-6 cancels the card padding), anchored left so
+                        its header is never the part that gets cut */}
+                    <div className="-mx-6 mt-8 flex justify-[safe_center] overflow-hidden sm:mx-0 sm:rounded-xl">
                       {tier.embedType === 'instagram' ? (
                         <blockquote
                           className="instagram-media"
@@ -159,7 +162,8 @@ export default function Tips() {
           </div>
 
           <div className="mt-16 text-center pb-16">
-            <p className="text-lg text-white font-semibold drop-shadow-lg">
+            {/* The pink glow behind it is light on phones: dark pink text there, white on desktop */}
+            <p className="text-lg font-semibold text-pink-800 lg:text-white lg:drop-shadow-lg">
               Não perca nenhuma dica! Acompanhe todo o conteúdo nas redes sociais.
             </p>
           </div>

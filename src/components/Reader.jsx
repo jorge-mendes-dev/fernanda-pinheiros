@@ -98,7 +98,7 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           onClick={onPrevious}
           disabled={currentPage <= 1}
           aria-label="Ir para a página anterior"
-          className={`flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 font-medium transition-[background-color,transform,box-shadow] duration-200 sm:gap-2 sm:px-4 md:px-5 md:py-2.5 ${
+          className={`flex items-center justify-center gap-1.5 min-h-11 min-w-11 rounded-lg px-3 py-2 font-medium transition-[background-color,transform,box-shadow] duration-200 sm:gap-2 sm:px-4 md:px-5 md:py-2.5 ${
             currentPage <= 1
               ? 'cursor-not-allowed bg-gray-100 text-gray-400 dark:bg-rose-900/30 dark:text-rose-700'
               : 'bg-rose-100 text-rose-700 hover:bg-rose-200 hover:shadow-md active:scale-95 dark:bg-rose-900 dark:text-rose-200 dark:hover:bg-rose-800'
@@ -125,7 +125,7 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           onClick={onNext}
           disabled={currentPage >= numPages}
           aria-label="Ir para a próxima página"
-          className={`flex items-center justify-center gap-1.5 rounded-lg px-3 py-2 font-medium transition-[background-color,transform,box-shadow] duration-200 sm:gap-2 sm:px-4 md:px-5 md:py-2.5 ${
+          className={`flex items-center justify-center gap-1.5 min-h-11 min-w-11 rounded-lg px-3 py-2 font-medium transition-[background-color,transform,box-shadow] duration-200 sm:gap-2 sm:px-4 md:px-5 md:py-2.5 ${
             currentPage >= numPages
               ? 'cursor-not-allowed bg-gray-100 text-gray-400 dark:bg-rose-900/30 dark:text-rose-700'
               : 'bg-rose-100 text-rose-700 hover:bg-rose-200 hover:shadow-md active:scale-95 dark:bg-rose-900 dark:text-rose-200 dark:hover:bg-rose-800'
@@ -145,7 +145,7 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           <button
             onClick={handleZoomOut}
             aria-label="Diminuir zoom"
-            className="rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
             title="Diminuir zoom"
             type="button"
           >
@@ -154,7 +154,7 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           <button
             onClick={handleZoomReset}
             aria-label="Resetar zoom"
-            className="rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
             title="Resetar zoom"
             type="button"
           >
@@ -163,7 +163,7 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           <button
             onClick={handleZoomIn}
             aria-label="Aumentar zoom"
-            className="rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
             title="Aumentar zoom"
             type="button"
           >
@@ -172,7 +172,7 @@ const PageNavigation = ({ currentPage, numPages, onPrevious, onNext, handleFulls
           <button
             onClick={handleFullscreen}
             aria-label={isFullscreen ? 'Sair do modo tela cheia' : 'Ativar modo tela cheia'}
-            className="rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded-lg p-2 transition-[background-color,transform] duration-200 hover:bg-rose-100 active:scale-95 dark:hover:bg-rose-900"
             title={isFullscreen ? 'Sair do modo tela cheia' : 'Tela cheia'}
             type="button"
           >

@@ -5,7 +5,7 @@ export default function About() {
   const { about } = AppConfig;
 
   return (
-    <div className="overflow-hidden bg-white py-20 sm:py-24" id="about">
+    <div className="overflow-hidden bg-white py-14 sm:py-20 lg:py-24" id="about">
       {/* Text beside a staggered 2x2 photo mosaic: the old template collage used
           fixed widths that overflowed and cut a photo at the screen edge */}
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">

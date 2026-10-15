@@ -32,7 +32,7 @@ export default function Header() {
         />
       </svg>
       <div className="mx-auto max-w-7xl lg:grid lg:grid-cols-12 lg:gap-x-8 lg:px-8">
-        <div className="px-6 pb-24 pt-10 sm:pb-32 lg:col-span-7 lg:px-0 lg:pb-48 lg:pt-32 xl:col-span-6">
+        <div className="px-6 pb-12 pt-10 sm:pb-20 lg:col-span-7 lg:px-0 lg:pb-48 lg:pt-32 xl:col-span-6">
           <div className="mx-auto max-w-lg lg:mx-0">
             <div className="flex flex-wrap gap-2 sm:mt-32 lg:mt-16">
               <span className="rounded-full bg-gradient-to-r from-primary/10 to-pink-200/20 px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm font-bold text-primary ring-1 ring-inset ring-primary/20 shadow-sm">
@@ -76,8 +76,8 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="relative lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-pink-300/30 rounded-2xl lg:rounded-none" />
+        <div className="relative px-6 lg:px-0 lg:col-span-5 lg:-mr-8 xl:absolute xl:inset-0 xl:left-1/2 xl:mr-0">
+          <div className="absolute inset-y-0 inset-x-6 lg:inset-x-0 bg-gradient-to-tr from-primary/20 via-transparent to-pink-300/30 rounded-2xl lg:rounded-none" />
           <Image
             alt={header.image.alt}
             src={header.image.src}
